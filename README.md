@@ -1,4 +1,6 @@
 # cse210-student-template
+Name: Veihi Tupai
+Date: September 2023
 This is the starter code for students in CSE 210.
 
 This repository contains the starter code for many different projects. They are arranged as follows:
