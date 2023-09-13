@@ -7,6 +7,27 @@ class Program
         Console.Write("What is your grade percentage? ");
         string gradeUser = Console.ReadLine();
         int grade = int.Parse(gradeUser);
-        Console.WriteLine($"Your grade is {grade}");
+
+        if (grade >= 90)
+        {
+            Console.WriteLine($"You have an A.");
+        }
+        else if (grade >=80)
+        {
+            Console.WriteLine($"You have a B.");
+        }
+        else if (grade >=70)
+        {
+            Console.WriteLine($"You have a C.");
+        }
+        else if (grade >=60)
+        {
+            Console.WriteLine($"You have a D.");
+        }
+        else
+        {
+            Console.WriteLine($"You have a F.");
+        }
+        
     }
 }
