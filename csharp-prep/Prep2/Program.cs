@@ -7,6 +7,7 @@ class Program
         Console.Write("What is your grade percentage? ");
         string gradeUser = Console.ReadLine();
         int grade = int.Parse(gradeUser);
+
         string letter = "A";
 
         if (grade >= 90)
@@ -30,7 +31,19 @@ class Program
             letter = "F";
         }
 
-        Console.WriteLine($"You have {letter}.");
+        string sign = "";
+        int signGrade = grade % 10;
+        if (signGrade >= 7)
+        {
+            sign = "+";
+        }
+        else if (signGrade < 3)
+        {
+            sign = "-";
+        }
+
+
+        Console.WriteLine($"You have {letter}{sign}.");
         
         if (grade >= 70)
         {
