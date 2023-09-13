@@ -42,6 +42,14 @@ class Program
             sign = "-";
         }
 
+        if (letter == "A" && sign == "+")
+        {
+            sign = "";
+        }
+        else if (letter == "F" && sign =="-" || sign =="+")
+        {
+            sign = "";
+        }
 
         Console.WriteLine($"You have {letter}{sign}.");
         
