@@ -29,5 +29,14 @@ class Program
             Console.WriteLine($"You have a F.");
         }
         
+        if (grade >= 70)
+        {
+            Console.WriteLine("Congratulations, you pass!");
+        }
+        else
+        {
+            Console.WriteLine("Do better next time.");
+        }
+
     }
 }
