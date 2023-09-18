@@ -9,7 +9,9 @@ class Program
         int magicNumber = int.Parse(number);
 
         Console.Write("What is your guess? ");
-        
+        string guess = Console.ReadLine();
+        int guessNumber = int.Parse(guess);
+
 
     }
 }
