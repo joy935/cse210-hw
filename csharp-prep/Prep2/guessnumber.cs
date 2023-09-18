@@ -8,5 +8,8 @@ class Program
         string number = Console.ReadLine();
         int magicNumber = int.Parse(number);
 
+        Console.Write("What is your guess? ");
+        
+
     }
 }
