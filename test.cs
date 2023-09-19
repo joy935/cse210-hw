@@ -17,24 +17,30 @@ class Program
             Random randomGenerator = new Random();
             int magicNumber = randomGenerator.Next(1,100);
 
+            int guessNumber = 0;
             int guesses = 0;
 
             do {
                 Console.Write("What is your guess? ");
-                string guess = Console.ReadLine();
-                int guessNumber = int.Parse(guess);
+                string guess2 = Console.ReadLine();
+                int guessNumber2 = int.Parse(guess2);
 
-                if (guessNumber == magicNumber)
+                if (guessNumber2 == magicNumber)
                 {
                     guesses += 1;
                     Console.WriteLine("You guessed it!");
                     Console.WriteLine($"It took you {guesses} guess.");
-                    break;
+                    Console.WriteLine("Do you want to play again? (yes or no) ");
+                    string playAgain = Console.ReadLine();
+                    if (playAgain == "no")
+                    {
+                        break;
+                    }
                     
                 }
                 else 
                 {
-                    if (guessNumber > magicNumber)
+                    if (guessNumber2 > magicNumber)
                     {
                         Console.WriteLine("Lower");
                         guesses += 1;
@@ -45,9 +51,9 @@ class Program
                     }
 
                 }
-            } while (true);
-            Console.WriteLine("Do you want to play again? (yes or no) ");
-            playAgain = Console.ReadLine();
-        } while (playAgain.ToLower() == "yes");
+            } while (guessNumber != magicNumber);
+        } while (playAgain == "yes");
+        
+        
     }
 }
