@@ -15,12 +15,15 @@ class Program
         {
             Console.Write("Enter number: ");
             number = float.Parse(Console.ReadLine());
-            numbers.Add(number);
+            if (number != 0)
+            {
+                numbers.Add(number);
+            }
         }
 
         float sum = 0;
-        float largest = 0;
-        float smallest = 99999;
+        int largest = 0;
+        int smallest = 99999;
         foreach (int oneNumber in numbers)
         {
             sum += oneNumber;
@@ -35,7 +38,7 @@ class Program
         }
         Console.WriteLine($"The sum is: {sum}");
 
-        float lenNumbers = (numbers.Count - 1);
+        float lenNumbers = (numbers.Count);
         float average = sum / lenNumbers;
         Console.WriteLine($"The average is: {average}");
 
@@ -43,7 +46,6 @@ class Program
 
         Console.WriteLine($"The smallest positive number is: {smallest}");
 
-        numbers.RemoveAt(numbers.Count - 1);
         numbers.Sort();
         Console.WriteLine("The sorted list is:");
         foreach (int i in numbers)
