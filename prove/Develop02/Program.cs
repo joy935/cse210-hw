@@ -12,33 +12,33 @@ partial class Program
         Console.WriteLine("3. Load");
         Console.WriteLine("4. Save");
         Console.WriteLine("5. Quit");
+        Console.Write("What would you like to do? ");
         string choiceUser = Console.ReadLine();
         int choice = int.Parse(choiceUser);
 
         if (choice == 1)
         {
             Console.WriteLine("1");
-            //break;
+            Prompt prompt = new Prompt();
+            prompt.GetRandomPrompt();
+            Console.Write("> ");
+            string entryUser = Console.ReadLine();
         }
         else if (choice == 2)
         {
             Console.WriteLine("2");
-        //     break;
         }
         else if (choice == 3)
         {
             Console.WriteLine("3");
-        //     break;
         }
         else if (choice == 4)
         {
             Console.WriteLine("4");
-        //     break;
         }
         else if (choice == 5)
         {
             Console.WriteLine("5");
-        //     break;
         }
     }
 }
