@@ -2,23 +2,8 @@ using System;
 
 class Program
 {
-    public class Job
-    {
-        public string _compagny = "";
-        public string _jobTitle = "";
-        public int _startYear = 0;
-        public int _endYear = 0;
-
-        public void DisplayJobDetails()
-        {
-            Console.WriteLine($"{_jobTitle} ({_compagny}) {_startYear}-{_endYear}");
-        }
-    }
-    
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Learning02 World!");
-
         Job job1 = new Job();
         job1._compagny = "Microsoft";
         job1._jobTitle = "Software Engineer";
@@ -31,10 +16,13 @@ class Program
         job2._startYear = 2022;
         job2._endYear = 2023;
 
-        Console.WriteLine(job1._compagny);
-        Console.WriteLine(job2._compagny);
+        Resume myResume = new Resume();
+        myResume._name = "Allison Rose";
+        myResume._jobs.Add(job1);
+        myResume._jobs.Add(job2);
 
-        job1.DisplayJobDetails();
-        job2.DisplayJobDetails();
+        myResume.DisplayResumeDetails();
+
+
     }
 }
