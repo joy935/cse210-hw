@@ -5,31 +5,46 @@ using System.IO;
     {
         public List<Entry> _entries = new List<Entry>();
 
-        public void AddEntryInFile()
+        public void AddEntryInFile(string fileName)
         {
             foreach (Entry entry in _entries)
             {
-                entry.WriteEntryInFile();
+                entry.WriteEntryInFile(fileName);
             }
         }
 
-        public void DisplayEntryFromFile()
+        public void DisplayEntryFromFile(string filename)
         {
-            string fileName = "myFile.txt";
-            string[] lines = System.IO.File.ReadAllLines(fileName);
-
-            foreach (string line in lines)
+            if (File.Exists(filename))
             {
-                Console.WriteLine(line);
+                string[] lines = System.IO.File.ReadAllLines(filename);
+
+                foreach (string line in lines)
+                {
+                    Console.WriteLine(line);
+                }
+            }
+            else
+            {
+                Console.WriteLine($"File '{filename}' not found.");
             }
         }
 
-        public void SaveFile()
+        public string LoadFile()
         {
-            ///
+           Console.WriteLine("What is the filename?");
+           string filename = Console.ReadLine();
+           return filename;
+
         }
-        // public void LoadFile()
-        // {
-        //     ///
-        // }
+
+        public string SaveFile()
+        {
+            Console.WriteLine("What is the filename?");
+            string filename = Console.ReadLine();
+            string firstPartPath = "/Users/veihitupai/Documents/GitHub/cse210-hw/prove/Develop02/";
+            string filePath = Path.Combine(firstPartPath, filename);
+            System.IO.File.WriteAllText(filePath, "");
+            return filename;
+        }
     }

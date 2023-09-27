@@ -7,14 +7,11 @@ public class Entry
     public string _entry;
     public string _date;
 
-    public void WriteEntryInFile()
+    public void WriteEntryInFile(string fileName)
     {
-
-        string fileName = "myFile.txt";
-
         using (StreamWriter outputFile = new StreamWriter(fileName, true))
         {
-            outputFile.WriteLine($"{_date} - {_randomPrompt}\n{_entry}\n");
+            outputFile.WriteLine($"Date:{_date} - Prompt:{_randomPrompt}\n{_entry}\n");
         }
     }
 }
