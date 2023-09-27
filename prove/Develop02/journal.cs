@@ -1,24 +1,32 @@
 using System;
+using System.IO; 
 
     public class Journal
     {
         public List<Entry> _entries = new List<Entry>();
-        public string _getDate;
 
-        public void AddEntry()
-        {
-            //// 
-        }
-        public void Display()
-        {
-            // from entry class
-        }
+        // public void AddEntry()
+        // {
+        //     using  (StreamWriter outputFile = new StreamWriter(fileName))
+        //     {
+        //         outputFile.WriteLine($"{date} - {prompt}");
+        //     }
+        // }
+        // public void Display()
+        // {
+        //     string fileName = "";
+        //     string[] lines = System.IO.File.ReadAllLines(fileName);
+        //     foreach (Entry entry in _entries)
+        //     {
+        //         entry.DisplayEntry();
+        //     }
+        // }
         public void SaveFile()
-        {
-            // type file = Console.WriteLine("What is the filename?");
-        }
-        public void LoadFile()
         {
             ///
         }
+        // public void LoadFile()
+        // {
+        //     ///
+        // }
     }

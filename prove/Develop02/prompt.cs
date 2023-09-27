@@ -16,10 +16,10 @@ public class Prompt
         "List 3 things you are grateful for.",
     };
 
-    public void GetRandomPrompt()
+    public string GetRandomPrompt()
     {
         Random random = new Random();
         int i = random.Next(promptList.Count);
-        Console.WriteLine(promptList[i]);
+        return promptList[i];
     }
 }

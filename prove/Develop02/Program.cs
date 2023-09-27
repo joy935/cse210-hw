@@ -19,10 +19,17 @@ partial class Program
         if (choice == 1)
         {
             Console.WriteLine("1");
+            DateTime theCurrentTime = DateTime.Now;
+            string dateText = theCurrentTime.ToShortDateString();
+            
             Prompt prompt = new Prompt();
-            prompt.GetRandomPrompt();
+            Entry entry = new Entry();
+            entry._date = dateText;
+            entry._randomPrompt = prompt.GetRandomPrompt();
+            Console.WriteLine(entry._randomPrompt);
             Console.Write("> ");
-            string entryUser = Console.ReadLine();
+            entry._entry = Console.ReadLine();
+            entry.DisplayEntry();
         }
         else if (choice == 2)
         {
@@ -36,9 +43,9 @@ partial class Program
         {
             Console.WriteLine("4");
         }
-        else if (choice == 5)
-        {
-            Console.WriteLine("5");
-        }
+        // else if (choice == 5)
+        // {
+        //     Console.WriteLine("5");
+        // }
     }
 }
