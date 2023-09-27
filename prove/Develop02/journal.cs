@@ -5,22 +5,25 @@ using System.IO;
     {
         public List<Entry> _entries = new List<Entry>();
 
-        // public void AddEntry()
-        // {
-        //     using  (StreamWriter outputFile = new StreamWriter(fileName))
-        //     {
-        //         outputFile.WriteLine($"{date} - {prompt}");
-        //     }
-        // }
-        // public void Display()
-        // {
-        //     string fileName = "";
-        //     string[] lines = System.IO.File.ReadAllLines(fileName);
-        //     foreach (Entry entry in _entries)
-        //     {
-        //         entry.DisplayEntry();
-        //     }
-        // }
+        public void AddEntryInFile()
+        {
+            foreach (Entry entry in _entries)
+            {
+                entry.WriteEntryInFile();
+            }
+        }
+
+        public void DisplayEntryFromFile()
+        {
+            string fileName = "myFile.txt";
+            string[] lines = System.IO.File.ReadAllLines(fileName);
+
+            foreach (string line in lines)
+            {
+                Console.WriteLine(line);
+            }
+        }
+
         public void SaveFile()
         {
             ///

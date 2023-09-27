@@ -14,8 +14,7 @@ public class Entry
 
         using (StreamWriter outputFile = new StreamWriter(fileName, true))
         {
-            outputFile.WriteLine($"{_date} - {_randomPrompt}");
-            outputFile.WriteLine(_entry);
+            outputFile.WriteLine($"{_date} - {_randomPrompt}\n{_entry}\n");
         }
     }
 }

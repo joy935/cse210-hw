@@ -32,7 +32,8 @@ partial class Program
         }
         else if (choice == 2)
         {
-            Console.WriteLine("DISPLAY");
+            Journal journal = new Journal();
+            journal.DisplayEntryFromFile();
 
         }
         else if (choice == 3)
