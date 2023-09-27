@@ -18,7 +18,6 @@ partial class Program
 
         if (choice == 1)
         {
-            Console.WriteLine("1");
             DateTime theCurrentTime = DateTime.Now;
             string dateText = theCurrentTime.ToShortDateString();
             
@@ -29,23 +28,24 @@ partial class Program
             Console.WriteLine(entry._randomPrompt);
             Console.Write("> ");
             entry._entry = Console.ReadLine();
-            entry.DisplayEntry();
+            entry.WriteEntryInFile();            
         }
         else if (choice == 2)
         {
-            Console.WriteLine("2");
+            Console.WriteLine("DISPLAY");
+
         }
         else if (choice == 3)
         {
-            Console.WriteLine("3");
+            Console.WriteLine("LOAD");
         }
         else if (choice == 4)
         {
-            Console.WriteLine("4");
+            Console.WriteLine("SAVE");
         }
         // else if (choice == 5)
         // {
-        //     Console.WriteLine("5");
+        //     Console.WriteLine("QUIT");
         // }
     }
 }

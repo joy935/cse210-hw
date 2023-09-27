@@ -1,4 +1,5 @@
 using System;
+using System.IO; 
 
 public class Entry
 {
@@ -6,9 +7,15 @@ public class Entry
     public string _entry;
     public string _date;
 
-    public void DisplayEntry()
+    public void WriteEntryInFile()
     {
-        Console.WriteLine($"{_date} - {_randomPrompt}");
-        Console.WriteLine(_entry);
+
+        string fileName = "myFile.txt";
+
+        using (StreamWriter outputFile = new StreamWriter(fileName, true))
+        {
+            outputFile.WriteLine($"{_date} - {_randomPrompt}");
+            outputFile.WriteLine(_entry);
+        }
     }
 }
