@@ -42,9 +42,12 @@ using System.IO;
         {
             Console.WriteLine("What is the filename?");
             string filename = Console.ReadLine();
+
             string firstPartPath = "/Users/veihitupai/Documents/GitHub/cse210-hw/prove/Develop02/";
-            string filePath = Path.Combine(firstPartPath, filename);
-            System.IO.File.WriteAllText(filePath, "");
+            string filePath = Path.Combine(firstPartPath, filename); 
+            
+            string entriesToAdd = string.Join(Environment.NewLine, _entries);
+            System.IO.File.WriteAllText(filePath, entriesToAdd);
             return filename;
         }
     }
