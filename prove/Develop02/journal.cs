@@ -1,52 +1,83 @@
 using System;
 using System.IO; 
 
+    // define a class
     public class Journal
     {
+        // define a list of entries
         public List<Entry> _entries = new List<Entry>();
 
+        /* AddEntryInFile is a method that writes each entry in a file.
+        Parameter: fileName
+        Return: nothing */
         public void AddEntryInFile(string fileName)
         {
+            // iterate through all entries
             foreach (Entry entry in _entries)
             {
+                // write each entry in the file
                 entry.WriteEntryInFile(fileName);
             }
         }
 
+        /* DisplayEntryFromFile is a method that display each entry
+        from a file. 
+        Parameter: filename, the name of the file 
+        Return: nothing */
         public void DisplayEntryFromFile(string filename)
         {
+            // if the file exists, display the content of the file
             if (File.Exists(filename))
             {
+                /* open a file, read all lines of the file into the string array 
+                lines and close the file */
                 string[] lines = System.IO.File.ReadAllLines(filename);
 
+                // iterate through all entries in the file
                 foreach (string line in lines)
                 {
+                    // display each line
                     Console.WriteLine(line);
                 }
             }
+            // if the file doesn't exist, display an error message
             else
             {
+                /* display the error message with the name of the 
+                file not found */
                 Console.WriteLine($"File '{filename}' not found.");
             }
         }
 
+        /* Load the journal from a file
+        Parameter: none
+        Return: filename, the name of the file*/
         public string LoadFile()
         {
+            // get the filename from the user
            Console.WriteLine("What is the filename?");
            string filename = Console.ReadLine();
            return filename;
 
         }
 
+        /* Save the journal to a file
+        Parameter: none
+        Return: filename, the name of the file */
         public string SaveFile()
         {
+            // get the filename from the user
             Console.WriteLine("What is the filename?");
             string filename = Console.ReadLine();
 
+            // determine the path to save the file
             string firstPartPath = "/Users/veihitupai/Documents/GitHub/cse210-hw/prove/Develop02/";
             string filePath = Path.Combine(firstPartPath, filename); 
             
+            // concatenate the entries of the journal 
             string entriesToAdd = string.Join(Environment.NewLine, _entries);
+            // create a new file, write the journal to the file and close the file
+            // if the file already exists, overwrite it
             System.IO.File.WriteAllText(filePath, entriesToAdd);
             return filename;
         }

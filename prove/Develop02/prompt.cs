@@ -1,8 +1,10 @@
 using System;
 
+// create a class named Prompt
 public class Prompt
 {
-    private static List<string> promptList = new List<string> 
+    // define the class attribute _promptList which is a list of prompts
+    private static List<string> _promptList = new List<string> 
     {
         "Who was the most interesting person I interacted with today?",
         "What was the best part of my day?",
@@ -16,10 +18,16 @@ public class Prompt
         "List 3 things you are grateful for.",
     };
 
+    /* GetRandomPrompt defines the class behavior to get a random 
+    prompt from the list of prompts 
+    Parameter: none
+    Return : the list of prompts */
     public string GetRandomPrompt()
     {
+        // use the random method
         Random random = new Random();
-        int i = random.Next(promptList.Count);
-        return promptList[i];
+        int i = random.Next(_promptList.Count);
+        // return a random element from the promptList at the index i
+        return _promptList[i];
     }
 }
