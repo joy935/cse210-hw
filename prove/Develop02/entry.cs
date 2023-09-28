@@ -16,12 +16,15 @@ public class Entry
     Return : nothing */
     public void WriteEntryInFile(string fileName)
     {
+        /* save the date, the prompt and the entry separated by a 
+        tilde character as a string */
+        string lines = $"{_date}~{_randomPrompt}~{_entry}";
+
         // open, write and close the file
         // true is to append the file (otherwise it would overwrite)
         using (StreamWriter outputFile = new StreamWriter(fileName, true))
         {
-            // the entry is composed by the date, the prompt and the entry
-            outputFile.WriteLine($"Date: {_date} - Prompt: {_randomPrompt}\n{_entry}\n");
+            outputFile.WriteLine($"{lines}");
         }
     }
 }

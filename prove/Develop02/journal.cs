@@ -36,8 +36,26 @@ using System.IO;
                 // iterate through all entries in the file
                 foreach (string line in lines)
                 {
-                    // display each line
-                    Console.WriteLine(line);
+                    // split each line at the tilde character
+                    string[] elements = line.Split("~");
+
+                    // if there are all the elements (date, prompt and entry)
+                    if (elements.Length >=3)
+                    {
+                        // create three strings to correspond to a specific element
+                        string date = elements[0];
+                        string prompt = elements[1];
+                        string entry = elements[2];
+                        // display each line
+                        Console.WriteLine($"Date: {date} - Prompt: {prompt}\n{entry}\n");
+                    }
+                    // if the line doesn't have enough element
+                    else
+                    {
+                        // display this error message
+                        Console.WriteLine($"Invalid format of the entry: {line}.");
+                    }
+
                 }
             }
             // if the file doesn't exist, display an error message
