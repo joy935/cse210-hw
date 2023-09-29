@@ -11,17 +11,17 @@ public class Prompt
         "How did I see the hand of the Lord in my life today?",
         "What was the strongest emotion I felt today?",
         "If I had one thing I could do over today, what would it be?",
-        "What have you done differently today?",
+        "What have I done differently today?",
         "What is something unexpected that happened today?",
-        "If you could change one thing from today, what would it be?",
-        "List 3 things that helped you feel happy today.",
-        "List 3 things you are grateful for.",
+        "If I could change one thing from today, what would it be?",
+        "List 3 things that helped me feel happy today.",
+        "List 3 things I am grateful for.",
     };
 
     /* GetRandomPrompt defines the class behavior to get a random 
     prompt from the list of prompts 
     Parameter: none
-    Return : the list of prompts */
+    Return : a prompt */
     public string GetRandomPrompt()
     {
         // use the random method
