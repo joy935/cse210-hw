@@ -1,4 +1,5 @@
 using System;
+using System.IO; 
 
 partial class Program
 {
@@ -8,7 +9,7 @@ partial class Program
         Console.WriteLine("Welcome to the Journal Program!");
 
         // initialize the fileName with an existing file
-        string fileName = "myFile.csv";
+        string fileName = "myFile.txt";
         
         // loop through the menu
         while (true)
@@ -53,9 +54,11 @@ partial class Program
                 /* store the user entry in the class attribute _entry 
                 from the entry object */
                 entry._entry = Console.ReadLine();
+                // add the new entries to list of the journal class
+                journal._entries.Add(entry);
                 /* add the user entry to a file using the method 
                 WriteEntryInFile from the entry object */
-                entry.WriteEntryInFile(fileName);            
+                journal.WriteEntryInFile(fileName);            
             }
             // if the user chooses to display the entry (entries)
             else if (choice == 2)

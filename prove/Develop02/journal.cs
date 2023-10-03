@@ -4,19 +4,26 @@ using System.IO;
     // define a class
     public class Journal
     {
-        // define a list of entries
+        // define a list of entries from the entry class
         public List<Entry> _entries = new List<Entry>();
 
-        /* AddEntryInFile is a method that writes each entry in a file.
+        /* AddEntryInFile is a method that writes the new entry 
+        composed by the date, the random prompt and the 
+        user entry in a file.
         Parameter: fileName
         Return: nothing */
-        public void AddEntryInFile(string fileName)
+        public void WriteEntryInFile(string filename)
         {
-            // iterate through all entries
-            foreach (Entry entry in _entries)
+            // open, write and close the file
+            // true, to append the file (otherwise it would overwrite)
+            using (StreamWriter outputFile = new StreamWriter(filename, true))
             {
-                // write each entry in the file
-                entry.WriteEntryInFile(fileName);
+                // iterate through all entries
+                foreach (Entry entry in _entries)
+                {
+                    // write each entry in the file
+                    outputFile.WriteLine(entry.GetEntry());
+                }
             }
         }
 

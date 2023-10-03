@@ -10,22 +10,15 @@ public class Entry
     public string _entry;        // for the user entry
     public string _date;         // for the date of the entry
 
-    /* WriteEntryInFile is a method that writes the new entry 
-    in the file composed by the date, the random prompt and the 
-    user entry.
-    Parameter: filename, the name of the file 
-    Return : nothing */
-    public void WriteEntryInFile(string fileName)
+    /* WriteEntryInFile is a method that stores the new entry 
+    composed by the date, the random prompt and the user entry 
+    as a string.
+    Parameter: none
+    Return : the string composed by the date, prompt and entry. */
+    public string GetEntry()
     {
         /* save the date, the prompt and the entry separated by a 
-        tilde character as a string */
-        string lines = $"{_date}~{_randomPrompt}~{_entry}";
-
-        // open, write and close the file
-        // true is to append the file (otherwise it would overwrite)
-        using (StreamWriter outputFile = new StreamWriter(fileName, true))
-        {
-            outputFile.WriteLine($"{lines}");
-        }
+        tilde character as a string and return it*/
+        return $"{_date}~{_randomPrompt}~{_entry}";
     }
 }
