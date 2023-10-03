@@ -8,7 +8,7 @@ partial class Program
         Console.WriteLine("Welcome to the Journal Program!");
 
         // initialize the fileName with an existing file
-        string fileName = "myFile.txt";
+        string fileName = "myFile.csv";
         
         // loop through the menu
         while (true)

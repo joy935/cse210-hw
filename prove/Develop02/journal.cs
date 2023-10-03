@@ -55,7 +55,6 @@ using System.IO;
                         // display this error message
                         Console.WriteLine($"Invalid format of the entry: {line}.");
                     }
-
                 }
             }
             // if the file doesn't exist, display an error message

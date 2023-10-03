@@ -1,3 +1,2 @@
-9/29/2023~List 3 things you are grateful for.~Sleeping well, waking up with Ev and the quietness.
-9/29/2023~If you could change one thing from today, what would it be?~I would of showered earlier. I don't know why I'm taking forever to shower.
-9/29/2023~List 3 things that helped you feel happy today.~Evan's cuddles, Evan's laugh and Evan's smile.
+Date,RandomPrompt,Entry
+10/2/2023,What is something unexpected that happened today?,I rapidly done my JavaScript assignment.
