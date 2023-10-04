@@ -36,6 +36,12 @@ using System.IO;
             // if the file exists, display the content of the file
             if (File.Exists(filename))
             {
+                //
+                Streak streak = new Streak();
+                streak.GetTheDates(filename);
+                int currentStreak = streak.GetInfoDates();
+                Console.WriteLine($"Streak: {currentStreak}");
+
                 /* open a file, read all lines of the file into the string array 
                 lines and close the file */
                 string[] lines = System.IO.File.ReadAllLines(filename);
@@ -47,7 +53,7 @@ using System.IO;
                     string[] elements = line.Split("~");
 
                     // if there are all the elements (date, prompt and entry)
-                    if (elements.Length >=3)
+                    if (elements.Length >= 3)
                     {
                         // create three strings to correspond to a specific element
                         string date = elements[0];
