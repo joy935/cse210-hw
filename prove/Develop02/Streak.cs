@@ -106,7 +106,8 @@ public class Streak
                 consecutive++;
             }
             /* if the entries are a month apart but the second
-            day compared is the first day of the month */
+            day compared is the first day of the month and the first
+            day compared is the last day of the month */
             else if (resultMonth == 1 && nextDay == 1 && firstDay == lastDay)
             {
                 // add +1 to the streak
