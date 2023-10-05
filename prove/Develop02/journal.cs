@@ -46,7 +46,7 @@ using System.IO;
                 lines and close the file */
                 string[] lines = System.IO.File.ReadAllLines(filename);
 
-                // iterate through all entries in the file
+                // iterate through all lines in the file
                 foreach (string line in lines)
                 {
                     // split each line at the tilde character
