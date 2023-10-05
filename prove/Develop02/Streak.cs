@@ -68,6 +68,13 @@ public class Streak
         return day;
     }
 
+    public int GetLastDay(string date)
+    {
+        DateTime dt = Convert.ToDateTime(date);
+        int lastDay = DateTime.DaysInMonth(dt.Year, dt.Month);
+        return lastDay;
+    }
+
     /*GetInfoDate is a method that update the streak (here named 
     consecutive) according to the dates in the journal */
     public int GetInfoDates()
@@ -85,9 +92,13 @@ public class Streak
             resultMonth = GetMonth(_listDatesInJournal[i+1]) - GetMonth(_listDatesInJournal[i]);
             // compute the difference of two following days as resultDay
             int resultDay = GetDay(_listDatesInJournal[i+1]) - GetDay(_listDatesInJournal[i]);
-            // NextDay correspond to the second day used in the comparison
+            // nextDay corresponds to the second dayte used in the comparison
             int nextDay = GetDay(_listDatesInJournal[i+1]);
-            
+            // firstDay corresponds to the first date used in the comparison
+            int firstDay = GetDay(_listDatesInJournal[i]);
+            // lastDay corresponds tot the last day of the month in the first date in the comparison
+            int lastDay = GetLastDay(_listDatesInJournal[i]);
+
             // if the entries has the same month and a day apart
             if (resultMonth == 0 && resultDay == 1)
             {
@@ -96,7 +107,7 @@ public class Streak
             }
             /* if the entries are a month apart but the second
             day compared is the first day of the month */
-            else if (resultMonth == 1 && nextDay == 1)
+            else if (resultMonth == 1 && nextDay == 1 && firstDay == lastDay)
             {
                 // add +1 to the streak
                 consecutive++;
