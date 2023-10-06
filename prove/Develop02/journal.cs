@@ -102,10 +102,11 @@ using System.IO;
 
             // determine the path to save the file
             string firstPartPath = "/Users/veihitupai/Documents/GitHub/cse210-hw/prove/Develop02/";
-            string filePath = Path.Combine(firstPartPath, filename); 
+            string filePath = Path.Combine(firstPartPath, filename);
             
             // concatenate the entries of the journal 
             string entriesToAdd = string.Join(Environment.NewLine, _entries);
+            
             // create a new file, write the journal to the file and close the file
             // if the file already exists, overwrite it
             System.IO.File.WriteAllText(filePath, entriesToAdd);

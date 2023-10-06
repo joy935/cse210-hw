@@ -68,6 +68,7 @@ public class Streak
         return day;
     }
 
+    /* GetLastDay is a method that gets the last day of the month */
     public int GetLastDay(string date)
     {
         DateTime dt = Convert.ToDateTime(date);
