@@ -19,6 +19,6 @@ public class Entry
     {
         /* save the date, the prompt and the entry separated by a 
         tilde character as a string and return it*/
-        return $"{_date}~{_randomPrompt}~{_entry}";
+        return $"Date: {_date} - Prompt: {_randomPrompt}\n{_entry}";
     }
 }

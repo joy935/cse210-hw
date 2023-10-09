@@ -31,51 +31,16 @@ using System.IO;
         from a file. 
         Parameter: filename, the name of the file 
         Return: nothing */
-        public void DisplayEntryFromFile(string filename)
+        public void DisplayEntry(string filename)
         {
-            // if the file exists, display the content of the file
-            if (File.Exists(filename))
+            // Streak streak = new Streak();
+            // streak.GetTheDates(filename);
+            // int currentStreak = streak.GetInfoDates();
+            // Console.WriteLine($"Streak: {currentStreak}");
+
+            foreach (Entry entry in _entries)
             {
-                //
-                Streak streak = new Streak();
-                streak.GetTheDates(filename);
-                int currentStreak = streak.GetInfoDates();
-                Console.WriteLine($"Streak: {currentStreak}");
-
-                /* open a file, read all lines of the file into the string array 
-                lines and close the file */
-                string[] lines = System.IO.File.ReadAllLines(filename);
-
-                // iterate through all lines in the file
-                foreach (string line in lines)
-                {
-                    // split each line at the tilde character
-                    string[] elements = line.Split("~");
-
-                    // if there are all the elements (date, prompt and entry)
-                    if (elements.Length >= 3)
-                    {
-                        // create three strings to correspond to a specific element
-                        string date = elements[0];
-                        string prompt = elements[1];
-                        string entry = elements[2];
-                        // display each line
-                        Console.WriteLine($"Date: {date} - Prompt: {prompt}\n{entry}\n");
-                    }
-                    // if the line doesn't have enough element
-                    else
-                    {
-                        // display this error message
-                        Console.WriteLine($"Invalid format of the entry: {line}.");
-                    }
-                }
-            }
-            // if the file doesn't exist, display an error message
-            else
-            {
-                /* display the error message with the name of the 
-                file not found */
-                Console.WriteLine($"File '{filename}' not found.");
+                Console.WriteLine(entry.GetEntry());
             }
         }
 

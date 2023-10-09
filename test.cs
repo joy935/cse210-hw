@@ -1,59 +1,115 @@
 using System;
+using System.IO; 
 
-class Program
-{
-    static void Main(string[] args)
+    // define a class
+    public class Journal
     {
-        
-        // Console.Write("What is your magic number? ");
-        // string number = Console.ReadLine();
-        // int magicNumber = int.Parse(number);
-        
-        string playAgain;
+        // define a list of entries from the entry class
+        public List<Entry> _entries = new List<Entry>();
 
-        do {
-            Console.WriteLine("Let's guess the magic number! ");
-
-            Random randomGenerator = new Random();
-            int magicNumber = randomGenerator.Next(1,100);
-
-            int guessNumber = 0;
-            int guesses = 0;
-
-            do {
-                Console.Write("What is your guess? ");
-                string guess2 = Console.ReadLine();
-                int guessNumber2 = int.Parse(guess2);
-
-                if (guessNumber2 == magicNumber)
+        /* AddEntryInFile is a method that writes the new entry 
+        composed by the date, the random prompt and the 
+        user entry in a file.
+        Parameter: fileName
+        Return: nothing */
+        public void WriteEntryInFile(string filename)
+        {
+            // open, write and close the file
+            // true, to append the file (otherwise it would overwrite)
+            using (StreamWriter outputFile = new StreamWriter(filename, true))
+            {
+                // iterate through all entries
+                foreach (Entry entry in _entries)
                 {
-                    guesses += 1;
-                    Console.WriteLine("You guessed it!");
-                    Console.WriteLine($"It took you {guesses} guess.");
-                    Console.WriteLine("Do you want to play again? (yes or no) ");
-                    string playAgain = Console.ReadLine();
-                    if (playAgain == "no")
-                    {
-                        break;
-                    }
-                    
+                    // write each entry in the file
+                    outputFile.WriteLine(entry.GetEntry());
                 }
-                else 
-                {
-                    if (guessNumber2 > magicNumber)
-                    {
-                        Console.WriteLine("Lower");
-                        guesses += 1;
-                    }
-                    else {
-                        Console.WriteLine("Higher");
-                        guesses += 1;
-                    }
+            }
+        }
 
+        /* DisplayEntryFromFile is a method that display each entry
+        from a file. 
+        Parameter: filename, the name of the file 
+        Return: nothing */
+        public void DisplayEntryFromFile(string filename)
+        {
+            // if the file exists, display the content of the file
+            if (File.Exists(filename))
+            {
+                //
+                Streak streak = new Streak();
+                streak.GetTheDates(filename);
+                int currentStreak = streak.GetInfoDates();
+                Console.WriteLine($"Streak: {currentStreak}");
+
+                /* open a file, read all lines of the file into the string array 
+                lines and close the file */
+                string[] lines = System.IO.File.ReadAllLines(filename);
+
+                // iterate through all lines in the file
+                foreach (string line in lines)
+                {
+                    // split each line at the tilde character
+                    string[] elements = line.Split("~");
+
+                    // if there are all the elements (date, prompt and entry)
+                    if (elements.Length >= 3)
+                    {
+                        // create three strings to correspond to a specific element
+                        string date = elements[0];
+                        string prompt = elements[1];
+                        string entry = elements[2];
+                        // display each line
+                        Console.WriteLine($"Date: {date} - Prompt: {prompt}\n{entry}\n");
+                    }
+                    // if the line doesn't have enough element
+                    else
+                    {
+                        // display this error message
+                        Console.WriteLine($"Invalid format of the entry: {line}.");
+                    }
                 }
-            } while (guessNumber != magicNumber);
-        } while (playAgain == "yes");
-        
-        
+            }
+            // if the file doesn't exist, display an error message
+            else
+            {
+                /* display the error message with the name of the 
+                file not found */
+                Console.WriteLine($"File '{filename}' not found.");
+            }
+        }
+
+        /* Load the journal from a file
+        Parameter: none
+        Return: filename, the name of the file*/
+        public string LoadFile()
+        {
+            // get the filename from the user
+           Console.WriteLine("What is the filename?");
+           string filename = Console.ReadLine();
+           return filename;
+
+        }
+
+        /* Save the journal to a file
+        Parameter: none
+        Return: filename, the name of the file */
+        public string SaveFile()
+        {
+            // get the filename from the user
+            Console.WriteLine("What is the filename?");
+            string filename = Console.ReadLine();
+
+            // determine the path to save the file
+            string firstPartPath = "/Users/veihitupai/Documents/GitHub/cse210-hw/prove/Develop02/";
+            string filePath = Path.Combine(firstPartPath, filename);
+            
+            // concatenate the entries of the journal 
+            string entriesToAdd = string.Join(Environment.NewLine, _entries);
+            
+            // create a new file, write the journal to the file and close the file
+            // if the file already exists, overwrite it
+            System.IO.File.WriteAllText(filePath, entriesToAdd);
+            return filename;
+        }
     }
-}
