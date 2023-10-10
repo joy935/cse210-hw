@@ -13,9 +13,9 @@ public class Fraction
     }
 
     // Constructor that has one parameter for the top and that initializes the denominator to 1. So that if you pass in the number 5, the fraction would be initialized to 5/1.
-    public Fraction(int top)
+    public Fraction(int wholeNumber)
     {
-        _top = top;
+        _top = wholeNumber;
         _bottom = 1;
     }
     // Constructor that has two parameters, one for the top and one for the bottom.
@@ -43,5 +43,15 @@ public class Fraction
     public void SetBottom(int bottom)
     {
         _bottom = bottom;
+    }
+
+    public string GetFractionString()
+    {
+        return $"{_top}/{_bottom}";
+    }
+    
+    public double GetDecimalValue()
+    {
+        return (double)_top / (double)_bottom;
     }
 };
