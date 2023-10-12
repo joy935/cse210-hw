@@ -3,13 +3,14 @@ using System
 private string _reference;
 private string _text;
 
-public void HideWords()
+public string HideWords()
 {
     string[] words = _text.Split(' ');
     Random random = new Random();
     int randomIndex = random.Next(0, words.Length);
     words[randomIndex] = "______";
     _text = string.Join(" ", words);
+    return _text;
 }
 
 public string GetRenderedText()
