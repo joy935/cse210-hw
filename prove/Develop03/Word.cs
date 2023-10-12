@@ -14,7 +14,7 @@ public class Word
         return $"{_word}";
     }
 
-    public void IsHidden()
+    public bool IsHidden()
     {
         if (_word.Contains("______"))
         {

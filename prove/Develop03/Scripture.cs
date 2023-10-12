@@ -4,7 +4,7 @@ public class Scripture
 {
     private string _reference;
     private string _text;
-
+    
     public string HideWords()
     {
         string[] words = _text.Split(' ');
@@ -20,7 +20,7 @@ public class Scripture
         return $"{_reference} {_text}";
     }
 
-    public string IsCompletelyHidden()
+    public bool IsCompletelyHidden()
     {
         if (_text.Contains("______"))
         {

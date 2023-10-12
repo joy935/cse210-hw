@@ -8,24 +8,28 @@ public class Reference
     private string _verseEnd;
     private string _text;
 
-    public string DisplayReference()
-    {
-        return $"{_book} {_chapter}:{_verse}";
-    }
-
-    public string DisplayText()
-    {
-        return $"{_text}";
-    }
-
-    public Reference()
+    public string GetReference()
     {
         _book = "John";
         _chapter = "3";
         _verse = "16";
-        _text = "For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life.";
+        return $"{_book} {_chapter}:{_verse}";
     }
-
+    public void SetReference(string book, string chapter, string verse)
+    {
+        _book = book;
+        _chapter = chapter;
+        _verse = verse;
+    }
+    public string GetText()
+    {
+        _text = "For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life.";
+        return $"{_text}";
+    }
+    public void SetText(string text)
+    {
+        _text = text;
+    }
     public Reference(string verse)
     {
         _verse = verse;
@@ -36,5 +40,4 @@ public class Reference
         _verse = verse;
         _verseEnd = verseEnd;
     }
-
 }
