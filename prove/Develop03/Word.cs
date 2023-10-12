@@ -6,7 +6,13 @@ public class Word
 
     public string HideWord()
     {
-        return "______";
+        int length = _word.Length;
+        //_word = _word.Replace(_word, "_");
+        foreach (char letter in _word)
+        {
+            letter = "_";
+        }
+        return _word;
     }
 
     public string ShowWord()
