@@ -13,21 +13,28 @@ public class Scripture
         words[randomIndex] = "______";
         _text = string.Join(" ", words);
         return _text;
-    };
+    }
 
     public string GetRenderedText()
     {
         return $"{_reference} {_text}";
-    };
+    }
 
     public string IsCompletelyHidden()
     {
-        return _text.Contains("______");
-    };
+        if (_text.Contains("______"))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 
     public Scripture(string reference, string text)
     {
         _reference = reference;
         _text = text;
-    };
+    }
 }

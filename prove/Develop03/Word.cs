@@ -4,28 +4,35 @@ public class Word
 {
     private string _word;
 
-    public void HideWord()
+    public string HideWord()
     {
+        return "______";
+    }
 
-    };
-
-    public void ShowWord()
+    public string ShowWord()
     {
-
-    };
+        return $"{_word}";
+    }
 
     public void IsHidden()
     {
-
-    };
+        if (_word.Contains("______"))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 
     public string GetRenderedText()
     {
         return $"{_word}";
-    };
+    }
 
     public Word(string word)
     {
         _word = word;
-    };
+    }
 }
