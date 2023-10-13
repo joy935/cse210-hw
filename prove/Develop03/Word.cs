@@ -4,16 +4,12 @@ public class Word
 {
     private string _word;
 
-    // public string HideWord()
-    // {
-    //     int length = _word.Length;
-    //     //_word = _word.Replace(_word, "_");
-    //     foreach (char letter in _word)
-    //     {
-    //         letter = "_";
-    //     }
-    //     return _word;
-    // }
+    public string HideWord()
+    {
+        int length = _word.Length;
+        _word = _word.Replace(_word, "_");
+        return _word;
+    }
 
     public string ShowWord()
     {
@@ -34,18 +30,21 @@ public class Word
 
     public string GetRenderedText()
     {
-        return $"{_word}";
+        if (IsHidden(_word) == true)
+        {
+            return HideWord();
+        }
+        else
+        {
+            return ShowWord();
+        }
     }
 
     public Word(string word)
     {
-        if (IsHidden(word) == true)
-        {
-            word = "hidden";
-        } 
-        else
-        {
-            word = "not hidden";
-        }
+        // accept the text of the word to save it as an attribute
+        word = _word;
+        // set the initial visibility of the word
+        HideWord();
     }
 }
