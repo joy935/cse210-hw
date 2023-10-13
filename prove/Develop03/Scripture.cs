@@ -36,12 +36,18 @@ public class Scripture
     {
         _reference = reference;
         _text = text;
-        // private static List<Word> _wordsList = new List<Word>();
-        // string[] words = _text.Split(' ');
-        // foreach (string word in words)
-        // {
-        //     _wordsList.Add(word));
-        // }
 
+        // create a list from the text and split up the words
+        List<string> wordList = text.Split(" ").ToList();
+
+        // create a list of Word objects
+        List<Word> wordObjects = new List<Word>();
+
+        // split up the words into strings to create Word objects
+        foreach (string word in wordList)
+        {
+            Word oneWord = new Word(word);
+            wordObjects.Add(oneWord);
+        }
     }
 }
