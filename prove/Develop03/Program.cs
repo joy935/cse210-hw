@@ -5,7 +5,10 @@ class Program
     static void Main(string[] args)
     {
         Reference reference = new Reference("16");
+        reference.SetReference("John", "3", "16");
+        reference.SetText("For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life.");
         Scripture scripture = new Scripture(reference.GetReference(), reference.GetText());
+
         //Word word = new Word();
 
         while (true)

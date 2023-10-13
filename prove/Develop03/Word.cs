@@ -4,25 +4,25 @@ public class Word
 {
     private string _word;
 
-    public string HideWord()
-    {
-        int length = _word.Length;
-        //_word = _word.Replace(_word, "_");
-        foreach (char letter in _word)
-        {
-            letter = "_";
-        }
-        return _word;
-    }
+    // public string HideWord()
+    // {
+    //     int length = _word.Length;
+    //     //_word = _word.Replace(_word, "_");
+    //     foreach (char letter in _word)
+    //     {
+    //         letter = "_";
+    //     }
+    //     return _word;
+    // }
 
     public string ShowWord()
     {
         return $"{_word}";
     }
 
-    public bool IsHidden()
+    public bool IsHidden(string word)
     {
-        if (_word.Contains("______"))
+        if (word.Contains("______"))
         {
             return true;
         }
@@ -39,6 +39,13 @@ public class Word
 
     public Word(string word)
     {
-        _word = word;
+        if (IsHidden(word) == true)
+        {
+            word = "hidden";
+        } 
+        else
+        {
+            word = "not hidden";
+        }
     }
 }

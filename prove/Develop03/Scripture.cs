@@ -4,7 +4,7 @@ public class Scripture
 {
     private string _reference;
     private string _text;
-    
+
     public string HideWords()
     {
         string[] words = _text.Split(' ');
@@ -36,5 +36,12 @@ public class Scripture
     {
         _reference = reference;
         _text = text;
+        // private static List<Word> _wordsList = new List<Word>();
+        // string[] words = _text.Split(' ');
+        // foreach (string word in words)
+        // {
+        //     _wordsList.Add(word));
+        // }
+
     }
 }

@@ -10,9 +10,6 @@ public class Reference
 
     public string GetReference()
     {
-        _book = "John";
-        _chapter = "3";
-        _verse = "16";
         return $"{_book} {_chapter}:{_verse}";
     }
     public void SetReference(string book, string chapter, string verse)
@@ -21,9 +18,19 @@ public class Reference
         _chapter = chapter;
         _verse = verse;
     }
+    public string GetReferenceMultipleVerses()
+    {
+        return $"{_book} {_chapter}:{_verse}-{_verseEnd}";
+    }
+    public void SetReferenceMutipleVerses(string book, string chapter, string verse, string verseEnd)
+    {
+        _book = book;
+        _chapter = chapter;
+        _verse = verse;
+        _verseEnd = verseEnd;
+    }
     public string GetText()
     {
-        _text = "For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life.";
         return $"{_text}";
     }
     public void SetText(string text)
@@ -32,12 +39,12 @@ public class Reference
     }
     public Reference(string verse)
     {
-        _verse = verse;
+        GetReference();
+        GetText();
     }
-
     public Reference(string verse, string verseEnd)
     {
-        _verse = verse;
-        _verseEnd = verseEnd;
+        GetReferenceMultipleVerses();
+        GetText();
     }
 }
