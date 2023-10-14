@@ -8,7 +8,8 @@ public class Scripture
     public string HideWords()
     {
 
-        return wordObjects;
+
+        
         // string[] words = _text.Split(' ');
         // Random random = new Random();
         // int randomIndex = random.Next(0, words.Length);
@@ -42,14 +43,15 @@ public class Scripture
         // create a list from the text and split up the words
         List<string> wordList = text.Split(" ").ToList();
 
-        // create a list of Word objects
-        List<Word> wordObjects = new List<Word>();
+        // // create a list of Word objects
+        // List<Word> wordObjects = new List<Word>();
 
         // split up the words into strings to create Word objects
         foreach (string word in wordList)
         {
             Word oneWord = new Word(word);
-            wordObjects.Add(oneWord);
+            wordList.Add(oneWord);
+            // wordObjects.Add(oneWord);
         }
     }
 }
