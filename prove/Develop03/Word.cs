@@ -6,9 +6,16 @@ public class Word
 
     public string HideWord()
     {
-        int length = _word.Length;
-        _word = _word.Replace(_word, "_");
-        return _word;
+        if (_word == null)
+        {
+            Console.WriteLine("No word to hide.");
+        }
+        else
+        {
+            int length = _word.Length;
+            _word = _word.Replace(_word, "_");
+            return _word;
+        }
     }
 
     public string ShowWord()
@@ -28,7 +35,7 @@ public class Word
         }
     }
 
-    public string GetRenderedText()
+    public string GetText()
     {
         if (IsHidden(_word) == true)
         {

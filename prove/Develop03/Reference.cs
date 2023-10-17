@@ -6,45 +6,30 @@ public class Reference
     private string _chapter;
     private string _verse;
     private string _verseEnd;
-    private string _text;
 
-    public string GetReference()
+    public string GetRenderedText()
     {
-        return $"{_book} {_chapter}:{_verse}";
-    }
-    public void SetReference(string book, string chapter, string verse)
-    {
-        _book = book;
-        _chapter = chapter;
-        _verse = verse;
-    }
-    public string GetReferenceMultipleVerses()
+        if (!string.IsNullOrEmpty(_verseEnd))
     {
         return $"{_book} {_chapter}:{_verse}-{_verseEnd}";
     }
-    public void SetReferenceMutipleVerses(string book, string chapter, string verse, string verseEnd)
+        else
     {
-        _book = book;
-        _chapter = chapter;
-        _verse = verse;
-        _verseEnd = verseEnd;
+        return $"{_book} {_chapter}:{_verse}";
     }
-    public string GetText()
-    {
-        return $"{_text}";
     }
-    public void SetText(string text)
+
+    public Reference(string book, string chapter, string verse)
     {
-        _text = text;
+        this._book = book;
+        this._chapter = chapter;
+        this._verse = verse;
     }
-    public Reference(string verse)
+    public Reference(string book, string chapter, string verse, string verseEnd)
     {
-        GetReference();
-        GetText();
-    }
-    public Reference(string verse, string verseEnd)
-    {
-        GetReferenceMultipleVerses();
-        GetText();
+        this._book = book;
+        this._chapter = chapter;
+        this._verse = verse;
+        this._verseEnd = verseEnd;
     }
 }

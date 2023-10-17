@@ -2,25 +2,21 @@ using System;
 
 public class Scripture
 {
-    private string _reference;
+    private Reference reference;
     private string _text;
+    private List<Word> wordObjects; 
 
     public string HideWords()
     {
-
-
-        
-        // string[] words = _text.Split(' ');
-        // Random random = new Random();
-        // int randomIndex = random.Next(0, words.Length);
-        // words[randomIndex] = "______";
-        // _text = string.Join(" ", words);
-        // return _text;
+        Random random = new Random();
+        int randomIndex = random.Next(0, wordObjects.Count);
+        wordObjects[randomIndex].HideWord();
+        return wordObjects[randomIndex].GetText();
     }
 
     public string GetRenderedText()
     {
-        return $"{_reference} {_text}";
+        return $"{reference.GetRenderedText()} {_text}";
     }
 
     public bool IsCompletelyHidden()
@@ -35,23 +31,38 @@ public class Scripture
         }
     }
 
-    public Scripture(string reference, string text)
+    public Scripture(string book, string chapter, string verse, string text)
     {
-        _reference = reference;
-        _text = text;
+        reference = new Reference(book, chapter, verse);
+        this._text = text;
 
         // create a list from the text and split up the words
         List<string> wordList = text.Split(" ").ToList();
 
         // // create a list of Word objects
-        // List<Word> wordObjects = new List<Word>();
+        List<Word> wordObjects = new List<Word>();
 
         // split up the words into strings to create Word objects
         foreach (string word in wordList)
         {
             Word oneWord = new Word(word);
-            wordList.Add(oneWord);
+            wordObjects.Add(oneWord);
             // wordObjects.Add(oneWord);
         }
+    }
+    public Scripture(string book, string chapter, string verse, string verseEnd, string text)
+    {
+        reference = new Reference(book, chapter, verse, verseEnd);
+        this._text = text;
+    }
+    public Reference Reference
+    {
+        get { return reference; }
+        set { reference = value; }
+    }
+    public string Text
+    {
+        get { return _text; }
+        set { _text = value; }
     }
 }
