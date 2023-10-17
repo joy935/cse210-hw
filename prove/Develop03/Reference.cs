@@ -7,7 +7,7 @@ public class Reference
     private string _verse;
     private string _verseEnd;
 
-    public string GetRenderedText()
+    public string GetReference()
     {
         if (!string.IsNullOrEmpty(_verseEnd))
     {

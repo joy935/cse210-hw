@@ -8,7 +8,7 @@ public class Word
     {
         if (_word == null)
         {
-            Console.WriteLine("No word to hide.");
+            return "No word to hide.";
         }
         else
         {
@@ -25,17 +25,25 @@ public class Word
 
     public bool IsHidden(string word)
     {
-        if (word.Contains("______"))
-        {
-            return true;
-        }
-        else
+        if (word == null)
         {
             return false;
         }
+        else
+        {
+            if (word.Contains("_"))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
     }
 
-    public string GetText()
+    public string GetRenderedText()
     {
         if (IsHidden(_word) == true)
         {
