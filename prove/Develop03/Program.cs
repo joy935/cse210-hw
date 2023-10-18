@@ -14,37 +14,48 @@ class Program
         // Load scriptures from a file
         string fileName = "scriptures.txt";
         string [] lines = System.IO.File.ReadAllLines(fileName);
-        
+        // create a random object
         Random random = new Random();
+        // create a scripture object and initialize it to null
         Scripture scripture = null;
-        
+        // get a random index from the lines array
         int randomIndex = random.Next(0, lines.Length);
         
+        // loop through the lines array
         foreach (string line in lines)
         {
+            // create a string variable and initialize it to the line at the random index
             string chosenLine = lines[randomIndex];
-        
+            // split the line into an array of strings at the ~ character
             string [] parts = chosenLine.Split("~");
 
+            // if the length of the array is 4, create a scripture object with 4 parameters
             if (parts.Length == 4)
             {
+                // create variables for each part of the array
                 string book = parts[0];
                 string chapter = parts[1];
                 string verse = parts[2];
                 string text = parts[3];
+                // create a new scripture object for a verse
                 scripture = new Scripture(book, chapter, verse, text);
             }
+            // if the length of the array is 5, create a scripture object with 5 parameters
             else if (parts.Length == 5)
             {
+                // create variables for each part of the array
                 string book = parts[0];
                 string chapter = parts[1];
                 string verse = parts[2];
                 string verseEnd = parts[3];
                 string text = parts[4];
+                // create a new scripture object for multiple verses
                 scripture = new Scripture(book, chapter, verse, verseEnd, text);
             }
+            // if the length of the array is different from 4 or 5
             else
             {
+                // display an error message
                 Console.WriteLine($"Invalid line: {line}");
             }
         }        
