@@ -19,10 +19,12 @@ class Program
         Scripture scripture = null;
         
         int randomIndex = random.Next(0, lines.Length);
-
+        
         foreach (string line in lines)
         {
-            string [] parts = line.Split("~");
+            string chosenLine = lines[randomIndex];
+        
+            string [] parts = chosenLine.Split("~");
 
             if (parts.Length == 4)
             {
@@ -45,7 +47,7 @@ class Program
             {
                 Console.WriteLine($"Invalid line: {line}");
             }
-        }
+        }        
 
         // loop through the program until the user quits or the scritpure is completely hidden
         while (true)
