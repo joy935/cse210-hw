@@ -14,15 +14,22 @@ public class Scripture
         {
             if (i == randomIndex)
             {
-                wordObjects[i].HideWord();
+                if (wordObjects[i].IsHidden() == true)
+                {
+                    wordObjects[i].HideWord();
+                }
+                else
+                {
+                    wordObjects[i].HideWord();
+                }
             }
             else
             {
                 wordObjects[i].ShowWord();
             }
-
         }
-        return string.Join(" ", wordObjects.Select(word => word.GetRenderedText()));
+        _text = string.Join(" ", wordObjects.Select(word => word.GetRenderedText()));
+        return _text;
     }
 
     public string GetRenderedText()
