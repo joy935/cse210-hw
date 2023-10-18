@@ -9,19 +9,19 @@ public class Scripture
     public string HideWords()
     {
         Random random = new Random();
+        int previousIndex = -1;
         int randomIndex = random.Next(0, wordObjects.Count);
+
+        do 
+        {
+            randomIndex = random.Next(0, wordObjects.Count);
+        } while (randomIndex == previousIndex);
+        
         for (int i = 0; i < wordObjects.Count; i++)
         {
             if (i == randomIndex)
             {
-                if (wordObjects[i].IsHidden() == true)
-                {
-                    wordObjects[i].HideWord();
-                }
-                else
-                {
-                    wordObjects[i].HideWord();
-                }
+                wordObjects[i].HideWord();
             }
             else
             {
@@ -39,14 +39,7 @@ public class Scripture
 
     public bool IsCompletelyHidden()
     {
-        if (_text.Distinct().Skip(1).Any())
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return (wordObjects.All(word => word.IsHidden()));
     }
 
     public Scripture(string book, string chapter, string verse, string text)
@@ -57,7 +50,7 @@ public class Scripture
         // create a list from the text and split up the words
         List<string> wordList = text.Split(" ").ToList();
 
-        // // create a list of Word objects
+        // create a list of Word objects
         wordObjects = new List<Word>();
 
         // split up the words into strings to create Word objects
@@ -65,7 +58,6 @@ public class Scripture
         {
             Word oneWord = new Word(word);
             wordObjects.Add(oneWord);
-            // wordObjects.Add(oneWord);
         }
     }
     public Scripture(string book, string chapter, string verse, string verseEnd, string text)

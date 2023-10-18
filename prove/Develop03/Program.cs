@@ -5,8 +5,6 @@ class Program
     static void Main(string[] args)
     {
         Scripture scripture = new Scripture("John", "3", "16", "For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life.");
-        
-        //Word word = new Word();
 
         while (true)
         {
@@ -15,18 +13,24 @@ class Program
             Console.WriteLine("\nPress enter to continue or type 'quit' to finish.");
             string userChoice = Console.ReadLine();
 
-            if (userChoice == "quit")
-            {
-                break;
-            }
-            // else if (scripture.IsCompletelyHidden() == true)
-            // {
-            //     break;
-            // }
-            else if (Console.ReadKey().Key == ConsoleKey.Enter)
+            //if (Console.ReadKey().Key == ConsoleKey.Enter)
+            if (string.IsNullOrWhiteSpace(userChoice))
             {
                 Console.Clear();
-                scripture.HideWords();
+                if (scripture.IsCompletelyHidden() == true)
+                {
+                    break;
+                }
+                else 
+                {
+                    scripture.HideWords();
+                    scripture.HideWords();
+                    scripture.HideWords();
+                }
+            }
+            else if (userChoice == "quit")
+            {
+                break;
             }
             else
             {
