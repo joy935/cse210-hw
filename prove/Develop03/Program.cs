@@ -30,6 +30,7 @@ class Program
                 string chapter = parts[1];
                 string verse = parts[2];
                 string text = parts[3];
+                scripture = new Scripture(book, chapter, verse, text);
             }
             else if (parts.Length == 5)
             {
@@ -38,6 +39,7 @@ class Program
                 string verse = parts[2];
                 string verseEnd = parts[3];
                 string text = parts[4];
+                scripture = new Scripture(book, chapter, verse, verseEnd, text);
             }
             else
             {
