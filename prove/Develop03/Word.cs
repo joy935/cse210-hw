@@ -7,6 +7,7 @@ public class Word
     private string _word;   // a word from the text
 
     /* HideWord is a method that hides the word
+    by replacing each letter with an underscore
     Parameter: none
     Return: string, the word hidden 
     */
@@ -65,7 +66,6 @@ public class Word
                 return false;
             }
         }
-
     }
 
     /* GetRenderedText is a method that checks if the word is 
@@ -75,10 +75,12 @@ public class Word
     */
     public string GetRenderedText()
     {
+        // if the word is hidden, return the hidden word
         if (IsHidden() == true)
         {
             return HideWord();
         }
+        // if the word is not hidden, return the shown word
         else
         {
             return ShowWord();

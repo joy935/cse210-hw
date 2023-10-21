@@ -28,6 +28,7 @@ public class Reference
     }
 
     /* Reference is a constructor that takes in a book, chapter, and verse
+    and initializes the private attributes
     Parameters: string book, string chapter, string verse
     Return: none 
     */
@@ -38,7 +39,8 @@ public class Reference
         this._verse = verse;
     }
 
-    /* Reference is another constructor that takes in a book, chapter, verse, and verseEnd
+    /* Reference is another constructor that takes in a book, chapter, verse, 
+    and verseEnd and initializes the private attributes
     Parameters: string book, string chapter, string verse, string verseEnd
     Return: none */
     public Reference(string book, string chapter, string verse, string verseEnd)

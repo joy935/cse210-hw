@@ -4,14 +4,14 @@ using System;
 public class Scripture
 {
     // private attributes
-    private Reference reference;        // the constructor for the reference
+    private Reference reference;        // the constructor from the Reference class
     private string _text;               // the text of the scripture
     private List<Word> wordObjects;     // the list of Word objects
 
     /* HideWords is a method that hides a random word in the scripture 
     and returns the text with the word hidden
     Parameter: none
-    Return: string, the text with a word hidden
+    Return: string, the text with a word hidden or shown
     */
     public string HideWords()
     {
@@ -19,7 +19,7 @@ public class Scripture
         Random random = new Random();
         // initialize the previous index to -1
         int previousIndex = -1;
-        // create a random index
+        // create a random index in the scope of the wordObjects
         int randomIndex = random.Next(0, wordObjects.Count);
 
         /* loop through the randomIndex until it is not 
@@ -69,7 +69,10 @@ public class Scripture
         return (wordObjects.All(word => word.IsHidden()));
     }
 
-    /* Scripture is a constructor for the Scripture class
+    /* Scripture is a constructor for the Scripture class that
+    takes in a book, chapter, verse, and text and initializes the 
+    private attributes. It also creates a list of Word objects 
+    from the text and splits up the words.
     Parameter: strings, the book, the chapter, the verse and the text
     Return: none
     */
@@ -94,7 +97,10 @@ public class Scripture
         }
     }
 
-    /* Scripture is another constructor for the Scripture class that takes into account multiple verses
+    /* Scripture is another constructor for the Scripture class that takes in 
+    a book, chapter, verse, verseEnd, and text and initializes the private
+    attributes. It also creates a list of Word objects from the text and
+    splits up the words.
     Parameter: strings, the book, the chapter, the verse, the verseEnd and the text
     Return: none
     */
@@ -122,7 +128,7 @@ public class Scripture
     /* Reference is a property for the reference attribute to 
     get and set the reference
     Parameter: none
-    Return: Reference, the reference
+    Return: string, the reference
     */
     public Reference Reference
     {
