@@ -17,18 +17,19 @@ public class Scripture
     {
         // create a random number generator
         Random random = new Random();
-        // initialize the previous index to -1
-        int previousIndex = -1;
         // create a random index in the scope of the wordObjects
         int randomIndex = random.Next(0, wordObjects.Count);
-
-        /* loop through the randomIndex until it is not 
-        the same as the previous index */
+        // create a list of indexes to store the random index
+        List<int> listIndexes = new List<int>();
         do 
         {
+            // create a random index in the scope of the wordObjects
             randomIndex = random.Next(0, wordObjects.Count);
-        } while (randomIndex == previousIndex);
-        
+            // if the list of indexes contains the random index
+        } while (listIndexes.Contains(randomIndex));
+        // add the random index to the list of indexes
+        listIndexes.Add(randomIndex);
+
         // loop through the wordObjects
         for (int i = 0; i < wordObjects.Count; i++)
         {
