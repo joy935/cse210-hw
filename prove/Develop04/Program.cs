@@ -3,11 +3,10 @@ using System;
 class Program
 {
     static void Main(string[] args)
-    {
-        Console.WriteLine("Welcome to the Mindfullness Program!");
-        
+    {        
         while (true)
         {
+            Console.Clear();
             Console.WriteLine("Menu Options:");
             Console.WriteLine("1. Start breathing activity");
             Console.WriteLine("2. Start reflecting activity");
@@ -22,9 +21,11 @@ class Program
                 //Activity activity = new Activity("Breathing Activity", "This activity will help you relax and focus on your breathing.");
                 //activity.DisplayStartMessage();
                 BreathingActivity activity = new BreathingActivity("Breathing Activity", "This activity will help you relax and focus on your breathing.");
-                activity.DisplayStartMessage();
+                activity.Duration = int.Parse(activity.DisplayStartMessage());
+                activity.GetReady();
                 activity.DisplayBreathe();
-                break;
+                activity.DisplayBreathe();
+                activity.DisplayEndMessage();
             }
             else if (choice == 2)
             {

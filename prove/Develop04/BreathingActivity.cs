@@ -13,7 +13,7 @@ public class BreathingActivity : Activity
     {
         Console.WriteLine("Breathe in...");
         PauseCountdown();
-        Console.WriteLine("Breathe out...");
+        Console.WriteLine("Now, breathe out...\n");
         PauseCountdown();
     }
 }

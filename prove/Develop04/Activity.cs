@@ -9,28 +9,51 @@ public class Activity
 
     public string DisplayStartMessage()
     {
-        Console.WriteLine($"Welcome to the {_nameActivity}!\n\n");
-        Console.WriteLine($"{_description}\n\n");
+        Console.Clear();
+        Console.WriteLine($"Welcome to the {_nameActivity}!\n");
+        Console.WriteLine($"{_description}\n");
         Console.WriteLine("How long, in seconds, would you like for your session?");
         string duration = Console.ReadLine();
         return duration;
     }
 
+    public void GetReady()
+    {
+        Console.Clear();
+        Console.WriteLine("Get ready...");
+        PauseSpinner();
+    }
+
     public void PauseSpinner()
     {
         Console.Write("|");
-        Thread.Sleep(500);
+        Thread.Sleep(300);
         Console.Write("\b \b");
         Console.Write("/");
-        Thread.Sleep(500);
+        Thread.Sleep(300);
         Console.Write("\b \b");
         Console.Write("-");
-        Thread.Sleep(500);
+        Thread.Sleep(300);
         Console.Write("\b \b");
         Console.Write("\\");
-        Thread.Sleep(500);
+        Thread.Sleep(300);
         Console.Write("\b \b");
         Console.Write("|");
+        Thread.Sleep(300);
+        Console.Write("\b \b");
+        Console.Write("/");
+        Thread.Sleep(300);
+        Console.Write("\b \b");
+        Console.Write("-");
+        Thread.Sleep(300);
+        Console.Write("\b \b");
+        Console.Write("\\");
+        Thread.Sleep(300);
+        Console.Write("\b \b");
+        Console.Write("|");
+        Thread.Sleep(300);
+        Console.Write("\b \b");
+        Console.Write("\n");
     }
 
     public void PauseCountdown()
@@ -50,14 +73,15 @@ public class Activity
         Console.Write("1");
         Thread.Sleep(1000);
         Console.Write("\b \b");
-        Console.Write("0");
-        Thread.Sleep(1000);
-        Console.Write("\b \b");
     }
 
-    public string DisplayEndMessage(string duration)
+    public void DisplayEndMessage()
     {
-        return $"Well done!!!\n\nYou have completed {duration} seconds of the {_nameActivity}.";
+        Console.WriteLine($"Well done!!!");
+        PauseSpinner();
+        Console.WriteLine("\n");
+        Console.WriteLine($"You have completed {_duration} seconds of the {_nameActivity}.");
+        PauseSpinner();
     }
 
     public Activity(string nameActivity, string description)
@@ -75,7 +99,7 @@ public class Activity
         get { return _description; }
         set { _description = value; }
     }
-    public int duration
+    public int Duration
     {
         get { return _duration; }
         set { _duration = value; }
