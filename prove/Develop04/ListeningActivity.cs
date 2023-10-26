@@ -25,5 +25,25 @@ public class ListeningActivity : Activity
         return _prompts[i];
     }
 
+    public void DisplayPrompt()
+    {
+        Console.WriteLine("List as many responses you can to the following prompt:");
+        Console.WriteLine($"--- {GetPrompt()} ---\n");
+        Console.WriteLine("You may begin in:");
+        PauseCountdown();
+    }
 
+    public string GetResponse()
+    {
+        int i = 0;
+        do 
+        {
+            Console.WriteLine("> ");
+            Console.ReadLine();
+            i++;
+        }
+        while (Console.ReadKey(true).Key != ConsoleKey.Enter);
+        return $"You listed {i} items.";
+
+    }
 }

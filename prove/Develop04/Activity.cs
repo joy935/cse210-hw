@@ -50,9 +50,9 @@ public class Activity
 
     public void DisplayEndMessage()
     {
-        Console.WriteLine($"Well done!!!");
+        Console.WriteLine($"\nWell done!!!");
         PauseSpinner();
-        Console.WriteLine($"You have completed {_duration} seconds of the {_nameActivity}.");
+        Console.WriteLine($"\nYou have completed {_duration} seconds of the {_nameActivity}.");
         PauseSpinner();
     }
 

@@ -39,7 +39,12 @@ class Program
             }
             else if (choice == 3)
             {
-                Console.WriteLine("Starting listening activity...");
+                ListeningActivity activity3 = new ListeningActivity("Listening Activity", "This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.");
+                activity3.Duration = int.Parse(activity3.DisplayStartMessage());
+                activity3.GetReady();
+                activity3.DisplayPrompt();
+                Console.WriteLine(activity3.GetResponse());
+                activity3.DisplayEndMessage();
             }
             else if (choice == 4)
             {
