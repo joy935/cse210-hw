@@ -19,10 +19,7 @@ class Program
 
             if (choice == 1)
             {
-                Console.WriteLine("Starting breathing activity...");
-                Activity activity = new Activity();
-                activity.PauseSpinner();
-                activity.PauseCountdown();
+                BreathingActivity breathingActivity = new BreathingActivity();
                 break;
             }
             else if (choice == 2)
