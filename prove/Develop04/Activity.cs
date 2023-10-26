@@ -79,7 +79,6 @@ public class Activity
     {
         Console.WriteLine($"Well done!!!");
         PauseSpinner();
-        Console.WriteLine("\n");
         Console.WriteLine($"You have completed {_duration} seconds of the {_nameActivity}.");
         PauseSpinner();
     }

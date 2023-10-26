@@ -18,8 +18,6 @@ class Program
 
             if (choice == 1)
             {
-                //Activity activity = new Activity("Breathing Activity", "This activity will help you relax and focus on your breathing.");
-                //activity.DisplayStartMessage();
                 BreathingActivity activity1 = new BreathingActivity("Breathing Activity", "This activity will help you relax and focus on your breathing.");
                 activity1.Duration = int.Parse(activity1.DisplayStartMessage());
                 activity1.GetReady();
@@ -35,7 +33,7 @@ class Program
                 string ready = activity2.DisplayPrompt();
                 if (string.IsNullOrWhiteSpace(ready))
                 {
-                    activity2.DisplayQuestion();
+                    activity2.DisplayQuestion(); // define number of repetition of the spinner based on duration
                     activity2.DisplayEndMessage();
                 }
             }
