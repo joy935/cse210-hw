@@ -26,34 +26,16 @@ public class Activity
 
     public void PauseSpinner()
     {
-        Console.Write("|");
-        Thread.Sleep(300);
-        Console.Write("\b \b");
-        Console.Write("/");
-        Thread.Sleep(300);
-        Console.Write("\b \b");
-        Console.Write("-");
-        Thread.Sleep(300);
-        Console.Write("\b \b");
-        Console.Write("\\");
-        Thread.Sleep(300);
-        Console.Write("\b \b");
-        Console.Write("|");
-        Thread.Sleep(300);
-        Console.Write("\b \b");
-        Console.Write("/");
-        Thread.Sleep(300);
-        Console.Write("\b \b");
-        Console.Write("-");
-        Thread.Sleep(300);
-        Console.Write("\b \b");
-        Console.Write("\\");
-        Thread.Sleep(300);
-        Console.Write("\b \b");
-        Console.Write("|");
-        Thread.Sleep(300);
-        Console.Write("\b \b");
-        Console.Write("\n");
+        string [] spinCharacters = new string [] {"|", "/", "-", "\\"};
+        for (int i = 0; i < 2; i++)
+        {
+            foreach (string spin in spinCharacters)
+            {
+                Console.Write(spin);
+                Thread.Sleep(1000);
+                Console.Write("\b \b");
+            }
+        }
     }
 
     public void PauseCountdown()
