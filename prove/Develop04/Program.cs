@@ -22,6 +22,7 @@ class Program
                 Console.WriteLine("Starting breathing activity...");
                 Activity activity = new Activity();
                 activity.PauseSpinner();
+                activity.PauseCountdown();
                 break;
             }
             else if (choice == 2)
