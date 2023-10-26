@@ -20,16 +20,24 @@ class Program
             {
                 //Activity activity = new Activity("Breathing Activity", "This activity will help you relax and focus on your breathing.");
                 //activity.DisplayStartMessage();
-                BreathingActivity activity = new BreathingActivity("Breathing Activity", "This activity will help you relax and focus on your breathing.");
-                activity.Duration = int.Parse(activity.DisplayStartMessage());
-                activity.GetReady();
-                activity.DisplayBreathe();
-                activity.DisplayBreathe();
-                activity.DisplayEndMessage();
+                BreathingActivity activity1 = new BreathingActivity("Breathing Activity", "This activity will help you relax and focus on your breathing.");
+                activity1.Duration = int.Parse(activity1.DisplayStartMessage());
+                activity1.GetReady();
+                activity1.DisplayBreathe();
+                activity1.DisplayBreathe(); // define number of repetition based on duration
+                activity1.DisplayEndMessage();
             }
             else if (choice == 2)
             {
-                Console.WriteLine("Starting reflecting activity...");
+                ReflectingActivity activity2 = new ReflectingActivity("Reflecting Activity", "This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.");
+                activity2.Duration = int.Parse(activity2.DisplayStartMessage());
+                activity2.GetReady();
+                string ready = activity2.DisplayPrompt();
+                if (string.IsNullOrWhiteSpace(ready))
+                {
+                    activity2.DisplayQuestion();
+                    activity2.DisplayEndMessage();
+                }
             }
             else if (choice == 3)
             {
@@ -38,6 +46,10 @@ class Program
             else if (choice == 4)
             {
                 break;
+            }
+            else
+            {
+                Console.WriteLine("Invalid choice. Please try again.");
             }
 
         }
