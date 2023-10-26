@@ -7,9 +7,13 @@ public class Activity
     protected string _description;
     protected int _duration;
 
-    public string DisplayStartMessage( string nameActivity, string description)
+    public string DisplayStartMessage()
     {
-        return $"Welcome to the {nameActivity}!\n\n{description}\n\nHow long, in seconds, would you like for your session?";
+        Console.WriteLine($"Welcome to the {_nameActivity}!\n\n");
+        Console.WriteLine($"{_description}\n\n");
+        Console.WriteLine("How long, in seconds, would you like for your session?");
+        string duration = Console.ReadLine();
+        return duration;
     }
 
     public void PauseSpinner()
@@ -53,13 +57,28 @@ public class Activity
 
     public string DisplayEndMessage(string duration)
     {
-        return $"Well done!!!\n\nYou have completed {duration} seconds of the {nameActivity}.";
+        return $"Well done!!!\n\nYou have completed {duration} seconds of the {_nameActivity}.";
     }
 
-    public void Activity(string nameActivity, string description, int duration)
+    public Activity(string nameActivity, string description)
     {
         _nameActivity = nameActivity;
         _description = description;
-        _duration = duration;
     }
+    public string NameActivity
+    {
+        get { return _nameActivity; }
+        set { _nameActivity = value; }
+    }
+    public string Description
+    {
+        get { return _description; }
+        set { _description = value; }
+    }
+    public int duration
+    {
+        get { return _duration; }
+        set { _duration = value; }
+    }
+
 }

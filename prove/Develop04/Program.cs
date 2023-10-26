@@ -19,7 +19,8 @@ class Program
 
             if (choice == 1)
             {
-                BreathingActivity breathingActivity = new BreathingActivity();
+                Activity activity = new Activity("Breathing Activity", "This activity will help you relax and focus on your breathing.");
+                activity.DisplayStartMessage();
                 break;
             }
             else if (choice == 2)
