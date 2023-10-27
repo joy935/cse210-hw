@@ -33,7 +33,7 @@ class Program
                 string ready = activity2.DisplayPrompt();
                 if (string.IsNullOrWhiteSpace(ready))
                 {
-                    activity2.DisplayQuestion(); // define number of repetition of the spinner based on duration
+                    activity2.DisplayQuestion(); // define number of questions shown based on duration
                     activity2.DisplayEndMessage();
                 }
             }
@@ -43,7 +43,7 @@ class Program
                 activity3.Duration = int.Parse(activity3.DisplayStartMessage());
                 activity3.GetReady();
                 activity3.DisplayPrompt();
-                Console.WriteLine(activity3.GetResponse());
+                Console.WriteLine(activity3.GetResponse()); // define the time to write answers based on duration
                 activity3.DisplayEndMessage();
             }
             else if (choice == 4)
