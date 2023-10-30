@@ -41,6 +41,7 @@ class Program
                 string ready = activity2.DisplayPrompt();
                 if (string.IsNullOrWhiteSpace(ready))
                 {
+                    Console.Clear();
                     activity2.DisplayQuestion(); // define number of questions shown based on duration
                     activity2.DisplayEndMessage();
                 }

@@ -20,8 +20,9 @@ public class Activity
     public void GetReady()
     {
         Console.Clear();
-        Console.Write("Get ready...");
+        Console.WriteLine("Get ready...");
         PauseSpinner();
+        Console.WriteLine("");
     }
 
     public void PauseSpinner()
@@ -32,7 +33,7 @@ public class Activity
             foreach (string spin in spinCharacters)
             {
                 Console.Write(spin);
-                Thread.Sleep(1000);
+                Thread.Sleep(300);
                 Console.Write("\b \b");
             }
         }
@@ -50,10 +51,10 @@ public class Activity
 
     public void DisplayEndMessage()
     {
-        Console.Write($"\nWell done!!!");
+        Console.WriteLine($"\nWell done!!!");
         PauseSpinner();
         Console.WriteLine("");
-        Console.Write($"\nYou have completed {_duration} seconds of the {_nameActivity}.");
+        Console.WriteLine($"\nYou have completed {_duration} seconds of the {_nameActivity}.");
         PauseSpinner();
     }
 
