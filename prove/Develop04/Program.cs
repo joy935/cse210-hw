@@ -14,8 +14,6 @@ class Program
             Console.WriteLine("4. Quit");
             Console.WriteLine("Select a choice from the menu.");
 
-            DateTime startTime = DateTime.Now;
-
             string choiceUser = Console.ReadLine();
             int choice = int.Parse(choiceUser);
 
@@ -23,12 +21,14 @@ class Program
             {
                 BreathingActivity activity1 = new BreathingActivity("Breathing Activity", "This activity will help you relax and focus on your breathing.");
                 activity1.Duration = int.Parse(activity1.DisplayStartMessage());
+                DateTime startTime = DateTime.Now;
                 DateTime endTime = startTime.AddSeconds(activity1.Duration);
                 DateTime currentTime = DateTime.Now;
                 activity1.GetReady();
                 do
                 {
                     activity1.DisplayBreathe();
+                    currentTime = DateTime.Now;
                 }
                 while (currentTime < endTime);
                 activity1.DisplayEndMessage();
