@@ -3,10 +3,11 @@ using System;
 /* BreathingActivity class */
 public class BreathingActivity : Activity
 {
-    public BreathingActivity(string nameActivity, string description) : base (nameActivity, description)
+    public BreathingActivity(string nameActivity, string description, int duration) : base (nameActivity, description, duration)
     {
         _nameActivity = nameActivity;
         _description = description;
+        _duration = duration;
     }
 
     public void DisplayBreathe()

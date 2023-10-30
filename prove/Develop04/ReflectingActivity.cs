@@ -23,10 +23,11 @@ public class ReflectingActivity : Activity
         "How can you keep this experience in mind in the future?",
     };
 
-    public ReflectingActivity(string nameActivity, string description) : base (nameActivity, description)
+    public ReflectingActivity(string nameActivity, string description, int duration) : base (nameActivity, description, duration)
     {
         _nameActivity = nameActivity;
         _description = description;
+        _duration = duration;
     }
 
     public string GetPrompt()

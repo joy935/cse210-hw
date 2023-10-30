@@ -12,10 +12,11 @@ public class ListingActivity : Activity
         "Who are some of your personal heroes?",
     };
 
-    public ListingActivity(string nameActivity, string description) : base (nameActivity, description)
+    public ListingActivity(string nameActivity, string description, int duration) : base (nameActivity, description, duration)
     {
         _nameActivity = nameActivity;
         _description = description;
+        _duration = duration;
     }
 
     public string GetPrompt()
