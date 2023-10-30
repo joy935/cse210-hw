@@ -86,7 +86,22 @@ class Program
             }
             else if (choice == 4)
             {
-                Aff
+                AffirmingActivity activity4 = new AffirmingActivity("Affirming Activity", "This activity will help you to practice self affirmation to focus on yourself and your belief, which can increase self worth.", 0);
+                activity4.Duration = int.Parse(activity4.DisplayStartMessage());
+
+                DateTime startTime = DateTime.Now;
+                DateTime endTime = startTime.AddSeconds(activity4.Duration);
+                DateTime currentTime = DateTime.Now;
+
+                activity4.GetReady();
+                activity4.DisplayOpeningMessage();
+                do
+                {
+                    activity4.DisplayAffirmation();
+                    currentTime = DateTime.Now;
+                }
+                while (currentTime < endTime);
+                activity4.DisplayEndMessage();
             }
             else if (choice == 5)
             {

@@ -3,7 +3,7 @@ using System;
 /* Affirmation class */
 public class AffirmingActivity : Activity
 {
-    private List<string> _prompts = new List<string>
+    private List<string> _affirmations = new List<string>
     {
         "I feel surrounded by love everywhere.",
         "I am a person of faith, and I believe that good things lie ahead of me!",
@@ -15,7 +15,7 @@ public class AffirmingActivity : Activity
         "My drive and ambition allow me to achieve my goals.",
         "I accomplish everything I set my mind to.",
         "Counting our blessings is far better than recounting our problems.",
-    }
+    };
 
     public AffirmingActivity(string nameActivity, string description, int duration) : base (nameActivity, description, duration)
     {
@@ -27,20 +27,23 @@ public class AffirmingActivity : Activity
     public string GetPrompt()
     {
         Random random = new Random();
-        int i = random.Next(_prompts.Count);
-        return _prompts[i];
+        int i = random.Next(_affirmations.Count);
+        return _affirmations[i];
     }
 
     public void DisplayOpeningMessage()
     {
-        Console.WriteLine("Consider the following affirmation:\n");
+        Console.WriteLine("\nConsider the following affirmation:\n");
         Console.Write("You may begin in: ");
         PauseCountdown();
+        Console.WriteLine("");
     }
 
-    public void DisplayPrompt()
+    public void DisplayAffirmation()
     {
         string prompt = GetPrompt();
-        Console.WriteLine(prompt);
+        Console.Write($"{prompt}");
+        PauseSpinner();
+        Console.WriteLine("");
     }
 }
