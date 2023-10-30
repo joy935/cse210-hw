@@ -19,7 +19,7 @@ class Program
 
             if (choice == 1)
             {
-                BreathingActivity activity1 = new BreathingActivity("Breathing Activity", "This activity will help you relax and focus on your breathing.");
+                BreathingActivity activity1 = new BreathingActivity("Breathing Activity", "This activity will help you relax and focus on your breathing.", 0);
                 activity1.Duration = int.Parse(activity1.DisplayStartMessage());
 
                 DateTime startTime = DateTime.Now;
@@ -39,7 +39,7 @@ class Program
             }
             else if (choice == 2)
             {
-                ReflectingActivity activity2 = new ReflectingActivity("Reflecting Activity", "This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.");
+                ReflectingActivity activity2 = new ReflectingActivity("Reflecting Activity", "This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.", 0);
                 activity2.Duration = int.Parse(activity2.DisplayStartMessage());
 
                 DateTime startTime = DateTime.Now;
@@ -63,7 +63,7 @@ class Program
             }
             else if (choice == 3)
             {
-                ListingActivity activity3 = new ListingActivity("Listening Activity", "This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.");
+                ListingActivity activity3 = new ListingActivity("Listening Activity", "This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.", 0);
                 activity3.Duration = int.Parse(activity3.DisplayStartMessage());
 
                 DateTime startTime = DateTime.Now;

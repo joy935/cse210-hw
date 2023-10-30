@@ -55,11 +55,12 @@ public class Activity
         Console.WriteLine($"\nYou have completed {_duration} seconds of the {_nameActivity}.");
         PauseSpinner();
     }
-
-    public Activity(string nameActivity, string description)
+    
+    public Activity(string nameActivity, string description, int duration)
     {
         _nameActivity = nameActivity;
         _description = description;
+        _duration = duration;
     }
     public string NameActivity
     {
