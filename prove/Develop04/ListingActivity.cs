@@ -1,7 +1,7 @@
 using System;
 
-/* Listening Activity class */
-public class ListeningActivity : Activity
+/* Listing Activity class */
+public class ListingActivity : Activity
 {
     private List<string> _prompts = new List<string>
     {
@@ -12,7 +12,7 @@ public class ListeningActivity : Activity
         "Who are some of your personal heroes?",
     };
 
-    public ListeningActivity(string nameActivity, string description) : base (nameActivity, description)
+    public ListingActivity(string nameActivity, string description) : base (nameActivity, description)
     {
         _nameActivity = nameActivity;
         _description = description;

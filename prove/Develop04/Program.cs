@@ -48,7 +48,7 @@ class Program
             }
             else if (choice == 3)
             {
-                ListeningActivity activity3 = new ListeningActivity("Listening Activity", "This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.");
+                ListingActivity activity3 = new ListingActivity("Listening Activity", "This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.");
                 activity3.Duration = int.Parse(activity3.DisplayStartMessage());
                 activity3.GetReady();
                 activity3.DisplayPrompt();
