@@ -13,6 +13,9 @@ class Program
             Console.WriteLine("3. Start listening activity");
             Console.WriteLine("4. Quit");
             Console.WriteLine("Select a choice from the menu.");
+
+            DateTime startTime = DateTime.Now;
+
             string choiceUser = Console.ReadLine();
             int choice = int.Parse(choiceUser);
 
@@ -20,9 +23,14 @@ class Program
             {
                 BreathingActivity activity1 = new BreathingActivity("Breathing Activity", "This activity will help you relax and focus on your breathing.");
                 activity1.Duration = int.Parse(activity1.DisplayStartMessage());
+                DateTime endTime = startTime.AddSeconds(activity1.Duration);
+                DateTime currentTime = DateTime.Now;
                 activity1.GetReady();
-                activity1.DisplayBreathe();
-                activity1.DisplayBreathe(); // define number of repetition based on duration
+                do
+                {
+                    activity1.DisplayBreathe();
+                }
+                while (currentTime < endTime);
                 activity1.DisplayEndMessage();
             }
             else if (choice == 2)

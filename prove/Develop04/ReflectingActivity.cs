@@ -47,7 +47,7 @@ public class ReflectingActivity : Activity
     {
         Console.WriteLine("Consider the following prompt:\n");
         Console.WriteLine($"--- {GetPrompt()} ---\n");
-        Console.WriteLine("When you have something in mind, press enter to continue.");
+        Console.Write("When you have something in mind, press enter to continue.");
         string ready = Console.ReadLine();
         return ready;
     }
@@ -55,9 +55,9 @@ public class ReflectingActivity : Activity
     public void DisplayQuestion()
     {
         Console.Clear();
-        Console.WriteLine($"> {GetQuestion()}");
+        Console.Write($"> {GetQuestion()}");
         PauseSpinner();
-        Console.WriteLine($"> {GetQuestion()}");
+        Console.Write($"> {GetQuestion()}");
         PauseSpinner();
     }
 }

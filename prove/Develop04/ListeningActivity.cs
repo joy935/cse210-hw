@@ -29,7 +29,7 @@ public class ListeningActivity : Activity
     {
         Console.WriteLine("List as many responses you can to the following prompt:");
         Console.WriteLine($"--- {GetPrompt()} ---\n");
-        Console.WriteLine("You may begin in:");
+        Console.Write("You may begin in:");
         PauseCountdown();
     }
 
@@ -38,7 +38,7 @@ public class ListeningActivity : Activity
         int i = 0;
         do 
         {
-            Console.WriteLine("> ");
+            Console.Write("> ");
             Console.ReadLine();
             i++;
         }

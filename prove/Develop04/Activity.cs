@@ -20,7 +20,7 @@ public class Activity
     public void GetReady()
     {
         Console.Clear();
-        Console.WriteLine("Get ready...");
+        Console.Write("Get ready...");
         PauseSpinner();
     }
 
@@ -50,9 +50,10 @@ public class Activity
 
     public void DisplayEndMessage()
     {
-        Console.WriteLine($"\nWell done!!!");
+        Console.Write($"\nWell done!!!");
         PauseSpinner();
-        Console.WriteLine($"\nYou have completed {_duration} seconds of the {_nameActivity}.");
+        Console.WriteLine("");
+        Console.Write($"\nYou have completed {_duration} seconds of the {_nameActivity}.");
         PauseSpinner();
     }
 
