@@ -28,9 +28,10 @@ public class ListingActivity : Activity
     public void DisplayPrompt()
     {
         Console.WriteLine("List as many responses you can to the following prompt:");
-        Console.WriteLine($"--- {GetPrompt()} ---\n");
-        Console.Write("You may begin in:");
+        Console.WriteLine($"--- {GetPrompt()} ---");
+        Console.Write("You may begin in: ");
         PauseCountdown();
+        Console.WriteLine("");
     }
 
     public string GetResponse()
@@ -39,6 +40,7 @@ public class ListingActivity : Activity
         do 
         {
             Console.Write("> ");
+            Console.Write("");
             Console.ReadLine();
             i++;
         }

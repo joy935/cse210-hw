@@ -33,7 +33,7 @@ public class Activity
             foreach (string spin in spinCharacters)
             {
                 Console.Write(spin);
-                Thread.Sleep(300);
+                Thread.Sleep(500);
                 Console.Write("\b \b");
             }
         }
@@ -41,7 +41,7 @@ public class Activity
 
     public void PauseCountdown()
     {
-        for (int i = 5; i > 0; i--)
+        for (int i = 3; i > 0; i--)
         {
             Console.Write($"{i}");
             Thread.Sleep(1000);
