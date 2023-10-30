@@ -36,16 +36,8 @@ public class ListingActivity : Activity
 
     public string GetResponse()
     {
-        int i = 0;
-        do 
-        {
-            Console.Write("> ");
-            Console.Write("");
-            Console.ReadLine();
-            i++;
-        }
-        while (Console.ReadKey(true).Key != ConsoleKey.Enter);
-        return $"You listed {i} items.";
-
+        Console.Write("> ");
+        string input = Console.ReadLine();
+        return input;
     }
 }

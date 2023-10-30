@@ -65,9 +65,22 @@ class Program
             {
                 ListingActivity activity3 = new ListingActivity("Listening Activity", "This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.");
                 activity3.Duration = int.Parse(activity3.DisplayStartMessage());
+
+                DateTime startTime = DateTime.Now;
+                DateTime endTime = startTime.AddSeconds(activity3.Duration);
+                DateTime currentTime = DateTime.Now;       
+
                 activity3.GetReady();
                 activity3.DisplayPrompt();
-                Console.WriteLine(activity3.GetResponse()); // define the time to write answers based on duration
+                int i = 0;
+                do
+                {
+                    activity3.GetResponse();
+                    i++;
+                    currentTime = DateTime.Now; 
+                }
+                while (currentTime < endTime);
+                Console.WriteLine($"You listed {i} items.");
                 activity3.DisplayEndMessage();
             }
             else if (choice == 4)
