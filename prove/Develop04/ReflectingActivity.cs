@@ -59,7 +59,8 @@ public class ReflectingActivity : Activity
 
     public void DisplayQuestion()
     {
-        Console.Write($"> {GetQuestion()}");
+        string question = GetQuestion();
+        Console.Write($"> {question}");
         PauseSpinner();
         Console.WriteLine("");
     }
