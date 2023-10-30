@@ -32,6 +32,7 @@ class Program
                 }
                 while (currentTime < endTime);
                 activity1.DisplayEndMessage();
+                
             }
             else if (choice == 2)
             {
