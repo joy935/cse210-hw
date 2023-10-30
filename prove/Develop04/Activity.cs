@@ -22,7 +22,6 @@ public class Activity
         Console.Clear();
         Console.WriteLine("Get ready...");
         PauseSpinner();
-        Console.WriteLine("");
     }
 
     public void PauseSpinner()
@@ -53,7 +52,6 @@ public class Activity
     {
         Console.WriteLine($"\nWell done!!!");
         PauseSpinner();
-        Console.WriteLine("");
         Console.WriteLine($"\nYou have completed {_duration} seconds of the {_nameActivity}.");
         PauseSpinner();
     }
