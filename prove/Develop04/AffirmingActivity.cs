@@ -1,7 +1,7 @@
 using System;
 
 /* Affirmation class */
-public class AffirmationActivity : Activity
+public class AffirmingActivity : Activity
 {
     private List<string> _prompts = new List<string>
     {
@@ -17,7 +17,7 @@ public class AffirmationActivity : Activity
         "Counting our blessings is far better than recounting our problems.",
     }
 
-    public AffirmationActivity(string nameActivity, string description, int duration) : base (nameActivity, description, duration)
+    public AffirmingActivity(string nameActivity, string description, int duration) : base (nameActivity, description, duration)
     {
         _nameActivity = nameActivity;
         _description = description;
