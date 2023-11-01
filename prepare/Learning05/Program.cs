@@ -6,13 +6,13 @@ class Program
     {
 
         Square square = new Square("Red", 5);
-        Console.WriteLine($"Color: {square.GetColor()} - Area: {square.GetArea()}");
+        // Console.WriteLine($"Color: {square.GetColor()} - Area: {square.GetArea()}");
 
         Rectangle rectangle = new Rectangle("Blue", 5, 10);
-        Console.WriteLine($"Color: {rectangle.GetColor()} - Area: {rectangle.GetArea()}");
+        // Console.WriteLine($"Color: {rectangle.GetColor()} - Area: {rectangle.GetArea()}");
 
         Circle circle = new Circle("Green", 5);
-        Console.WriteLine($"Color: {circle.GetColor()} - Area: {circle.GetArea()}");
+        // Console.WriteLine($"Color: {circle.GetColor()} - Area: {circle.GetArea()}");
 
         List<Shape> shapes = new List<Shape>();
         shapes.Add(square);
@@ -21,7 +21,7 @@ class Program
 
         foreach (Shape shape in shapes)
         {
-            Console.WriteLine($"Color: {shape.GetColor()} - Area: {shape.GetArea()}");
+            Console.WriteLine($"The {shape.GetColor()} shape has an area of {shape.GetArea()}.");
         }
     }
 }
