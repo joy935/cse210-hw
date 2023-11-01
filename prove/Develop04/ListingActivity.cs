@@ -21,9 +21,15 @@ public class ListingActivity : Activity
 
     public string GetPrompt()
     {
+        List <int> listIndexes = new List<int>();
         Random random = new Random();
-        int i = random.Next(_prompts.Count);
-        return _prompts[i];
+        int randomIndex;
+        do 
+        {
+            randomIndex = random.Next(_prompts.Count);
+        } while (listIndexes.Contains(randomIndex));
+        listIndexes.Add(randomIndex);
+        return _prompts[randomIndex];
     }
 
     public void DisplayPrompt()

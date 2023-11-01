@@ -39,9 +39,15 @@ public class ReflectingActivity : Activity
 
     public string GetQuestion()
     {
+        List<int> listIndexes = new List<int>();
         Random random = new Random();
-        int i = random.Next(_questions.Count);
-        return _questions[i];
+        int randomIndex;
+        do
+        {
+            randomIndex = random.Next(_questions.Count);
+        } while (listIndexes.Contains(randomIndex));
+        listIndexes.Add(randomIndex);
+        return _questions[randomIndex];
     }
 
     public string DisplayPrompt()
