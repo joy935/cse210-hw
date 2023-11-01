@@ -1,8 +1,8 @@
 using System;
 
-public virtual class Shape
+public class Shape
 {
-    private string _color;
+    protected string _color;
 
     public string GetColor()
     {
@@ -14,7 +14,7 @@ public virtual class Shape
         _color = color;
     }
 
-    public void Shape(string color)
+    public Shape(string color)
     {
         SetColor(color);
     }
