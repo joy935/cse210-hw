@@ -4,14 +4,14 @@ public virtual class Shape
 {
     private string _color;
 
-    public void SetColor(string color)
-    {
-        _color = color;
-    }
-    
     public string GetColor()
     {
         return _color;
+    }
+
+    public void SetColor(string color)
+    {
+        _color = color;
     }
 
     public void Shape(string color)
