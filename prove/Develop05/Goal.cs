@@ -44,8 +44,8 @@ public class Goal
         _points = points;
     }
 
-    public int CreateGoal()
+    public virtual string CreateGoal()
     {
-        return -1;
+        return "done";
     }
 }
