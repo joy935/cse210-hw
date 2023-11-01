@@ -10,5 +10,8 @@ class Program
 
         Rectangle rectangle = new Rectangle("Blue", 5, 10);
         Console.WriteLine($"Rectangle - Color: {rectangle.GetColor()} - Area: {rectangle.GetArea()}");
+
+        Circle circle = new Circle("Green", 5);
+        Console.WriteLine($"Circle - Color: {circle.GetColor()} - Area: {circle.GetArea()}");
     }
 }
