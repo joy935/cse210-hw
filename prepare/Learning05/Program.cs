@@ -18,6 +18,10 @@ class Program
         shapes.Add(square);
         shapes.Add(rectangle);
         shapes.Add(circle);
-        
+
+        foreach (Shape shape in shapes)
+        {
+            Console.WriteLine($"Color: {shape.GetColor()} - Area: {shape.GetArea()}");
+        }
     }
 }
