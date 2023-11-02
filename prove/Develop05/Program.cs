@@ -38,6 +38,15 @@ class Program
                     EternalGoal eGoal = new EternalGoal("name", "description", 0, 0);
                     eGoal.CreateGoal();
                 }
+                else if (goalType == 3)
+                {
+                    ChecklistGoal cGoal = new ChecklistGoal("name", "description", 0, 0, 0, 0, 0);
+                    cGoal.CreateGoal();
+                }
+                else
+                {
+                    Console.WriteLine("Invalid choice. Please try again.");
+                }
             }
             else if (choice == 2)
             {
