@@ -47,10 +47,7 @@ public abstract class Goal
 
     public abstract string CreateGoal();
 
-    public virtual string DisplayGoal()
-    {
-        return $"Goal{_name}~{_description}";
-    }
+    public abstract string GetStringRepresentation();
 
     public virtual void ListGoals()
     {   

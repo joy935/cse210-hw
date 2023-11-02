@@ -3,19 +3,14 @@ using System.IO;
 using System.Collections.Generic;
 
 /* Load and Save Goal derived class */
-public class LoadSaveGoal : Goal
+public class LoadSaveGoal
 {
     private string _fileName;
     private List<SimpleGoal> _goals = new List<SimpleGoal>();
 
-    public LoadSaveGoal(string name, string description, int points, string fileName) : base(name, description, points)
+    public LoadSaveGoal(string fileName)
     {
         _fileName = fileName;
-    }
-
-    public override string CreateGoal()
-    {
-        return "Load and Save Goal";
     }
 
     public void SaveGoal(string fileName)
@@ -33,7 +28,7 @@ public class LoadSaveGoal : Goal
     {
         Console.Write("What is the filename for the goal file? ");
         string filename = Console.ReadLine();
-        string firstPath = "./";
+        string firstPath = "./prove/Develop05/";
         string filePath = Path.Combine(firstPath, filename);
         string goalsText = string.Join("\n", _goals);
         System.IO.File.WriteAllText(filePath, goalsText);

@@ -5,6 +5,7 @@ class Program
     static void Main(string[] args)
     {
         List<Goal> goals = new List<Goal>();
+        string fileName = "";
 
         while (true)
         {
@@ -20,7 +21,7 @@ class Program
 
             int choice = int.Parse(Console.ReadLine());
 
-            if (choice == 1) // use switch statement
+            if (choice == 1)
             {
                 Console.WriteLine("The type of goals are: ");
                 Console.WriteLine("1. Simple Goal");
@@ -29,7 +30,7 @@ class Program
                 Console.WriteLine("Which type of goal would you like to create? ");
                 int goalType = int.Parse(Console.ReadLine());
 
-                if (goalType == 1) // use switch statement
+                if (goalType == 1)
                 {
                     SimpleGoal sGoal = new SimpleGoal("simple", "description", 0);
                     sGoal.CreateGoal();
@@ -55,14 +56,17 @@ class Program
             else if (choice == 2)
             {
                 Console.WriteLine("The goals are: ");
+                int i = 0;
                 foreach (Goal goal in goals)
                 {
+                    Console.Write($"{i}. ");
                     goal.ListGoals();
+                    i++;
                 }
             }
             else if (choice == 3)
             {
-                fileName = SaveFile();
+                fileName = goal.SaveFile();
             }
             else if (choice == 4)
             {
