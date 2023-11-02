@@ -9,9 +9,4 @@ public class SimpleGoal : Goal
     {
         _totalPoints = totalPoints;
     }
-
-    public override string CreateGoal()
-    {
-        return $"{_name} ({_description})";
-    }
 }

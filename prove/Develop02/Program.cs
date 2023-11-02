@@ -65,7 +65,7 @@ partial class Program
             {
                 /* display the entry (entries) using the method 
                 DisplayEntryFromFile from the journal object */
-                journal.DisplayEntryFromFile(fileName);
+                journal.DisplayEntry(fileName);
 
             }
             // if the user chooses to load a file

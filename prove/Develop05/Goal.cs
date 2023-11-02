@@ -46,6 +46,12 @@ public class Goal
 
     public virtual string CreateGoal()
     {
-        return "done";
+        Console.WriteLine("What is the name of your goal?");
+        string name = Console.ReadLine();
+        Console.WriteLine("What is a short description of it?");
+        string description = Console.ReadLine();
+        Console.WriteLine("What is the amount of points associated with this goal?");
+        int points = Convert.ToInt32(Console.ReadLine());
+        return $"{_name} {_description}";
     }
 }
