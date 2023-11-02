@@ -1,7 +1,7 @@
 using System;
 
 /* Goal Base Class */
-public class Goal
+public abstract class Goal
 {
     protected string _name;
     protected string _description;
@@ -44,14 +44,5 @@ public class Goal
         _points = points;
     }
 
-    public virtual string CreateGoal()
-    {
-        Console.Write("What is the name of your goal? ");
-        string name = Console.ReadLine();
-        Console.Write("What is a short description of it? ");
-        string description = Console.ReadLine();
-        Console.Write("What is the amount of points associated with this goal? ");
-        int points = Convert.ToInt32(Console.ReadLine());
-        return $"{name}~{description}~{points}";
-    }
+    public abstract string CreateGoal()
 }

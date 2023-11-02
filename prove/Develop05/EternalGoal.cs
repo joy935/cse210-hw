@@ -1,11 +1,11 @@
 using System;
 
-/* Simple Goal derived class */
-public class SimpleGoal : Goal
+/* Eternal Goal derived class */
+public class EternalGoal : Goal
 {
     private int _totalPoints;
 
-    public SimpleGoal(string name, string description, int points, int totalPoints) : base(name, description, points)
+    public EternalGoal(string name, string description, int points, int totalPoints) : base(name, description, points)
     {
         _totalPoints = totalPoints;
     }
@@ -18,6 +18,6 @@ public class SimpleGoal : Goal
         string description = Console.ReadLine();
         Console.Write("What is the amount of points associated with this goal? ");
         int points = Convert.ToInt32(Console.ReadLine());
-        return $"Simple Goal~{name}~{description}~{points}";
+        return $"Eternal Goal~{name}~{description}~{points}";
     }
 }
