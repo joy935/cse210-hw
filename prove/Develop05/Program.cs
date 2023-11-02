@@ -21,7 +21,13 @@ class Program
 
             if (choice == 1)
             {
-                Console.WriteLine("1");
+                Console.WriteLine("The type of goals are: ");
+                Console.WriteLine("1. Simple Goal");
+                Console.WriteLine("2. Eternal Goal");
+                Console.WriteLine("3. Checklist Goal");
+                Console.WriteLine("Which type of goal would you like to create? ");
+                int goalType = int.Parse(Console.ReadLine());
+                break;
             }
             else if (choice == 2)
             {
