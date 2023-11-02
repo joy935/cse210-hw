@@ -44,5 +44,5 @@ public abstract class Goal
         _points = points;
     }
 
-    public abstract string CreateGoal()
+    public abstract string CreateGoal();
 }
