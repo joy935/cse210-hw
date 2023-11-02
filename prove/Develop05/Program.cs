@@ -27,6 +27,8 @@ class Program
                 Console.WriteLine("3. Checklist Goal");
                 Console.WriteLine("Which type of goal would you like to create? ");
                 int goalType = int.Parse(Console.ReadLine());
+                Goal goal = new Goal("one", "two", 2);
+                Console.WriteLine($"{goal.CreateGoal()}");
                 break;
             }
             else if (choice == 2)
