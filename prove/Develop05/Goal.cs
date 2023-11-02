@@ -48,7 +48,7 @@ public abstract class Goal
     public abstract void CreateGoal();
     { }
 
-    public virtual void ListGoal()
+    public virtual void ListGoals()
     {   
         Console.WriteLine($"[ ] {_name} ({_description})");
     }

@@ -57,7 +57,7 @@ class Program
                 Console.WriteLine("The goals are: ");
                 foreach (Goal goal in goals)
                 {
-                    goal.ListGoal();
+                    goal.ListGoals();
                 }
             }
             else if (choice == 3)

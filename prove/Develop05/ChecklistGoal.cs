@@ -30,7 +30,7 @@ public class ChecklistGoal : Goal
         return $"Checklist Goal~{_name}~{_description}~{points}~{_bonus}~{_totalRepetition}~{_completed}";
     }
 
-    public override void ListGoal()
+    public override void ListGoals()
     {
         Console.WriteLine($"[ ] {_name} ({_description}) -- Currently completed: {_completed}/{_totalRepetition}");
     }
