@@ -6,6 +6,7 @@ using System.Collections.Generic;
 public class LoadSaveGoal : Goal
 {
     private string _fileName;
+    private List<SimpleGoal> _goals = new List<SimpleGoal>();
 
     public LoadSaveGoal(string name, string description, int points, string fileName) : base(name, description, points)
     {
@@ -17,21 +18,26 @@ public class LoadSaveGoal : Goal
         return "Load and Save Goal";
     }
 
-    public override string DisplayGoal()
-    {
-        return "Load and Save Goal";
-    }
-
     public void SaveGoal(string fileName)
     {
-        using (StreamWriter sw = new StreamWriter(fileName))
+        using (StreamWriter outputFile = new StreamWriter(fileName))
         {
-            foreach (SimpleGoal goal in goals)
+            foreach (SimpleGoal goal in _goals)
             {
-                string line = goal.DisplayGoal();
-                outputFile.WriteLine(line);
+                outputFile.WriteLine(goal.DisplayGoal());
             }
         }
+    }
+
+    public string SaveFile()
+    {
+        Console.Write("What is the filename for the goal file? ");
+        string filename = Console.ReadLine();
+        string firstPath = "./";
+        string filePath = Path.Combine(firstPath, filename);
+        string goalsText = string.Join("\n", _goals);
+        System.IO.File.WriteAllText(filePath, goalsText);
+        return _fileName;
     }
 
 }

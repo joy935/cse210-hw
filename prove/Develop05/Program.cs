@@ -62,9 +62,7 @@ class Program
             }
             else if (choice == 3)
             {
-                Console.Write("What is the filename for the goal file? ");
-                string filename = Console.ReadLine();
-                FileHandler.SaveGoals(goals, filename);
+                fileName = SaveFile();
             }
             else if (choice == 4)
             {

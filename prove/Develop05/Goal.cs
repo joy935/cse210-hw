@@ -47,7 +47,10 @@ public abstract class Goal
 
     public abstract string CreateGoal();
 
-    public abstract string DisplayGoal();
+    public virtual string DisplayGoal()
+    {
+        return $"Goal{_name}~{_description}";
+    }
 
     public virtual void ListGoals()
     {   
