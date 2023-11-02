@@ -4,6 +4,7 @@ class Program
 {
     static void Main(string[] args)
     {
+        List<Goal> goals = new List<Goal>();
 
         while (true)
         {
@@ -30,18 +31,21 @@ class Program
 
                 if (goalType == 1)
                 {
-                    SimpleGoal sGoal = new SimpleGoal("name", "description", 0, 0);
+                    SimpleGoal sGoal = new SimpleGoal("simple", "description", 0, 0);
                     sGoal.CreateGoal();
+                    goals.Add(sGoal);
                 }
                 else if (goalType == 2)
-                {
-                    EternalGoal eGoal = new EternalGoal("name", "description", 0, 0);
+                {   
+                    EternalGoal eGoal = new EternalGoal("eternal", "description", 0, 0);
                     eGoal.CreateGoal();
+                    goals.Add(eGoal);
                 }
                 else if (goalType == 3)
-                {
-                    ChecklistGoal cGoal = new ChecklistGoal("name", "description", 0, 0, 0, 0, 0);
+                {   
+                    ChecklistGoal cGoal = new ChecklistGoal("checklist", "description", 0, 0, 0, 0, 0);
                     cGoal.CreateGoal();
+                    goals.Add(cGoal);
                 }
                 else
                 {
@@ -50,7 +54,11 @@ class Program
             }
             else if (choice == 2)
             {
-                Console.WriteLine("2");
+                Console.WriteLine("The goals are: ");
+                foreach (Goal goal in goals)
+                {
+                    goal.ListGoal();
+                }
             }
             else if (choice == 3)
             {

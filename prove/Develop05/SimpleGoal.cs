@@ -13,11 +13,11 @@ public class SimpleGoal : Goal
     public override string CreateGoal()
     {
         Console.Write("What is the name of your goal? ");
-        string name = Console.ReadLine();
+        _name = Console.ReadLine();
         Console.Write("What is a short description of it? ");
-        string description = Console.ReadLine();
+        _description = Console.ReadLine();
         Console.Write("What is the amount of points associated with this goal? ");
-        int points = Convert.ToInt32(Console.ReadLine());
-        return $"Simple Goal~{name}~{description}~{points}";
+        _points = Convert.ToInt32(Console.ReadLine());
+        return $"Simple Goal~{_name}~{_description}~{points}";
     }
 }

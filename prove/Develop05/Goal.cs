@@ -6,6 +6,7 @@ public abstract class Goal
     protected string _name;
     protected string _description;
     protected int _points;
+    private List<SimpleGoal> _simpleGoals = new List<SimpleGoal>();
 
     public Goal(string name, string description, int points)
     {
@@ -45,4 +46,9 @@ public abstract class Goal
     }
 
     public abstract string CreateGoal();
+
+    public virtual void ListGoal()
+    {   
+        Console.WriteLine($"[ ] {_name} ({_description})");
+    }
 }
