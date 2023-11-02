@@ -27,7 +27,12 @@ public class ChecklistGoal : Goal
         Console.Write("What is the bonus accomplishing it that many times? ");
         _bonus = Convert.ToInt32(Console.ReadLine());
         _completed = 0;
-        return $"Checklist Goal~{_name}~{_description}~{points}~{_bonus}~{_totalRepetition}~{_completed}";
+        return $"Checklist Goal~{_name}~{_description}~{_points}~{_bonus}~{_totalRepetition}~{_completed}";
+    }
+
+    public override string DisplayGoal()
+    {
+        return $"Checklist Goal~{_name}~{_description}~{_points}~{_bonus}~{_totalRepetition}~{_completed}";
     }
 
     public override void ListGoals()

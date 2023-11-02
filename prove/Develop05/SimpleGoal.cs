@@ -15,11 +15,17 @@ public class SimpleGoal : Goal
         _description = Console.ReadLine();
         Console.Write("What is the amount of points associated with this goal? ");
         _points = Convert.ToInt32(Console.ReadLine());
-        return $"Simple Goal~{_name}~{_description}~{points}";
+        return $"Simple Goal~{_name}~{_description}~{_points}";
     }
 
     public override string DisplayGoal()
     {
-        return $"Simple Goal~{_name}~{_description}~{points}";
+        return $"Simple Goal~{_name}~{_description}~{_points}";
+    }
+
+    public static SimpleGoal Parse(string line)
+    {
+        string[] values = line.Split('~');
+        return new SimpleGoal(values[1], values[2], Convert.ToInt32(values[3]));
     }
 }

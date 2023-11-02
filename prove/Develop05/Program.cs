@@ -31,19 +31,19 @@ class Program
 
                 if (goalType == 1) // use switch statement
                 {
-                    SimpleGoal sGoal = new SimpleGoal("simple", "description", 0, 0);
+                    SimpleGoal sGoal = new SimpleGoal("simple", "description", 0);
                     sGoal.CreateGoal();
                     goals.Add(sGoal);
                 }
                 else if (goalType == 2)
                 {   
-                    EternalGoal eGoal = new EternalGoal("eternal", "description", 0, 0);
+                    EternalGoal eGoal = new EternalGoal("eternal", "description", 0);
                     eGoal.CreateGoal();
                     goals.Add(eGoal);
                 }
                 else if (goalType == 3)
                 {   
-                    ChecklistGoal cGoal = new ChecklistGoal("checklist", "description", 0, 0, 0, 0, 0);
+                    ChecklistGoal cGoal = new ChecklistGoal("checklist", "description", 0, 0, 0, 0);
                     cGoal.CreateGoal();
                     goals.Add(cGoal);
                 }
@@ -62,7 +62,9 @@ class Program
             }
             else if (choice == 3)
             {
-                Console.WriteLine("3");
+                Console.Write("What is the filename for the goal file? ");
+                string filename = Console.ReadLine();
+                FileHandler.SaveGoals(goals, filename);
             }
             else if (choice == 4)
             {

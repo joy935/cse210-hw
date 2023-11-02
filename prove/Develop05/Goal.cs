@@ -45,8 +45,9 @@ public abstract class Goal
         _points = points;
     }
 
-    public abstract void CreateGoal();
-    { }
+    public abstract string CreateGoal();
+
+    public abstract string DisplayGoal();
 
     public virtual void ListGoals()
     {   

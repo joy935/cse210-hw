@@ -3,8 +3,6 @@ using System;
 /* Eternal Goal derived class */
 public class EternalGoal : Goal
 {
-    private int _totalPoints;
-
     public EternalGoal(string name, string description, int points) : base(name, description, points)
     { }
 
@@ -16,11 +14,11 @@ public class EternalGoal : Goal
         _description = Console.ReadLine();
         Console.Write("What is the amount of points associated with this goal? ");
         _points = Convert.ToInt32(Console.ReadLine());
-        return $"Eternal Goal~{_name}~{_description}~{points}";
+        return $"Eternal Goal~{_name}~{_description}~{_points}";
     }
 
     public override string DisplayGoal()
     {
-        return $"Eternal Goal~{_name}~{_description}~{points}";
+        return $"Eternal Goal~{_name}~{_description}~{_points}";
     }
 }
