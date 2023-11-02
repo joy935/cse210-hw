@@ -20,7 +20,7 @@ class Program
 
             int choice = int.Parse(Console.ReadLine());
 
-            if (choice == 1)
+            if (choice == 1) // use switch statement
             {
                 Console.WriteLine("The type of goals are: ");
                 Console.WriteLine("1. Simple Goal");
@@ -29,7 +29,7 @@ class Program
                 Console.WriteLine("Which type of goal would you like to create? ");
                 int goalType = int.Parse(Console.ReadLine());
 
-                if (goalType == 1)
+                if (goalType == 1) // use switch statement
                 {
                     SimpleGoal sGoal = new SimpleGoal("simple", "description", 0, 0);
                     sGoal.CreateGoal();
