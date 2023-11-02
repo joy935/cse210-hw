@@ -19,7 +19,7 @@ public class LoadSaveGoal
         {
             foreach (SimpleGoal goal in _goals)
             {
-                outputFile.WriteLine(goal.DisplayGoal());
+                outputFile.WriteLine(goal.GetStringRepresentation());
             }
         }
     }

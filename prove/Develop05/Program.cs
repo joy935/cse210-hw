@@ -66,7 +66,7 @@ class Program
             }
             else if (choice == 3)
             {
-                fileName = goal.SaveFile();
+                Console.Write("3");
             }
             else if (choice == 4)
             {
