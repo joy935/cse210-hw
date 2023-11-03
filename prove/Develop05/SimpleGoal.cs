@@ -34,7 +34,14 @@ public class SimpleGoal : Goal
 
     public override string GetStringRepresentation()
     {
-        return $"Simple Goal~{_name}~{_description}~{_points}~False";
+        if (_completed == true)
+        {
+            return $"Simple Goal~{_name}~{_description}~{_points}~True";
+        }
+        else 
+        {
+            return $"Simple Goal~{_name}~{_description}~{_points}~False";
+        }
     }
 
     public override bool IsCompleted()
