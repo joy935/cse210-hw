@@ -48,8 +48,5 @@ public abstract class Goal
 
     public abstract string GetStringRepresentation();
 
-    public virtual void ListGoals()
-    {   
-        Console.WriteLine($"[ ] {_name} ({_description})");
-    }
+    public abstract void ListGoals();
 }

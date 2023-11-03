@@ -17,6 +17,11 @@ public class EternalGoal : Goal
         return $"Eternal Goal~{_name}~{_description}~{_points}";
     }
 
+    public override void ListGoals()
+    {
+        Console.WriteLine($"[ ] {_name} ({_description})");
+    }
+
     public override string GetStringRepresentation()
     {
         return $"Eternal Goal~{_name}~{_description}~{_points}";

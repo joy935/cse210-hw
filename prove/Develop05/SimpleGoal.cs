@@ -18,6 +18,11 @@ public class SimpleGoal : Goal
         return $"Simple Goal~{_name}~{_description}~{_points}";
     }
 
+    public override void ListGoals()
+    {
+        Console.WriteLine($"[ ] {_name} ({_description})");
+    }
+
     public override string GetStringRepresentation()
     {
         return $"Simple Goal~{_name}~{_description}~{_points}~False";
