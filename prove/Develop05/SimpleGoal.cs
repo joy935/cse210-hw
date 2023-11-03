@@ -4,6 +4,8 @@ using System;
 public class SimpleGoal : Goal
 {
 
+    private bool _completed = false;
+
     public SimpleGoal(string name, string description, int points) : base(name, description, points)
     { }
 
@@ -20,12 +22,32 @@ public class SimpleGoal : Goal
 
     public override void ListGoals()
     {
-        Console.WriteLine($"[ ] {_name} ({_description})");
+        if (IsCompleted() == true)
+        {
+            Console.WriteLine($"[X] {_name} ({_description})");
+        }
+        else
+        {
+            Console.WriteLine($"[ ] {_name} ({_description})");
+        }
     }
 
     public override string GetStringRepresentation()
     {
         return $"Simple Goal~{_name}~{_description}~{_points}~False";
+    }
+
+    public override bool IsCompleted()
+    {
+        if (_completed == true) // when known, this condition should be changed
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+        
     }
 
     public static SimpleGoal Parse(string line)

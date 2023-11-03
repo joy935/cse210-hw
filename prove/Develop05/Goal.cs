@@ -49,4 +49,9 @@ public abstract class Goal
     public abstract string GetStringRepresentation();
 
     public abstract void ListGoals();
+
+    public virtual bool IsCompleted()
+    {
+        return false;
+    }
 }
