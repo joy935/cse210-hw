@@ -2,37 +2,28 @@ using System;
 using System.IO;
 using System.Collections.Generic;
 
-/* Load and Save Goal derived class */
+/* Load and Save Goal class */
 public class LoadSaveGoal
 {
     private string _fileName;
-    private List<SimpleGoal> _goals = new List<SimpleGoal>();
 
     public LoadSaveGoal(string fileName)
     {
         _fileName = fileName;
     }
 
-    public void SaveGoal(string fileName)
+    public void SaveGoal(string fileName, List<Goal> goals)
     {
-        using (StreamWriter outputFile = new StreamWriter(fileName))
+        using (StreamWriter outputFile = new StreamWriter(fileName, true))
         {
-            foreach (SimpleGoal goal in _goals)
+            foreach (Goal goal in goals)
             {
                 outputFile.WriteLine(goal.GetStringRepresentation());
             }
-        }
+        };
+        string firstPath = "./prove/Develop05/";
+        string filePath = Path.Combine(firstPath, fileName);
     }
 
-    public string SaveFile()
-    {
-        Console.Write("What is the filename for the goal file? ");
-        string filename = Console.ReadLine();
-        string firstPath = "./prove/Develop05/";
-        string filePath = Path.Combine(firstPath, filename);
-        string goalsText = string.Join("\n", _goals);
-        System.IO.File.WriteAllText(filePath, goalsText);
-        return _fileName;
-    }
 
 }

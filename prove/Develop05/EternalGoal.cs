@@ -26,4 +26,9 @@ public class EternalGoal : Goal
     {
         return $"Eternal Goal~{_name}~{_description}~{_points}";
     }
+
+    public override bool IsCompleted()
+    {
+        return false;
+    }
 }

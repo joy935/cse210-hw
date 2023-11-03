@@ -1,2 +1,3 @@
-Checklist Goal~Read~Read and finish a book~45~600~500~0
-Simple Goal~Hike~On the mountain top~67~False
+Simple Goal~Pray~Pray often~50~False
+Eternal Goal~Scriptures~Study everyday~34
+Checklist Goal~Temple~Go to the temple this month~68~500~3~0

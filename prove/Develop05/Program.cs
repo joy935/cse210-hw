@@ -5,6 +5,7 @@ class Program
     static void Main(string[] args)
     {
         List<Goal> goals = new List<Goal>();
+        LoadSaveGoal lsgoals = new LoadSaveGoal("filename");
 
         while (true)
         {
@@ -66,16 +67,9 @@ class Program
             else if (choice == 3)
             {
                 Console.Write("What is the filename for the goal file? ");
-                string filename = Console.ReadLine();
-                using (StreamWriter outputFile = new StreamWriter(filename, true))
-                {
-                    foreach (Goal goal in goals)
-                    {
-                        outputFile.WriteLine(goal.GetStringRepresentation());
-                    }
-                };
-                string firstPath = "./prove/Develop05/";
-                string filePath = Path.Combine(firstPath, filename);
+                string fileName = Console.ReadLine();
+                lsgoals.SaveGoal(fileName, goals);
+
             }
             else if (choice == 4)
             {
