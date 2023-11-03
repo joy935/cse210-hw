@@ -56,10 +56,4 @@ public class SimpleGoal : Goal
         }
         
     }
-
-    public static SimpleGoal Parse(string line)
-    {
-        string[] values = line.Split('~');
-        return new SimpleGoal(values[1], values[2], Convert.ToInt32(values[3]));
-    }
 }
