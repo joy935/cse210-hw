@@ -54,6 +54,5 @@ public class SimpleGoal : Goal
         {
             return false;
         }
-        
     }
 }
