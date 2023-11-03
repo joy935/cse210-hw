@@ -73,7 +73,18 @@ class Program
             }
             else if (choice == 4)
             {
-                Console.WriteLine("4");
+                Console.WriteLine("What is the filename for the goal file? ");
+                string fileName = Console.ReadLine();
+                string loadData = System.IO.File.ReadAllText(fileName);
+                LoadSaveGoal loadedandsaved = LoadSaveGoal RetrieveGoal(loadData);
+                if (loadedandsaved != null)
+                {
+                    //
+                }
+                else
+                {
+                    Console.WriteLine("Invalid choice. Please try again.");
+                }
             }
             else if (choice == 5)
             {
