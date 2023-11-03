@@ -20,7 +20,7 @@ public class SimpleGoal : Goal
 
     public override string GetStringRepresentation()
     {
-        return $"Simple Goal~{_name}~{_description}~{_points}";
+        return $"Simple Goal~{_name}~{_description}~{_points}~False";
     }
 
     public static SimpleGoal Parse(string line)

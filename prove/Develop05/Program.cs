@@ -5,7 +5,6 @@ class Program
     static void Main(string[] args)
     {
         List<Goal> goals = new List<Goal>();
-        string fileName = "";
 
         while (true)
         {
@@ -56,7 +55,7 @@ class Program
             else if (choice == 2)
             {
                 Console.WriteLine("The goals are: ");
-                int i = 0;
+                int i = 1;
                 foreach (Goal goal in goals)
                 {
                     Console.Write($"{i}. ");
@@ -66,7 +65,17 @@ class Program
             }
             else if (choice == 3)
             {
-                Console.Write("3");
+                Console.Write("What is the filename for the goal file? ");
+                string filename = Console.ReadLine();
+                using (StreamWriter outputFile = new StreamWriter(filename, true))
+                {
+                    foreach (Goal goal in goals)
+                    {
+                        outputFile.WriteLine(goal.GetStringRepresentation());
+                    }
+                };
+                string firstPath = "./prove/Develop05/";
+                string filePath = Path.Combine(firstPath, filename);
             }
             else if (choice == 4)
             {
