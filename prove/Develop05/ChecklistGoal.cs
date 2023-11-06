@@ -36,11 +36,11 @@ public class ChecklistGoal : Goal
 
     public override void ListGoals()
     {
-        // if (IsCompleted() == true)
-        // {
-        //     Console.WriteLine($"[X] {_name} ({_description}) -- Currently completed: {_numberRepetition}/{_totalRepetition}");
-        // }
-        // else
+        if (IsCompleted() == true)
+        {
+            Console.WriteLine($"[X] {_name} ({_description}) -- Currently completed: {_numberRepetition}/{_totalRepetition}");
+        }
+        else
         {
             Console.WriteLine($"[ ] {_name} ({_description}) -- Currently completed: {_numberRepetition}/{_totalRepetition}");
         }
@@ -49,12 +49,12 @@ public class ChecklistGoal : Goal
     
     public override bool IsCompleted()
     {
-        // if (_numberRepetition % _totalRepetition == 0 && _numberRepetition != 0)
-        // {
-        //     _points += _bonus;
-        //     return true;
-        // }
-        // else
+        if (_numberRepetition % _totalRepetition == 0 && _numberRepetition != 0)
+        {
+            _points += _bonus;
+            return true;
+        }
+        else
         {
             return false;
         }

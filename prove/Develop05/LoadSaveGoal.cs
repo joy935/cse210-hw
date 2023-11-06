@@ -29,12 +29,10 @@ public class LoadSaveGoal
     {
         
         List<Goal> goals = new List<Goal>();
-        // read each lines from the file
         string [] lines = System.IO.File.ReadAllLines(fileName);
 
         foreach (string line in lines)
         {
-            // split it based on the colon : to get the type of the object and the details
             string [] parts = line.Split(':');
             string type = parts[0];
             string details = parts[1];
