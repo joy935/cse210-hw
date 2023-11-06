@@ -6,6 +6,7 @@ class Program
     {
         List<Goal> goals = new List<Goal>();
         LoadSaveGoal lsgoals = new LoadSaveGoal("filename");
+        UserInterface userinterface = new UserInterface(goals);
 
         while (true)
         {
@@ -89,10 +90,7 @@ class Program
                 }
                 Console.Write("Which goal did you accomplish? ");
                 int goalDone = int.Parse(Console.ReadLine());
-                // foreach (Goal goal in goals)
-                // {
-                //     goal.RecordEvent(goalDone); // not correct
-                // }
+                userinterface.UpdateGoal(goalDone, goals);
             }
             else if (choice == 6)
             {
