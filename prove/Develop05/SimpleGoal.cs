@@ -47,9 +47,10 @@ public class SimpleGoal : Goal
         }
     }
 
-    public override void RecordEvent(int numberGoal)
+    public override void RecordEvent()
     {
         Console.WriteLine($"Congratulations! You have earned {_points} points!");
         _completed = true;
+        GetStringRepresentation();
     }
 }

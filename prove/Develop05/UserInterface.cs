@@ -13,13 +13,14 @@ public class UserInterface
 
     public void UpdateGoal(int numberGoal, List<Goal> goals)
     {
-        foreach (Goal goal in _goals)
+        foreach (Goal goal in goals)
         {
             for (int i = 0; i < this._goals.Count; i++)
             {
                 if (i == numberGoal)
                 {
-                    this._goals[i].RecordEvent(numberGoal);
+                    this._goals[i].RecordEvent();
+                    Console.WriteLine(goals[i]);
                 }
             }
         }

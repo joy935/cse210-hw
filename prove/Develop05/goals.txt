@@ -3,3 +3,8 @@ SimpleGoal:Do something nice~To Evan~50~False
 EternalGoal:Pray everyday sir~Pray often~23
 ChecklistGoal:Exercize~Twice a week~74~400~2~2
 ChecklistGoal:Jump~Each week~54~460~6~1
+SimpleGoal:Help someone~Anyone in need~50~True
+SimpleGoal:Do something nice~To Evan~50~False
+EternalGoal:Pray everyday sir~Pray often~23
+ChecklistGoal:Exercize~Twice a week~874~400~2~2
+ChecklistGoal:Jump~Each week~54~460~6~1

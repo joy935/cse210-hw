@@ -59,18 +59,20 @@ public class ChecklistGoal : Goal
         }
     }
 
-    public override void RecordEvent(int numberGoal)
+    public override void RecordEvent()
     {
         Console.WriteLine($"Congratulations! You have earned {_points} points!");
         if (_numberRepetition < _totalRepetition)
         {
             _numberRepetition++;
             _points++;
+            GetStringRepresentation();
         }
         else if (_numberRepetition == _totalRepetition)
         {
             _numberRepetition = _totalRepetition;
             _points += _bonus;
+            GetStringRepresentation();
         }
         else
         {

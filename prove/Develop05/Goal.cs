@@ -75,8 +75,9 @@ public abstract class Goal
         return false;
     }
 
-    public virtual void RecordEvent(int numberGoal)
+    public virtual void RecordEvent()
     {
         Console.WriteLine($"Congratulations! You have earned {_points} points!");
+        GetStringRepresentation();
     }
 }
