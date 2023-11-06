@@ -66,12 +66,17 @@ public abstract class Goal
         _points = Convert.ToInt32(Console.ReadLine());
     }
 
-    public abstract string GetStringRepresentation();
-
     public abstract void ListGoals();
+
+    public abstract string GetStringRepresentation();
 
     public virtual bool IsCompleted()
     {
         return false;
+    }
+
+    public virtual void RecordEvent(int numberGoal)
+    {
+        Console.WriteLine($"Congratulations! You have earned {_points} points!");
     }
 }

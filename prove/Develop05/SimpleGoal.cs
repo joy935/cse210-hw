@@ -46,4 +46,10 @@ public class SimpleGoal : Goal
             return false;
         }
     }
+
+    public override void RecordEvent(int numberGoal)
+    {
+        Console.WriteLine($"Congratulations! You have earned {_points} points!");
+        _completed = true;
+    }
 }

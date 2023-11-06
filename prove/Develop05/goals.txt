@@ -1,3 +1,3 @@
 SimpleGoal:Help someone~Anyone in need~45~False
-EternalGoal:Pray everyday~Pray often~23
-ChecklistGoal:Exercize~Twice a week~74~400~2~0
+EternalGoal:Pray everyday sir~Pray often~23
+ChecklistGoal:Exercize~Twice a week~74~400~2~1

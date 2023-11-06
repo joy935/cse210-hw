@@ -73,15 +73,22 @@ class Program
             }
             else if (choice == 4)
             {
-                Console.WriteLine("What is the filename for the goal file? ");
+                Console.Write("What is the filename for the goal file? ");
                 string fileName = Console.ReadLine();
                 goals = lsgoals.LoadGoal(fileName);
-                Console.WriteLine($"The goals are: {goals}");
-
             }
             else if (choice == 5)
             {
-                Console.WriteLine("5");
+                Console.WriteLine("The goals are: ");
+                int i = 1;
+                foreach (Goal goal in goals)
+                {
+                    Console.Write($"{i}. ");
+                    goal.ListGoals();
+                    i++;
+                }
+                Console.Write("Which goal did you accomplish? ");
+                int goalDone = int.Parse(Console.ReadLine());
             }
             else if (choice == 6)
             {

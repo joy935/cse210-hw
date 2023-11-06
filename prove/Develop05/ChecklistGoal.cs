@@ -60,4 +60,9 @@ public class ChecklistGoal : Goal
         }
     }
 
+    public override void RecordEvent(int numberGoal)
+    {
+        Console.WriteLine($"Congratulations! You have earned {_points} points!");
+        _numberRepetition++;
+    }
 }
