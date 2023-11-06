@@ -89,6 +89,12 @@ class Program
                 }
                 Console.Write("Which goal did you accomplish? ");
                 int goalDone = int.Parse(Console.ReadLine());
+                foreach (Goal goal in goals)
+                {
+                    goal.RecordEvent(goalDone);
+                }
+
+                
             }
             else if (choice == 6)
             {
