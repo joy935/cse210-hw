@@ -91,10 +91,8 @@ class Program
                 int goalDone = int.Parse(Console.ReadLine());
                 foreach (Goal goal in goals)
                 {
-                    goal.RecordEvent(goalDone);
+                    goal.RecordEvent(goalDone); // not correct
                 }
-
-                
             }
             else if (choice == 6)
             {
@@ -105,8 +103,5 @@ class Program
                 Console.WriteLine("Invalid choice. Please try again.");
             }
         }
-
-        
-        
     }
 }

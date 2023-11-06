@@ -44,7 +44,6 @@ public class ChecklistGoal : Goal
         {
             Console.WriteLine($"[ ] {_name} ({_description}) -- Currently completed: {_numberRepetition}/{_totalRepetition}");
         }
-        
     }
     
     public override bool IsCompleted()
@@ -76,7 +75,6 @@ public class ChecklistGoal : Goal
         else
         {
             Console.WriteLine("Error: You have already completed this goal.");
-        }
-        
+        } 
     }
 }
