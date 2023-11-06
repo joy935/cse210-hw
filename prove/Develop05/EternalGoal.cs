@@ -3,7 +3,7 @@ using System;
 /* Eternal Goal derived class */
 public class EternalGoal : Goal
 {
-    public EternalGoal(string name, string description, int points) : base(name, description, points)
+    public EternalGoal(string type, string name, string description, int points) : base(type, name, description, points)
     { }
 
     public override string CreateGoal()

@@ -7,7 +7,7 @@ public class ChecklistGoal : Goal
     private int _bonus;
     private int _numberRepetition;
 
-    public ChecklistGoal(string name, string description, int points, int bonus, int totalRepetition, int numberRepetition) : base(name, description, points)
+    public ChecklistGoal(string type, string name, string description, int points, int bonus, int totalRepetition, int numberRepetition) : base(type, name, description, points)
     {
         _bonus = bonus;
         _totalRepetition = totalRepetition;
