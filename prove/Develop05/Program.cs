@@ -32,19 +32,19 @@ class Program
 
                 if (goalType == 1)
                 {
-                    SimpleGoal sGoal = new SimpleGoal("simple", "description", 0);
+                    SimpleGoal sGoal = new SimpleGoal("simple", "new", "description", 0);
                     sGoal.CreateGoal();
                     goals.Add(sGoal);
                 }
                 else if (goalType == 2)
                 {   
-                    EternalGoal eGoal = new EternalGoal("eternal", "description", 0);
+                    EternalGoal eGoal = new EternalGoal("eternal", "new", "description", 0);
                     eGoal.CreateGoal();
                     goals.Add(eGoal);
                 }
                 else if (goalType == 3)
                 {   
-                    ChecklistGoal cGoal = new ChecklistGoal("checklist", "description", 0, 0, 0, 0);
+                    ChecklistGoal cGoal = new ChecklistGoal("checklist", "new", "description", 0, 0, 0, 0);
                     cGoal.CreateGoal();
                     goals.Add(cGoal);
                 }
@@ -76,15 +76,8 @@ class Program
                 Console.WriteLine("What is the filename for the goal file? ");
                 string fileName = Console.ReadLine();
                 string loadData = System.IO.File.ReadAllText(fileName);
-                LoadSaveGoal loadedandsaved = LoadSaveGoal RetrieveGoal(loadData);
-                if (loadedandsaved != null)
-                {
-                    //
-                }
-                else
-                {
-                    Console.WriteLine("Invalid choice. Please try again.");
-                }
+                // LoadSaveGoal loadedandsaved = LoadSaveGoal RetrieveGoal(loadData);
+
             }
             else if (choice == 5)
             {

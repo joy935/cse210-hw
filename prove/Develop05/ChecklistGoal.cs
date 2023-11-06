@@ -14,7 +14,7 @@ public class ChecklistGoal : Goal
         _numberRepetition = numberRepetition;
     }
 
-    public override string CreateGoal()
+    public override void CreateGoal()
     {
         Console.Write("What is the name of your goal? ");
         _name = Console.ReadLine();
@@ -27,12 +27,11 @@ public class ChecklistGoal : Goal
         Console.Write("What is the bonus accomplishing it that many times? ");
         _bonus = Convert.ToInt32(Console.ReadLine());
         _numberRepetition = 0;
-        return $"Checklist Goal~{_name}~{_description}~{_points}~{_bonus}~{_totalRepetition}~{_numberRepetition}";
     }
 
     public override string GetStringRepresentation()
     {
-        return $"Checklist Goal~{_name}~{_description}~{_points}~{_bonus}~{_totalRepetition}~{_numberRepetition}";
+        return $"ChecklistGoal:{_name}~{_description}~{_points}~{_bonus}~{_totalRepetition}~{_numberRepetition}";
     }
 
     public override void ListGoals()

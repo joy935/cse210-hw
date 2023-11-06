@@ -9,17 +9,6 @@ public class SimpleGoal : Goal
     public SimpleGoal(string type, string name, string description, int points) : base(type, name, description, points)
     { }
 
-    public override string CreateGoal()
-    {
-        Console.Write("What is the name of your goal? ");
-        _name = Console.ReadLine();
-        Console.Write("What is a short description of it? ");
-        _description = Console.ReadLine();
-        Console.Write("What is the amount of points associated with this goal? ");
-        _points = Convert.ToInt32(Console.ReadLine());
-        return $"Simple Goal~{_name}~{_description}~{_points}";
-    }
-
     public override void ListGoals()
     {
         if (IsCompleted() == true)
@@ -36,11 +25,11 @@ public class SimpleGoal : Goal
     {
         if (_completed == true)
         {
-            return $"Simple Goal~{_name}~{_description}~{_points}~True";
+            return $"SimpleGoal:{_name}~{_description}~{_points}~True";
         }
         else 
         {
-            return $"Simple Goal~{_name}~{_description}~{_points}~False";
+            return $"SimpleGoal:{_name}~{_description}~{_points}~False";
         }
     }
 

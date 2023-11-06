@@ -8,11 +8,22 @@ public abstract class Goal
     protected string _description;
     protected int _points;
 
-    public Goal(string name, string description, int points)
+    public Goal(string type, string name, string description, int points)
     {
+        _type = type;
         _name = name;
         _description = description;
         _points = points;
+    }
+
+    public string GetType()
+    {
+        return _type;
+    }
+
+    public void SetType(string type)
+    {
+        _type = type;
     }
 
     public string GetName()
@@ -45,7 +56,15 @@ public abstract class Goal
         _points = points;
     }
 
-    public abstract string CreateGoal();
+    public virtual void CreateGoal()
+    {
+        Console.Write("What is the name of your goal? ");
+        _name = Console.ReadLine();
+        Console.Write("What is a short description of it? ");
+        _description = Console.ReadLine();
+        Console.Write("What is the amount of points associated with this goal? ");
+        _points = Convert.ToInt32(Console.ReadLine());
+    }
 
     public abstract string GetStringRepresentation();
 
