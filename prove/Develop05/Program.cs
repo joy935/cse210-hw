@@ -32,7 +32,7 @@ class Program
 
                 if (goalType == 1)
                 {
-                    SimpleGoal sGoal = new SimpleGoal("simple", "new", "description", 0);
+                    SimpleGoal sGoal = new SimpleGoal("simple", "new", "description", 0, false);
                     sGoal.CreateGoal();
                     goals.Add(sGoal);
                 }
@@ -75,8 +75,8 @@ class Program
             {
                 Console.WriteLine("What is the filename for the goal file? ");
                 string fileName = Console.ReadLine();
-                string loadData = System.IO.File.ReadAllText(fileName);
-                // LoadSaveGoal loadedandsaved = LoadSaveGoal RetrieveGoal(loadData);
+                goals = lsgoals.LoadGoal(fileName);
+                Console.WriteLine($"The goals are: {goals}");
 
             }
             else if (choice == 5)

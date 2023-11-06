@@ -1,8 +1,3 @@
-Simple Goal~Pray~Pray often~50~False
-Eternal Goal~Scriptures~Study everyday~34
-Checklist Goal~Temple~Go to the temple this month~68~500~3~0
-Simple Goal~Pray~Pray often~50~False
-Eternal Goal~Be kind~Do it everyday or try to~80
-SimpleGoal:Help someone~Anyone really~45~False
-EternalGoal:Be a good person~To anyone~23
-ChecklistGoal:Exercize~Once or twice a week~34~400~3~0
+SimpleGoal:Help someone~Anyone in need~45~False
+EternalGoal:Pray everyday~Pray often~23
+ChecklistGoal:Exercize~Twice a week~74~400~2~0

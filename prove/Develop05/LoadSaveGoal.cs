@@ -25,10 +25,53 @@ public class LoadSaveGoal
         string filePath = Path.Combine(firstPath, fileName);
     }
 
-    public void LoadGoal()
+    public List<Goal> LoadGoal(string fileName)
     {
-        // read in the line
-        // split it based on the colon : to get the type of the object (Person) and the details ("Brigham,Young")
-        //create a method called CreateGoal that would accept the string of details ("Brigham,Young"). This method could split the string on the commas to get the various items. Then, it could create a new Person object, set all the values, and return it.
+        
+        List<Goal> goals = new List<Goal>();
+        // read each lines from the file
+        string [] lines = System.IO.File.ReadAllLines(fileName);
+
+        foreach (string line in lines)
+        {
+            // split it based on the colon : to get the type of the object and the details
+            string [] parts = line.Split(':');
+            string type = parts[0];
+            string details = parts[1];
+            string [] infos = details.Split('~');
+            string name = infos[0];
+            string description = infos[1];
+            int points = int.Parse(infos[2]);
+        
+            if (type == "SimpleGoal")
+            {
+                bool completed = bool.Parse(infos[3]);
+
+                SimpleGoal sGoal = new SimpleGoal(type, name, description, points, completed);
+                sGoal.GetStringRepresentation();
+                goals.Add(sGoal);
+            }
+            else if (type == "EternalGoal")
+            {
+                EternalGoal eGoal = new EternalGoal(type, name, description, points);
+                eGoal.GetStringRepresentation();
+                goals.Add(eGoal);
+            }
+            else if (type == "ChecklistGoal")
+            {
+                int bonus = int.Parse(infos[3]);
+                int totalRepetition = int.Parse(infos[4]);
+                int numberRepetition = int.Parse(infos[5]);  
+
+                ChecklistGoal cGoal = new ChecklistGoal(type, name, description, points, bonus, totalRepetition, numberRepetition);
+                cGoal.GetStringRepresentation();
+                goals.Add(cGoal);
+            }
+            else
+            {
+                Console.WriteLine("Invalid type. Please try again.");
+            }
+        }
+        return goals;
     }
 }

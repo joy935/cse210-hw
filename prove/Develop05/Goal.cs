@@ -16,12 +16,12 @@ public abstract class Goal
         _points = points;
     }
 
-    public string GetType()
+    public string GetGoalType()
     {
         return _type;
     }
 
-    public void SetType(string type)
+    public void SetGoalType(string type)
     {
         _type = type;
     }
