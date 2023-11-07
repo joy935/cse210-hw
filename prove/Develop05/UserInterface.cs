@@ -17,7 +17,6 @@ public void UpdateGoal(int goalIndex, List<Goal> goals)
     {
         Goal goalToUpdate = goals[goalIndex];
         goalToUpdate.RecordEvent(); // to update the existing goal
-        Console.WriteLine(goalToUpdate.GetStringRepresentation()); // test to display the updated goal
     }
     else
     {
