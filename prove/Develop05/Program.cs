@@ -7,10 +7,11 @@ class Program
         List<Goal> goals = new List<Goal>();
         LoadSaveGoal lsGoals = new LoadSaveGoal("filename");
         UserInterface userInterface = new UserInterface(goals);
+        int totalPoints = 0;
 
         while (true)
         {
-            Console.WriteLine("\nYou have ... points.\n");
+            Console.WriteLine($"\nYou have {totalPoints} points.\n");
             Console.WriteLine("Menu Options: ");
             Console.WriteLine(" 1. Create a new Goal");
             Console.WriteLine(" 2. List Goals");
