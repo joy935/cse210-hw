@@ -5,8 +5,8 @@ class Program
     static void Main(string[] args)
     {
         List<Goal> goals = new List<Goal>();
-        LoadSaveGoal lsgoals = new LoadSaveGoal("filename");
-        UserInterface userinterface = new UserInterface(goals);
+        LoadSaveGoal lsGoals = new LoadSaveGoal("filename");
+        UserInterface userInterface = new UserInterface(goals);
 
         while (true)
         {
@@ -69,14 +69,14 @@ class Program
             {
                 Console.Write("What is the filename for the goal file? ");
                 string fileName = Console.ReadLine();
-                lsgoals.SaveGoal(fileName, goals);
+                lsGoals.SaveGoal(fileName, goals);
 
             }
             else if (choice == 4)
             {
                 Console.Write("What is the filename for the goal file? ");
                 string fileName = Console.ReadLine();
-                goals = lsgoals.LoadGoal(fileName);
+                goals = lsGoals.LoadGoal(fileName);
             }
             else if (choice == 5)
             {
@@ -90,7 +90,7 @@ class Program
                 }
                 Console.Write("Which goal did you accomplish? ");
                 int goalDone = int.Parse(Console.ReadLine()) - 1;
-                userinterface.UpdateGoal(goalDone, goals);
+                userInterface.UpdateGoal(goalDone, goals);
             }
             else if (choice == 6)
             {
