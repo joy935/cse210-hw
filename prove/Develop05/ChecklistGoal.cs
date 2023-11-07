@@ -58,23 +58,26 @@ public class ChecklistGoal : Goal
         }
     }
 
-    public override void RecordEvent()
+    public override int RecordEvent()
     {
         _numberRepetition++;
         if (_numberRepetition < _totalRepetition)
         {
             GetStringRepresentation();
             Console.WriteLine($"Congratulations! You have earned {_points} points!");
+            return _points;
         }
         else if (_numberRepetition == _totalRepetition)
         {
             _points +=_bonus;
             GetStringRepresentation();
             Console.WriteLine($"Congratulations! You have earned {_points} points!");
+            return _points;
         }
         else
         {
             Console.WriteLine("Error: You have already completed this goal.");
+            return 0;
         } 
     }
 }

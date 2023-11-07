@@ -21,9 +21,10 @@ public class EternalGoal : Goal
         return false;
     }
 
-    public override void RecordEvent()
+    public override int RecordEvent()
     {
         Console.WriteLine($"Congratulations! You have earned {_points} points!");
         GetStringRepresentation();
+        return _points;
     }
 }

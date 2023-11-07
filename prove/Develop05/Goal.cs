@@ -72,5 +72,5 @@ public abstract class Goal
 
     public abstract bool IsCompleted();
 
-    public abstract void RecordEvent();
+    public abstract int RecordEvent();
 }

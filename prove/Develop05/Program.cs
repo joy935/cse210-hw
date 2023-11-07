@@ -91,7 +91,8 @@ class Program
                 }
                 Console.Write("Which goal did you accomplish? ");
                 int goalDone = int.Parse(Console.ReadLine()) - 1;
-                userInterface.UpdateGoal(goalDone, goals);
+                int points = userInterface.UpdateGoal(goalDone, goals);
+                totalPoints += points;
             }
             else if (choice == 6)
             {
