@@ -11,18 +11,28 @@ public class UserInterface
         _goals = goals;
     }
 
-    public void UpdateGoal(int numberGoal, List<Goal> goals)
+    public void UpdateGoal(int goalIndex)
     {
-        foreach (Goal goal in goals)
+        // foreach (Goal goal in goals)
+        // {
+        //     for (int i = 0; i < this._goals.Count; i++)
+        //     {
+        //         if (i == goalIndex)
+        //         {
+        //             this._goals[i].RecordEvent();
+        //             Console.WriteLine(goals[i]);
+        //         }
+        //     }
+        // }
+        if (goalIndex >= 0 && goalIndex < _goals.Count)
         {
-            for (int i = 0; i < this._goals.Count; i++)
-            {
-                if (i == numberGoal)
-                {
-                    this._goals[i].RecordEvent();
-                    Console.WriteLine(goals[i]);
-                }
-            }
+            Goal goal = _goals[goalIndex];
+            goal.RecordEvent();
+            Console.WriteLine(goal);
+        }
+        else
+        {
+            Console.WriteLine("Invalid choice. Please try again.");
         }
     }
 }

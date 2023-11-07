@@ -4,7 +4,7 @@ using System;
 public class SimpleGoal : Goal
 {
 
-    private bool _completed = false;
+    private bool _completed;
 
     public SimpleGoal(string type, string name, string description, int points, bool completed) : base(type, name, description, points)
     {

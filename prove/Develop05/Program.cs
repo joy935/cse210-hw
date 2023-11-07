@@ -86,11 +86,15 @@ class Program
                 {
                     Console.Write($"{i}. ");
                     goal.ListGoals();
+                    Console.WriteLine(goal);
                     i++;
                 }
                 Console.Write("Which goal did you accomplish? ");
-                int goalDone = int.Parse(Console.ReadLine());
-                userinterface.UpdateGoal(goalDone, goals);
+                int goalDone = int.Parse(Console.ReadLine()) - 1;
+                // foreach (Goal goal in goals)
+                // {
+                //     userinterface.UpdateGoal(goalDone);
+                // }
             }
             else if (choice == 6)
             {

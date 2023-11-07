@@ -14,7 +14,7 @@ public class LoadSaveGoal
 
     public void SaveGoal(string fileName, List<Goal> goals)
     {
-        using (StreamWriter outputFile = new StreamWriter(fileName, true))
+        using (StreamWriter outputFile = new StreamWriter(fileName))
         {
             foreach (Goal goal in goals)
             {
