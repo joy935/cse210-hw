@@ -37,7 +37,7 @@ public class SimpleGoal : Goal
 
     public override bool IsCompleted()
     {
-        if (_completed == true) // when known, this condition should be changed
+        if (_completed == true)
         {
             return true;
         }

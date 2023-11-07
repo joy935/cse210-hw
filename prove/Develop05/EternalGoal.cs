@@ -15,4 +15,15 @@ public class EternalGoal : Goal
     {
         return $"EternalGoal:{_name}~{_description}~{_points}";
     }
+
+    public override bool IsCompleted()
+    {
+        return false;
+    }
+
+    public override void RecordEvent()
+    {
+        Console.WriteLine($"Congratulations! You have earned {_points} points!");
+        GetStringRepresentation();
+    }
 }

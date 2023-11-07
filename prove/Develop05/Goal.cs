@@ -70,14 +70,7 @@ public abstract class Goal
 
     public abstract string GetStringRepresentation();
 
-    public virtual bool IsCompleted()
-    {
-        return false;
-    }
+    public abstract bool IsCompleted();
 
-    public virtual void RecordEvent()
-    {
-        Console.WriteLine($"Congratulations! You have earned {_points} points!");
-        GetStringRepresentation();
-    }
+    public abstract void RecordEvent();
 }
