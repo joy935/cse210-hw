@@ -6,6 +6,16 @@ using System.Collections.Generic;
 public class LoadSaveGoal
 {
     private string _fileName;
+    private int _totalPoints;
+
+    public int GetTotalPoints()
+    {
+        return _totalPoints;
+    }
+    public void SetTotalPoints(int totalPoints)
+    {
+        _totalPoints = totalPoints;
+    }
 
     public LoadSaveGoal(string fileName)
     {
@@ -16,6 +26,7 @@ public class LoadSaveGoal
     {
         using (StreamWriter outputFile = new StreamWriter(fileName))
         {
+            outputFile.WriteLine($"TotalPoints: {_totalPoints}");
             foreach (Goal goal in goals)
             {
                 outputFile.WriteLine(goal.GetStringRepresentation());
@@ -36,39 +47,48 @@ public class LoadSaveGoal
             string [] parts = line.Split(':');
             string type = parts[0];
             string details = parts[1];
-            string [] infos = details.Split('~');
-            string name = infos[0];
-            string description = infos[1];
-            int points = int.Parse(infos[2]);
-        
-            if (type == "SimpleGoal")
+            
+            if (type == "TotalPoints")
             {
-                bool completed = bool.Parse(infos[3]);
+                _totalPoints = int.Parse(details);
+            }
+            else 
+            {
+                string [] infos = details.Split('~');
+                string name = infos[0];
+                string description = infos[1];
+                int points = int.Parse(infos[2]);
 
-                SimpleGoal sGoal = new SimpleGoal(type, name, description, points, completed);
-                sGoal.GetStringRepresentation();
-                goals.Add(sGoal);
-            }
-            else if (type == "EternalGoal")
-            {
-                EternalGoal eGoal = new EternalGoal(type, name, description, points);
-                eGoal.GetStringRepresentation();
-                goals.Add(eGoal);
-            }
-            else if (type == "ChecklistGoal")
-            {
-                int bonus = int.Parse(infos[3]);
-                int totalRepetition = int.Parse(infos[4]);
-                int numberRepetition = int.Parse(infos[5]);  
+                if (type == "SimpleGoal")
+                {
+                    bool completed = bool.Parse(infos[3]);
 
-                ChecklistGoal cGoal = new ChecklistGoal(type, name, description, points, bonus, totalRepetition, numberRepetition);
-                cGoal.GetStringRepresentation();
-                goals.Add(cGoal);
+                    SimpleGoal sGoal = new SimpleGoal(type, name, description, points, completed);
+                    sGoal.GetStringRepresentation();
+                    goals.Add(sGoal);
+                }
+                else if (type == "EternalGoal")
+                {
+                    EternalGoal eGoal = new EternalGoal(type, name, description, points);
+                    eGoal.GetStringRepresentation();
+                    goals.Add(eGoal);
+                }
+                else if (type == "ChecklistGoal")
+                {
+                    int bonus = int.Parse(infos[3]);
+                    int totalRepetition = int.Parse(infos[4]);
+                    int numberRepetition = int.Parse(infos[5]);  
+
+                    ChecklistGoal cGoal = new ChecklistGoal(type, name, description, points, bonus, totalRepetition, numberRepetition);
+                    cGoal.GetStringRepresentation();
+                    goals.Add(cGoal);
+                }
+                else
+                {
+                    Console.WriteLine("Invalid type. Please try again.");
+                }
             }
-            else
-            {
-                Console.WriteLine("Invalid type. Please try again.");
-            }
+
         }
         return goals;
     }
