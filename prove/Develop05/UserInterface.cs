@@ -4,6 +4,7 @@ using System.Collections.Generic;
 /* User Interface Class */
 public class UserInterface
 {
+    private List<Goal> _goals;
     public UserInterface(List<Goal> goals)
     {
         _goals = goals;
