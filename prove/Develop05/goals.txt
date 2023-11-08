@@ -1,6 +1,7 @@
-SimpleGoal:Help someone~Anyone in need~50~True
+TotalPoints:0
+SimpleGoal:Help someone~Anyone in need~50~False
 SimpleGoal:Do something nice~To Evan~50~False
 EternalGoal:Pray everyday sir~Pray often~50
-ChecklistGoal:Exercize~Twice a week~50~500~2~2
-ChecklistGoal:Jump~Each week~770~700~5~3
+ChecklistGoal:Exercize~Twice a week~50~500~2~0
+ChecklistGoal:Jump~Each week~770~700~5~0
 SimpleGoal:Go to church~On Sunday~100~False

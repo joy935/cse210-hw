@@ -66,18 +66,19 @@ class Program
                     i++;
                 }
             }
-            else if (choice == 3)
+            else if (choice == 3) // save goals
             {
                 Console.Write("What is the filename for the goal file? ");
                 string fileName = Console.ReadLine();
                 lsGoals.SaveGoal(fileName, goals);
 
             }
-            else if (choice == 4)
+            else if (choice == 4) // load goals
             {
                 Console.Write("What is the filename for the goal file? ");
                 string fileName = Console.ReadLine();
                 goals = lsGoals.LoadGoal(fileName);
+                totalPoints = lsGoals.GetTotalPoints();
             }
             else if (choice == 5)
             {
@@ -93,6 +94,7 @@ class Program
                 int goalDone = int.Parse(Console.ReadLine()) - 1;
                 int points = userInterface.UpdateGoal(goalDone, goals);
                 totalPoints += points;
+                lsGoals.SetTotalPoints(totalPoints);
             }
             else if (choice == 6)
             {

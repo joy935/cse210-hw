@@ -26,7 +26,7 @@ public class LoadSaveGoal
     {
         using (StreamWriter outputFile = new StreamWriter(fileName))
         {
-            outputFile.WriteLine($"TotalPoints: {_totalPoints}");
+            outputFile.WriteLine($"TotalPoints:{_totalPoints}");
             foreach (Goal goal in goals)
             {
                 outputFile.WriteLine(goal.GetStringRepresentation());
@@ -45,12 +45,14 @@ public class LoadSaveGoal
         foreach (string line in lines)
         {
             string [] parts = line.Split(':');
+            
             string type = parts[0];
             string details = parts[1];
             
             if (type == "TotalPoints")
             {
                 _totalPoints = int.Parse(details);
+                SetTotalPoints(_totalPoints);
             }
             else 
             {
