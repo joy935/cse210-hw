@@ -23,5 +23,4 @@ public class UserInterface
             Console.WriteLine("Invalid goal index. Please try again.");
             return 0;
         }
-    }
 }
