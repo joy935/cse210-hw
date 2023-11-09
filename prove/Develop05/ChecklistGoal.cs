@@ -28,12 +28,6 @@ public class ChecklistGoal : Goal
         _bonus = Convert.ToInt32(Console.ReadLine());
         _numberRepetition = 0;
     }
-
-    public override string GetStringRepresentation()
-    {
-        return $"ChecklistGoal:{_name}~{_description}~{_points}~{_bonus}~{_totalRepetition}~{_numberRepetition}";
-    }
-
     public override void ListGoals()
     {
         if (IsCompleted() == true)
@@ -44,6 +38,10 @@ public class ChecklistGoal : Goal
         {
             Console.WriteLine($"[ ] {_name} ({_description}) -- Currently completed: {_numberRepetition}/{_totalRepetition}");
         }
+    }
+    public override string GetStringRepresentation()
+    {
+        return $"ChecklistGoal:{_name}~{_description}~{_points}~{_bonus}~{_totalRepetition}~{_numberRepetition}";
     }
     
     public override bool IsCompleted()
