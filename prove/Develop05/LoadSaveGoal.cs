@@ -36,6 +36,10 @@ public class LoadSaveGoal
         string filePath = Path.Combine(firstPath, fileName);
     }
 
+    /* LoadGoal is a method to load the goals from a file. 
+    Parameters: fileName - the name of the file
+    Return: a list of goals
+    */
     public List<Goal> LoadGoal(string fileName)
     {
         
