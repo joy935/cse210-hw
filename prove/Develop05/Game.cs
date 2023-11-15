@@ -21,51 +21,58 @@ public class Game
     {
         if (_totalPoints >= 10000)
         {
-            Console.WriteLine("You have leveled up to Master!");
+            Console.WriteLine("You have reached a Master level!");
             return "Master";
         }
         else if (_totalPoints >= 5000)
         {
-            Console.WriteLine("You have leveled up to Expert!");
+            Console.WriteLine("You have reached an Expert level!");
             return "Expert";
         }
         else if (_totalPoints >= 2000)
         {
-            Console.WriteLine("You have leveled up to Advanced!");
+            Console.WriteLine("You have reached an Advanced level!");
             return "Advanced";
         }
         else if (_totalPoints >= 500)
         {
-            Console.WriteLine("You have leveled up to Apprentice!");
+            Console.WriteLine("You have reached an Apprentice level!");
             return "Apprentice";
         }
         else
         {
-            Console.WriteLine("You have not leveled up yet.");
+            Console.WriteLine("You have a Beginner level.");
+            return "Beginner";
         }
     }
     public void DisplayLevel()
     {
         string level = LevelUp();
         int pointsNeeded = 0;
+
         if (level == "Apprentice")
         {
-            pointsNeeded = 500 - _totalPoints;
+            pointsNeeded = 2000 - _totalPoints;
+            Console.WriteLine($"You are at {pointsNeeded} points to level up.");
         }
         else if (level == "Advanced")
         {
-            pointsNeeded = 2000 - _totalPoints;
+            pointsNeeded = 5000 - _totalPoints;
+            Console.WriteLine($"You are at {pointsNeeded} points to level up.");
         }
         else if (level == "Expert")
         {
-            pointsNeeded = 5000 - _totalPoints;
+            pointsNeeded = 10000 - _totalPoints;
+            Console.WriteLine($"You are at {pointsNeeded} points to level up.");
         }
         else if (level == "Master")
         {
-            pointsNeeded = 10000 - _totalPoints;
+            pointsNeeded = 100000 - _totalPoints; // what to do there?
         }
-        Console.WriteLine($"Your current level is: {level}.");
-        Console.WriteLine($"You are at {pointsNeeded} to level up.")
+        else
+        {
+            pointsNeeded = 500 - _totalPoints;
+            Console.WriteLine($"You are at {pointsNeeded} points to level up.");
+        }
     }
-
 }

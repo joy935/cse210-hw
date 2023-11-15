@@ -66,6 +66,7 @@ class Program
                     goal.ListGoals();
                     i++;
                 }
+                game.DisplayLevel();
             }
             else if (choice == 3) // save goals
             {
