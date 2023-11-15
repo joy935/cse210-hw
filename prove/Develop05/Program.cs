@@ -8,6 +8,7 @@ class Program
         LoadSaveGoal lsGoals = new LoadSaveGoal("filename");
         UserInterface userInterface = new UserInterface(goals);
         int totalPoints = 0;
+        Game game = new Game(totalPoints);
 
         while (true)
         {
@@ -65,6 +66,9 @@ class Program
                     goal.ListGoals();
                     i++;
                 }
+                game.SetTotalPoints(totalPoints);
+                game.LevelUp();
+
             }
             else if (choice == 3) // save goals
             {
