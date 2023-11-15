@@ -66,9 +66,6 @@ class Program
                     goal.ListGoals();
                     i++;
                 }
-                game.SetTotalPoints(totalPoints);
-                game.LevelUp();
-
             }
             else if (choice == 3) // save goals
             {
@@ -99,6 +96,8 @@ class Program
                 int points = userInterface.UpdateGoal(goalDone, goals);
                 totalPoints += points;
                 lsGoals.SetTotalPoints(totalPoints);
+                game.SetTotalPoints(totalPoints);
+                game.LevelUp();
             }
             else if (choice == 6)
             {

@@ -6,7 +6,7 @@ public class SimpleGoal : Goal
 {
 
     private bool _completed; // to store the completion status of the goal
-    
+
     // constructor to initialize the fields of the class using the base class constructor
     public SimpleGoal(string type, string name, string description, int points, bool completed) : base(type, name, description, points)
     {

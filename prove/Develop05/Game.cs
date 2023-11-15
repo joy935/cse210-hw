@@ -17,25 +17,55 @@ public class Game
     {
         _totalPoints = totalPoints;
     }
-    public void LevelUp()
+    public string LevelUp()
     {
-        if (_totalPoints >= 500)
+        if (_totalPoints >= 10000)
         {
-            _totalPoints += 250;
-            Console.WriteLine("You have leveled up to Apprentice!");
-            Console.WriteLine("You have earned 250 extra points!");
+            Console.WriteLine("You have leveled up to Master!");
+            return "Master";
+        }
+        else if (_totalPoints >= 5000)
+        {
+            Console.WriteLine("You have leveled up to Expert!");
+            return "Expert";
         }
         else if (_totalPoints >= 2000)
         {
-            _totalPoints += 500;
             Console.WriteLine("You have leveled up to Advanced!");
-            Console.WriteLine("You have earned 500 extra points!");
+            return "Advanced";
         }
-        else if (_totalPoints >= 10000)
+        else if (_totalPoints >= 500)
         {
-            _totalPoints += 1000;
-            Console.WriteLine("You have leveled up to Master!");
-            Console.WriteLine("You have earned 1000 extra points!");
+            Console.WriteLine("You have leveled up to Apprentice!");
+            return "Apprentice";
+        }
+        else
+        {
+            Console.WriteLine("You have not leveled up yet.");
         }
     }
+    public void DisplayLevel()
+    {
+        string level = LevelUp();
+        int pointsNeeded = 0;
+        if (level == "Apprentice")
+        {
+            pointsNeeded = 500 - _totalPoints;
+        }
+        else if (level == "Advanced")
+        {
+            pointsNeeded = 2000 - _totalPoints;
+        }
+        else if (level == "Expert")
+        {
+            pointsNeeded = 5000 - _totalPoints;
+        }
+        else if (level == "Master")
+        {
+            pointsNeeded = 10000 - _totalPoints;
+        }
+        Console.WriteLine($"Your current level is: {level}.");
+        Console.WriteLine($"You are at {pointsNeeded} to level up.")
+    }
+
 }
