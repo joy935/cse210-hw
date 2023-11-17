@@ -38,6 +38,7 @@ public class SimpleGoal : Goal
     representation of the goal
     It overrides the GetStringRepresentation method in the base class 
     by adding a boolean value to indicate if the goal is completed or not
+    on top of the goal type, name, description, and points attributes
     Parameters: none
     Return: string, the string representation of the goal
     */
