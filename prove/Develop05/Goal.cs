@@ -76,7 +76,7 @@ public abstract class Goal          // abstract class because some methods are n
         _points = Convert.ToInt32(Console.ReadLine());
     }
 
-    /* ListGoals is an abstract method that lists the goals
+    /* ListGoals is an abstract method that lists the goal
     It has no implementation in the base class and it must be overriden 
     in the derived classes
     Parameters: none
