@@ -5,14 +5,16 @@ class UserInterface
 {
 
     /* attribute of the class */
-    //private List<Task> _tasks; // list of tasks
+    private List<Task> _tasks; // list of tasks
 
     /* constructor of the class */
     public UserInterface() 
     {
     }
 
-    /* DisplayMenu
+    /* Menu is a method that displays the menu options.
+    Parameters: none
+    Return: none
     */
     public void Menu()
     {
@@ -25,7 +27,9 @@ class UserInterface
         Console.WriteLine("6. Quit");
     }
 
-    /* GetUserInput
+    /* GetUMenu is a method that gets the user's choice from the menu.
+    Parameters: none
+    Return: none
     */
     public void GetMenu()
     {
@@ -42,6 +46,7 @@ class UserInterface
                     break;
                 case 2:
                     Console.WriteLine("Display the to-do list");
+                    DisplayTasks(_tasks);
                     break;
                 case 3:
                     Console.WriteLine("Save the to-do list");
@@ -64,4 +69,8 @@ class UserInterface
 
     /* DisplayTasks
     */
+    public void DisplayTasks(List<Task> _tasks)
+    {
+        Console.WriteLine("To-do list");
+    }
 }
