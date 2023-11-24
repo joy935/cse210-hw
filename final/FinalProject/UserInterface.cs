@@ -76,7 +76,7 @@ class UserInterface
         Console.WriteLine("To-do list");
         foreach (Task task in _tasks)
         {
-            Console.WriteLine(task.GetTaskInfo());
+            task.DisplayTaskInfo();
         }
     }
 }
