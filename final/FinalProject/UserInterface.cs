@@ -67,10 +67,16 @@ class UserInterface
         }
     }
 
-    /* DisplayTasks
+    /* DisplayTasks is a method that displays the tasks in a list format.
+    Parameters: List<Task> _tasks, the list of tasks
+    Return: none
     */
     public void DisplayTasks(List<Task> _tasks)
     {
         Console.WriteLine("To-do list");
+        foreach (Task task in _tasks)
+        {
+            Console.WriteLine(task.GetTaskInfo());
+        }
     }
 }

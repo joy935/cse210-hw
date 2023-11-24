@@ -47,6 +47,10 @@ public abstract class Task
     */
     public abstract string GetTaskInfo();
 
+    /* DisplayTaskInfo ...
+    */
+    public abstract void DisplayTaskInfo();
+
     /* MarkComplete ...
     */
     public abstract bool MarkComplete();

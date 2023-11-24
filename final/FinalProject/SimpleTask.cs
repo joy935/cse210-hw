@@ -23,6 +23,13 @@ public class SimpleTask : Task
         }
     }
 
+    /* DisplayTaskInfo ...
+    */
+    public override void DisplayTaskInfo()
+    {
+        Console.WriteLine($"{_taskDescription}");
+    }
+
     /* MarkComplete ...
     */
     public override bool MarkComplete()
