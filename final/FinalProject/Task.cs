@@ -45,7 +45,7 @@ public class Task // add either virtual or abstract
 
     /* GetTaskInfo ...
     */
-    public abstract void GetTaskInfo();
+    public abstract string GetTaskInfo();
 
     /* MarkComplete ...
     */
