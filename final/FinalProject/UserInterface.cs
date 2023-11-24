@@ -6,11 +6,12 @@ class UserInterface
 
     /* attribute of the class */
     // list of tasks ???
+    List<Task> _tasks; // where to put this? in the constructor?
 
-    List<Task> tasks = new List<Task>(); // where to put this? in the constructor?
     /* constructor of the class */
-    public UserInterface() 
+    public UserInterface(List<Task> tasks)
     {
+        _tasks = tasks;
     }
 
     /* Menu is a method that displays the menu options.
@@ -19,7 +20,7 @@ class UserInterface
     */
     public void Menu()
     {
-        Console.WriteLine("Menu:");
+        Console.WriteLine("\nMenu:");
         Console.WriteLine("1. Create a new task");
         Console.WriteLine("2. Display the to-do list");
         Console.WriteLine("3. Save the to-do list");
@@ -69,15 +70,15 @@ class UserInterface
     }
 
     /* DisplayTasks is a method that displays the tasks in a list format.
-    Parameters: List<Task> _tasks, the list of tasks
+    Parameters: None
     Return: none
     */
     public void DisplayTasks()
     {
         Console.WriteLine("To-do list");
-        foreach (Task task in tasks)
+        foreach (Task task in _tasks)   // for each task in the list of tasks
         {
-            task.DisplayTaskInfo();
+            task.DisplayTaskInfo();     // display the task info
         }
     }
 }
