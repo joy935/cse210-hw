@@ -5,8 +5,9 @@ class UserInterface
 {
 
     /* attribute of the class */
-    private List<Task> _tasks; // list of tasks
+    // list of tasks ???
 
+    List<Task> tasks = new List<Task>(); // where to put this? in the constructor?
     /* constructor of the class */
     public UserInterface() 
     {
@@ -46,7 +47,7 @@ class UserInterface
                     break;
                 case 2:
                     Console.WriteLine("Display the to-do list");
-                    DisplayTasks(_tasks);
+                    DisplayTasks();
                     break;
                 case 3:
                     Console.WriteLine("Save the to-do list");
@@ -71,10 +72,10 @@ class UserInterface
     Parameters: List<Task> _tasks, the list of tasks
     Return: none
     */
-    public void DisplayTasks(List<Task> _tasks)
+    public void DisplayTasks()
     {
         Console.WriteLine("To-do list");
-        foreach (Task task in _tasks)
+        foreach (Task task in tasks)
         {
             task.DisplayTaskInfo();
         }
