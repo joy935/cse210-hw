@@ -1,7 +1,7 @@
 using System;
 
 /* Task Base Class */
-public class Task // add either virtual or abstract
+public abstract class Task
 { 
 
     /* attributes of the class */
