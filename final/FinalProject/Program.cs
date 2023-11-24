@@ -7,6 +7,6 @@ class Program
         List<Task> tasks = new List<Task>();
         UserInterface userInterface = new UserInterface();
 
-        userInterface.GetUserInput();
+        userInterface.GetMenu();
     }
 }

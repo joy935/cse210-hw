@@ -14,7 +14,7 @@ class UserInterface
 
     /* DisplayMenu
     */
-    public void DisplayMenu()
+    public void Menu()
     {
         Console.WriteLine("Menu:");
         Console.WriteLine("1. Create a new task");
@@ -27,12 +27,12 @@ class UserInterface
 
     /* GetUserInput
     */
-    public void GetUserInput()
+    public void GetMenu()
     {
         int choice = 0;
         while (choice != 6)
         {
-            DisplayMenu();
+            Menu();
             Console.Write("Enter your choice: ");
             choice = Convert.ToInt32(Console.ReadLine());
             switch (choice)
