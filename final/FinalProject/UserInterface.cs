@@ -1,7 +1,8 @@
 using System;
 
 /* User Interface Class */
-class UserInterface {
+class UserInterface 
+{
 
     /* attribute of the class */
     private List<Task> _tasks; // list of tasks
