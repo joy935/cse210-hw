@@ -7,7 +7,11 @@ class UserInterface {
     private List<Task> _tasks; // list of tasks
 
     /* constructor of the class */
-    public UserInterface() {
-        _tasks = new List<Task>();
+    public UserInterface(List<Task> tasks) 
+    {
+        _tasks = tasks;
     }
+
+    /* 
+    */
 }
