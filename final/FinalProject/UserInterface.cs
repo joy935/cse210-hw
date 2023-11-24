@@ -5,8 +5,7 @@ class UserInterface
 {
 
     /* attribute of the class */
-    // list of tasks ???
-    List<Task> _tasks; // where to put this? in the constructor?
+    List<Task> _tasks; // list of tasks
 
     /* constructor of the class */
     public UserInterface(List<Task> tasks)
