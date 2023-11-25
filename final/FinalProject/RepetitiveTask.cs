@@ -18,4 +18,39 @@ public class RepetitiveTask : Task
         _totalRepetition = totalRepetition;
     }
 
+    /* Getters and setters for the attributes of the class */
+    public int GetFrequencyRepetition()
+    {
+        return _frequencyRepetition;
+    }
+    public void SetFrequencyRepetition(int frequencyRepetition)
+    {
+        _frequencyRepetition = frequencyRepetition;
+    }
+    public DateTime GetDueDate()
+    {
+        return _dueDate;
+    }
+    public void SetDueDate(DateTime dueDate)
+    {
+        _dueDate = dueDate;
+    }
+    public int GetNumberRepetition()
+    {
+        return _numberRepetition;
+    }
+    public void SetNumberRepetition(int numberRepetition)
+    {
+        _numberRepetition = numberRepetition;
+    }
+    public int GetTotalRepetition()
+    {
+        return _totalRepetition;
+    }
+    public void SetTotalRepetition(int totalRepetition)
+    {
+        _totalRepetition = totalRepetition;
+    }
+
+    
 }
