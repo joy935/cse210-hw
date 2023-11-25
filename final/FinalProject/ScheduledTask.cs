@@ -24,5 +24,30 @@ public class ScheduledTask : Task
 
     /* GetTaskInfo ...
     */
+    public override string GetTaskInfo()
+    {
+        if (_isCompleted == true)
+        {
+            return $"ScheduledTask:{_taskDescription}~{_dueDate}~True";
+        }
+        else
+        {
+            return $"ScheduledTask:{_taskDescription}~{_dueDate}~False";
+        }
+    }
+
+    /* DisplayTaskInfo ...
+    */
+    public override void DisplayTaskInfo()
+    {
+
+    }
+
+    /* MarkComplete ...
+    */
+    public override bool MarkComplete()
+    {
+
+    }
 
 }
