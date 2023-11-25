@@ -52,5 +52,17 @@ public class RepetitiveTask : Task
         _totalRepetition = totalRepetition;
     }
 
-    
+    /* GetTaskInfo ...
+    */
+    public override string GetTaskInfo()
+    {
+        if (_isCompleted == true)
+        {
+            return $"RepetitiveTask:{_taskDescription}~{_frequencyRepetition}~{_dueDate}~{_numberRepetition}~{_totalRepetition}~True";
+        }
+        else
+        {
+            return $"RepetitiveTask:{_taskDescription}~{_frequencyRepetition}~{_dueDate}~{_numberRepetition}~{_totalRepetition}~False";
+        }
+    }
 }
