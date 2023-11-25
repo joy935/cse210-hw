@@ -29,12 +29,4 @@ public class SimpleTask : Task
     {
         Console.WriteLine($"{_taskDescription}");
     }
-
-    /* MarkComplete ...
-    */
-    public override bool MarkComplete()
-    {
-        _isCompleted = true;
-        return _isCompleted;
-    }
 }

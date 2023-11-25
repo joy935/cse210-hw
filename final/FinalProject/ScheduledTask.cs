@@ -42,13 +42,4 @@ public class ScheduledTask : Task
     {
         Console.WriteLine($"{_taskDescription} - Due: {_dueDate}");
     }
-
-    /* MarkComplete ...
-    */
-    public override bool MarkComplete()
-    {
-        _isCompleted = true;
-        return _isCompleted;
-    }
-
 }

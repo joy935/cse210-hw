@@ -53,5 +53,9 @@ public abstract class Task
 
     /* MarkComplete ...
     */
-    public abstract bool MarkComplete();
+    public virtual bool MarkComplete()
+    {
+        _isCompleted = true;
+        return _isCompleted;
+    }
 }
