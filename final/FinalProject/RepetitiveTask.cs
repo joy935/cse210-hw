@@ -65,4 +65,11 @@ public class RepetitiveTask : Task
             return $"RepetitiveTask:{_taskDescription}~{_frequencyRepetition}~{_dueDate}~{_numberRepetition}~{_totalRepetition}~False";
         }
     }
+
+    /* DisplayTaskInfo ...
+    */
+    public override void DisplayTaskInfo()
+    {
+        Console.WriteLine($"{_taskDescription} - Due: {_dueDate} (Repetition: {_numberRepetition}/{_totalRepetition})");
+    }
 }
