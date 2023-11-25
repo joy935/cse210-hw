@@ -5,7 +5,7 @@ class UserInterface
 {
 
     /* attribute of the class */
-    List<Task> _tasks; // list of tasks
+    private List<Task> _tasks; // list of tasks
 
     /* constructor of the class */
     public UserInterface(List<Task> tasks)
