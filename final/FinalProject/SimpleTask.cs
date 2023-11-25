@@ -6,7 +6,7 @@ public class SimpleTask : Task
     // no attributes
 
     /* constructor of the class */
-    public SimpleTask(string taskDescription, bool isCompleted) : base(taskDescription, isCompleted)
+    public SimpleTask(string type, string taskDescription, bool isCompleted) : base(type, taskDescription, isCompleted)
     {}
 
     /* GetTaskInfo ...
