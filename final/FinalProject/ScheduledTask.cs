@@ -47,7 +47,8 @@ public class ScheduledTask : Task
     */
     public override bool MarkComplete()
     {
-
+        _isCompleted = true;
+        return _isCompleted;
     }
 
 }
