@@ -40,7 +40,7 @@ public class ScheduledTask : Task
     */
     public override void DisplayTaskInfo()
     {
-
+        Console.WriteLine($"{_taskDescription} - Due: {_dueDate}");
     }
 
     /* MarkComplete ...
