@@ -11,4 +11,18 @@ public class ScheduledTask : Task
     {
         _dueDate = dueDate;
     }
+
+    /* Getters and setters for the attributes of the class */
+    public DateTime GetDueDate()
+    {
+        return _dueDate;
+    }
+    public void SetDueDate(DateTime dueDate)
+    {
+        _dueDate = dueDate;
+    }
+
+    /* GetTaskInfo ...
+    */
+    
 }
