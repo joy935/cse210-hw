@@ -7,7 +7,7 @@ public class ScheduledTask : Task
     private DateTime _dueDate; // due date of the task
 
     /* constructor of the class */
-    public ScheduledTask(string type, string taskDescription, bool isCompleted, DateTime dueDate) : base(type, taskDescription, isCompleted)
+    public ScheduledTask(string taskType, string taskDescription, bool isCompleted, DateTime dueDate) : base(taskType, taskDescription, isCompleted)
     {
         _dueDate = dueDate;
     }
