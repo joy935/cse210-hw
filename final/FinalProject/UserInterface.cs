@@ -50,6 +50,7 @@ class UserInterface
                     taskManager.AddTask();
                     break;
                 case 2: // tested : add numerotation to the tasks, display from a file
+                    _tasks = taskManager.GetTasks(); // update the list of tasks
                     DisplayTasks();
                     break;
                 case 3:  // tested : ok
@@ -57,7 +58,9 @@ class UserInterface
                     Console.WriteLine("To-Do list saved.");
                     break;
                 case 4: // tested : not ok - can't display the list from a file
-                    taskManager.LoadTasks("filename", _tasks);
+                    Console.Write("What is the filename? ");
+                    string filename = Console.ReadLine();
+                    _tasks = taskManager.LoadTasks(filename); // update the list of tasks
                     Console.WriteLine("To-Do list loaded.");
                     break;
                 case 5:
@@ -79,9 +82,6 @@ class UserInterface
     */
     public void DisplayTasks()
     {
-        // FileHandler fileHandler = new FileHandler("task.txt", _tasks);
-        // fileHandler.LoadFromFile("todo.txt");
-        // _tasks = fileHandler.GetTasks();
         Console.WriteLine("To-do list: ");
         foreach (Task task in _tasks)   // for each task in the list of tasks
         {
