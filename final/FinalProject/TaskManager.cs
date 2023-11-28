@@ -6,6 +6,7 @@ public class TaskManager
     /* attributes of the class */
     private string _fileName;   // name of the file
     private List<Task> _tasks;  // list of tasks
+    private FileHandler _fileHandler; // file handler
 
     /* constructor of the class */
     public TaskManager(string fileName, List<Task> tasks)
@@ -93,10 +94,7 @@ public class TaskManager
     /* DisplayTasks ...
     */
     public void DisplayTasks()
-    {
-        // UserInterface userInterface = new UserInterface(_tasks);
-        // userInterface.DisplayTasks();
-        
+    {   
         foreach (Task task in _tasks)
         {
             Console.WriteLine(task.GetTaskInfo());
@@ -109,19 +107,19 @@ public class TaskManager
     {
         Console.Write("What is the filename? ");
         string fileName = Console.ReadLine();
-        FileHandler fileHandler = new FileHandler(fileName, _tasks);
-        fileHandler.SaveToFile(fileName, _tasks);
+        _fileHandler = new FileHandler(fileName, _tasks);
+        _fileHandler.SaveToFile(fileName, _tasks);
     }
 
     /* LoadTasks ...
     */
     public void LoadTasks()
     {
+        _fileHandler = new FileHandler(_fileName, _tasks);
         Console.Write("What is the filename? ");
         string fileName = Console.ReadLine();
-        FileHandler fileHandler = new FileHandler(fileName, _tasks);
-        fileHandler.LoadFromFile(fileName);
-        _tasks = fileHandler.GetTasks();
+        _fileHandler.LoadFromFile(fileName);
+        _tasks = _fileHandler.GetTasks();
     }
 
     /* SortTasks ...
