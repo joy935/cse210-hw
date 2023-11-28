@@ -40,19 +40,20 @@ class UserInterface
             Menu();
             Console.Write("Enter your choice: ");
             choice = Convert.ToInt32(Console.ReadLine());
+
+            TaskManager taskManager = new TaskManager("tasks.txt", _tasks);
+
             switch (choice)
             {
                 case 1: // tested : ok
-                    Console.WriteLine("Create a new task");
-                    TaskManager taskManager = new TaskManager("tasks.txt", _tasks);
                     taskManager.AddTask();
                     break;
-                case 2: // tested : remove the time from the due date
-                    Console.WriteLine("Display the to-do list");
+                case 2: // tested : remove the time from the due date and add numerotation to the tasks
                     DisplayTasks();
                     break;
                 case 3: 
                     Console.WriteLine("Save the to-do list");
+                    taskManager.SaveTasks();
                     break;
                 case 4:
                     Console.WriteLine("Load a to-do list");
