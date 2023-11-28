@@ -56,7 +56,7 @@ class UserInterface
                     taskManager.SaveTasks();
                     Console.WriteLine("To-Do list saved.");
                     break;
-                case 4: // tested : not ok
+                case 4: // tested : not ok - can't display the list from a file
                     taskManager.LoadTasks();
                     Console.WriteLine("To-Do list loaded.");
                     break;
