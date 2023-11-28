@@ -93,10 +93,8 @@ public class TaskManager
     */
     public void DisplayTasks()
     {
-        foreach (Task task in _tasks)
-        {
-            task.DisplayTaskInfo();
-        }
+        UserInterface userInterface = new UserInterface(_tasks);
+        userInterface.DisplayTasks();
     }
 
     /* SaveTasks ...
