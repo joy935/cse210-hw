@@ -48,14 +48,14 @@ class UserInterface
                 case 1: // tested : ok
                     taskManager.AddTask();
                     break;
-                case 2: // tested : remove the time from the due date and add numerotation to the tasks
+                case 2: // tested : add numerotation to the tasks, display from a file
                     DisplayTasks();
                     break;
-                case 3: 
+                case 3:  // tested : ok
                     taskManager.SaveTasks();
                     Console.WriteLine("To-Do list saved.");
                     break;
-                case 4:
+                case 4: // tested : ok
                     taskManager.LoadTasks();
                     Console.WriteLine("Loading To-Do list...");
                     break;
@@ -78,7 +78,7 @@ class UserInterface
     */
     public void DisplayTasks()
     {
-        Console.WriteLine("To-do list");
+        Console.WriteLine("To-do list: ");
         foreach (Task task in _tasks)   // for each task in the list of tasks
         {
             task.DisplayTaskInfo();     // display the task info
