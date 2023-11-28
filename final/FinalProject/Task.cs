@@ -43,15 +43,25 @@ public abstract class Task
         _isCompleted = isCompleted;
     }
 
-    /* GetTaskInfo ...
+    /* methods of the class */
+    /* GetTaskInfo is an abstract method that returns the task info
+    in a specific format to be saved later in a file.
+    It is implemented in the derived classes.
+    Parameters: none
+    Return: string
     */
     public abstract string GetTaskInfo();
 
-    /* DisplayTaskInfo ...
+    /* DisplayTaskInfo is an abstract method that displays the task info.
+    It is implemented in the derived classes.
+    Parameters: none
+    Return: none
     */
     public abstract void DisplayTaskInfo();
 
-    /* MarkComplete ...
+    /* MarkComplete is a method that marks the task as complete.
+    Parameters: none
+    Return: bool
     */
     public virtual bool MarkComplete()
     {
