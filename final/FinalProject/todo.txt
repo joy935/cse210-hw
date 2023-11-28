@@ -1,3 +1,5 @@
 SimpleTask:Get a cake~False
 ScheduledTask:Pick up decor~11/30/2023~False
 RepetitiveTask:Go to Baden~weekly~12/2/2023~0~3~False
+SimpleTask:Buy a shirt~False
+ScheduledTask:Clean the car~12/17/2023~False
