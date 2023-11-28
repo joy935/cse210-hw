@@ -36,9 +36,27 @@ public class TaskManager
     */
     public void AddTask()
     {
-        foreach (Task task in _tasks)
+        Console.WriteLine("The type of taks are:");
+        Console.WriteLine("1. Simple Task");
+        Console.WriteLine("2. Scheduled Task");
+        Console.WriteLine("3. Repetitive Task");
+        Console.WriteLine("Which type of task would you like to create? ");
+        int taskType = Convert.ToInt32(Console.ReadLine());
+        
+        switch (taskType)
         {
-            /// add task to list
+            case 1:
+                SimpleTask simpleTask = new SimpleTask("SimpleTask", "description", false);
+                break;
+            case 2:
+                ScheduledTask scheduledTask = new ScheduledTask("ScheduleTask", "description", false, 11/11/24);
+                break;
+            case 3:
+                RepetitiveTask repetitiveTask = new RepetitiveTask("RepetitiveTask", "description", false, "daily", 12/12/24, 2, 4);
+                break;
+            default:
+                Console.WriteLine("Invalid choice");
+                break;
         }
     }
 
@@ -58,23 +76,23 @@ public class TaskManager
 
     /* SaveTasks ...
     */
-    public void SaveTasks()
-    {
-        Console.WriteLine("What is the filename? ");
-        string fileName = Console.ReadLine();
-        FileHandler fileHandler = new FileHandler(fileName, List<Task> tasks);
-        fileHandler.SaveToFile(fileName, _tasks);
-    }
+    // public void SaveTasks()
+    // {
+    //     Console.WriteLine("What is the filename? ");
+    //     string fileName = Console.ReadLine();
+    //     FileHandler fileHandler = new FileHandler(fileName, List<Task> tasks);
+    //     fileHandler.SaveToFile(fileName, _tasks);
+    // }
 
     /* LoadTasks ...
     */
-    public void LoadTasks()
-    {
-        Console.WriteLine("What is the filename? ");
-        string fileName = Console.ReadLine();
-        FileHandler fileHandler = new FileHandler(fileName, List<Task> tasks);
-        fileHandler.LoadFromFile(fileName);
-    }
+    // public void LoadTasks()
+    // {
+    //     Console.WriteLine("What is the filename? ");
+    //     string fileName = Console.ReadLine();
+    //     FileHandler fileHandler = new FileHandler(fileName, List<Task> tasks);
+    //     fileHandler.LoadFromFile(fileName);
+    // }
 
     /* SortTasks ...
     */
