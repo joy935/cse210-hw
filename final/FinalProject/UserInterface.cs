@@ -42,14 +42,16 @@ class UserInterface
             choice = Convert.ToInt32(Console.ReadLine());
             switch (choice)
             {
-                case 1:
+                case 1: // tested : ok
                     Console.WriteLine("Create a new task");
+                    TaskManager taskManager = new TaskManager("tasks.txt", _tasks);
+                    taskManager.AddTask();
                     break;
-                case 2:
+                case 2: // tested : remove the time from the due date
                     Console.WriteLine("Display the to-do list");
                     DisplayTasks();
                     break;
-                case 3:
+                case 3: 
                     Console.WriteLine("Save the to-do list");
                     break;
                 case 4:
