@@ -38,10 +38,13 @@ class UserInterface
         int choice = 0;
         while (choice != 6)
         {
+            // display the menu
             Menu();
+            // get the user's choice and convert it to an integer
             Console.Write("Enter your choice: ");
             choice = Convert.ToInt32(Console.ReadLine());
 
+            // create a task manager object
             TaskManager taskManager = new TaskManager("tasks.txt", _tasks);
 
             switch (choice)
@@ -63,7 +66,7 @@ class UserInterface
                     _tasks = taskManager.LoadTasks(filename); // update the list of tasks
                     Console.WriteLine("To-Do list loaded.");
                     break;
-                case 5: // tested : ____
+                case 5: // to be tested
                     Console.WriteLine("Complete a task");
                     break;
                 case 6: // tested : ok

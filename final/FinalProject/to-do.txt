@@ -1,2 +1,0 @@
-ScheduledTask:Get a cake~11/29/23~False
-RepetitiveTask:Go to Zurich~weekly~12/2/23~0~5~False
