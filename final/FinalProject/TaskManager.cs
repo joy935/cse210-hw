@@ -101,13 +101,13 @@ public class TaskManager
 
     /* SaveTasks ...
     */
-    // public void SaveTasks()
-    // {
-    //     Console.WriteLine("What is the filename? ");
-    //     string fileName = Console.ReadLine();
-    //     FileHandler fileHandler = new FileHandler(fileName, List<Task> tasks);
-    //     fileHandler.SaveToFile(fileName, _tasks);
-    // }
+    public void SaveTasks()
+    {
+        Console.Write("What is the filename? ");
+        string fileName = Console.ReadLine();
+        FileHandler fileHandler = new FileHandler(fileName, _tasks);
+        fileHandler.SaveToFile(fileName, _tasks);
+    }
 
     /* LoadTasks ...
     */
