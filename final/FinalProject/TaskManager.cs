@@ -32,5 +32,56 @@ public class TaskManager
         _tasks = tasks;
     }
 
+    /* AddTask ...
+    */
+    public void AddTask()
+    {
+        foreach (Task task in _tasks)
+        {
+            /// add task to list
+        }
+    }
+
+    /* RemoveTask ...
+    */
     
+
+    /* DisplayTasks ...
+    */
+    public void DisplayTasks()
+    {
+        foreach (Task task in _tasks)
+        {
+            task.DisplayTaskInfo();
+        }
+    }
+
+    /* SaveTasks ...
+    */
+    public void SaveTasks()
+    {
+        Console.WriteLine("What is the filename? ");
+        string fileName = Console.ReadLine();
+        FileHandler fileHandler = new FileHandler(fileName, List<Task> tasks);
+        fileHandler.SaveToFile(fileName, _tasks);
+    }
+
+    /* LoadTasks ...
+    */
+    public void LoadTasks()
+    {
+        Console.WriteLine("What is the filename? ");
+        string fileName = Console.ReadLine();
+        FileHandler fileHandler = new FileHandler(fileName, List<Task> tasks);
+        fileHandler.LoadFromFile(fileName);
+    }
+
+    /* SortTasks ...
+    */
+
+    /* OverDueTasks ...
+    */
+
+    /* CompleteTask ...
+    */
 }
