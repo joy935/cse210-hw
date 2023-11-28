@@ -63,7 +63,7 @@ class UserInterface
                     _tasks = taskManager.LoadTasks(filename); // update the list of tasks
                     Console.WriteLine("To-Do list loaded.");
                     break;
-                case 5:
+                case 5: // tested : ____
                     Console.WriteLine("Complete a task");
                     break;
                 case 6: // tested : ok
