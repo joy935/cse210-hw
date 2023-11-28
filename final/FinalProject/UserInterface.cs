@@ -49,7 +49,7 @@ class UserInterface
                 case 1: // tested : ok
                     taskManager.AddTask();
                     break;
-                case 2: // tested : add numerotation to the tasks, display from a file
+                case 2: // tested : add numerotation to the tasks
                     _tasks = taskManager.GetTasks(); // update the list of tasks
                     DisplayTasks();
                     break;
@@ -57,7 +57,7 @@ class UserInterface
                     taskManager.SaveTasks();
                     Console.WriteLine("To-Do list saved.");
                     break;
-                case 4: // tested : not ok - can't display the list from a file
+                case 4: // tested : ok
                     Console.Write("What is the filename? ");
                     string filename = Console.ReadLine();
                     _tasks = taskManager.LoadTasks(filename); // update the list of tasks
@@ -66,7 +66,7 @@ class UserInterface
                 case 5:
                     Console.WriteLine("Complete a task");
                     break;
-                case 6:
+                case 6: // tested : ok
                     Console.WriteLine("Quit");
                     break;
                 default:
