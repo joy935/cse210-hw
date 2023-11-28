@@ -78,7 +78,7 @@ public class FileHandler
             else if (taskType == "RepetitiveTask")
             {
                 DateTime dueDate = Convert.ToDateTime(infos[1]);
-                int frequencyRepetition = int.Parse(infos[2]);
+                string frequencyRepetition = infos[2];
                 int numberRepetition = int.Parse(infos[3]);
                 int totalRepetition = int.Parse(infos[4]);
                 bool isCompleted = bool.Parse(infos[5]);
