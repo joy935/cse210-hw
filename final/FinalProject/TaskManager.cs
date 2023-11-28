@@ -110,12 +110,10 @@ public class TaskManager
 
     /* LoadTasks ...
     */
-    public void LoadTasks(string filename, List<Task> tasks)
+    public List<Task> LoadTasks(string filename)
     {
-        _fileHandler = new FileHandler(filename, tasks);
-        Console.Write("What is the filename? ");
-        string fileName = Console.ReadLine();
-        _fileHandler.LoadFromFile(fileName);
+        _fileHandler = new FileHandler(filename, _tasks);
+        return _fileHandler.LoadFromFile(filename);
     }
 
     /* RemoveTask ...???
