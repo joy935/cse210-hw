@@ -4,20 +4,20 @@ using System;
 public class ScheduledTask : Task
 {
     /* attributes of the class */
-    private DateTime _dueDate; // due date of the task
+    private DateOnly _dueDate; // due date of the task
 
     /* constructor of the class */
-    public ScheduledTask(string taskType, string taskDescription, bool isCompleted, DateTime dueDate) : base(taskType, taskDescription, isCompleted)
+    public ScheduledTask(string taskType, string taskDescription, bool isCompleted, DateOnly dueDate) : base(taskType, taskDescription, isCompleted)
     {
         _dueDate = dueDate;
     }
 
     /* Getters and setters for the attributes of the class */
-    public DateTime GetDueDate()
+    public DateOnly GetDueDate()
     {
         return _dueDate;
     }
-    public void SetDueDate(DateTime dueDate)
+    public void SetDueDate(DateOnly dueDate)
     {
         _dueDate = dueDate;
     }

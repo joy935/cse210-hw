@@ -70,14 +70,14 @@ public class FileHandler
             }
             else if (taskType == "ScheduledTask")
             {
-                DateTime dueDate = Convert.ToDateTime(infos[1]);
+                DateOnly dueDate = DateOnly.Parse(infos[1]);
                 bool isCompleted = bool.Parse(infos[2]);
                 ScheduledTask scheduledTask = new ScheduledTask("ScheduledTask", taskDescription, isCompleted, dueDate);
                 tasks.Add(scheduledTask);
             }
             else if (taskType == "RepetitiveTask")
             {
-                DateTime dueDate = Convert.ToDateTime(infos[1]);
+                DateOnly dueDate = DateOnly.Parse(infos[1]);
                 string frequencyRepetition = infos[2];
                 int numberRepetition = int.Parse(infos[3]);
                 int totalRepetition = int.Parse(infos[4]);

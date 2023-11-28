@@ -53,17 +53,17 @@ public class TaskManager
                 _tasks.Add(simpleTask);
                 break;
             case 2:
-                ScheduledTask scheduledTask = new ScheduledTask("ScheduleTask", "description", false, DateTime.Parse("11/11/24"));
+                ScheduledTask scheduledTask = new ScheduledTask("ScheduleTask", "description", false, DateOnly.Parse("11/11/24"));
                 Console.Write("What is the description of the task? ");
                 string taskDescription2 = Console.ReadLine();
                 scheduledTask.SetTaskDescription(taskDescription2);
                 Console.Write("What is the due date of the task (MM/DD/YY)? ");
-                DateTime dueDate = DateTime.Parse(Console.ReadLine());
+                DateOnly dueDate = DateOnly.Parse(Console.ReadLine());
                 scheduledTask.SetDueDate(dueDate);
                 _tasks.Add(scheduledTask);
                 break;
             case 3:
-                RepetitiveTask repetitiveTask = new RepetitiveTask("RepetitiveTask", "description", false, "daily", DateTime.Parse("12/12/24"), 2, 4);
+                RepetitiveTask repetitiveTask = new RepetitiveTask("RepetitiveTask", "description", false, "daily", DateOnly.Parse("12/12/24"), 2, 4);
                 Console.Write("What is the description of the task? ");
                 string taskDescription3 = Console.ReadLine();
                 repetitiveTask.SetTaskDescription(taskDescription3);
@@ -71,7 +71,7 @@ public class TaskManager
                 string frequencyRepetition = Console.ReadLine();
                 repetitiveTask.SetFrequencyRepetition(frequencyRepetition);
                 Console.Write("What is the due date of the task (MM/DD/YY)? ");
-                DateTime dueDate2 = DateTime.Parse(Console.ReadLine());
+                DateOnly dueDate2 = DateOnly.Parse(Console.ReadLine());
                 repetitiveTask.SetDueDate(dueDate2);
                 Console.Write("How many times has the task been repeated? ");
                 int totalRepetition = Convert.ToInt32(Console.ReadLine());
@@ -111,13 +111,13 @@ public class TaskManager
 
     /* LoadTasks ...
     */
-    // public void LoadTasks()
-    // {
-    //     Console.WriteLine("What is the filename? ");
-    //     string fileName = Console.ReadLine();
-    //     FileHandler fileHandler = new FileHandler(fileName, List<Task> tasks);
-    //     fileHandler.LoadFromFile(fileName);
-    // }
+    public void LoadTasks()
+    {
+        Console.Write("What is the filename? ");
+        string fileName = Console.ReadLine();
+        FileHandler fileHandler = new FileHandler(fileName, _tasks);
+        fileHandler.LoadFromFile(fileName);
+    }
 
     /* SortTasks ...
     */

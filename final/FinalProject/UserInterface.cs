@@ -52,11 +52,12 @@ class UserInterface
                     DisplayTasks();
                     break;
                 case 3: 
-                    Console.WriteLine("Save the to-do list");
                     taskManager.SaveTasks();
+                    Console.WriteLine("To-Do list saved.");
                     break;
                 case 4:
-                    Console.WriteLine("Load a to-do list");
+                    taskManager.LoadTasks();
+                    Console.WriteLine("Loading To-Do list...");
                     break;
                 case 5:
                     Console.WriteLine("Complete a task");

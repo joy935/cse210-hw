@@ -1,1 +1,2 @@
-SimpleTask:Go to the market~False
+ScheduledTask:Get a cake~11/29/2023~False
+RepetitiveTask:Go to Zurich~weekly~12/2/2023~0~5~False
