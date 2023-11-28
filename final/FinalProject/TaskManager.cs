@@ -87,10 +87,6 @@ public class TaskManager
         }
     }
 
-    /* RemoveTask ...
-    */
-    
-
     /* DisplayTasks ...
     */
     public void DisplayTasks()
@@ -114,14 +110,16 @@ public class TaskManager
 
     /* LoadTasks ...
     */
-    public void LoadTasks()
+    public void LoadTasks(string filename, List<Task> tasks)
     {
-        _fileHandler = new FileHandler(_fileName, _tasks);
+        _fileHandler = new FileHandler(filename, tasks);
         Console.Write("What is the filename? ");
         string fileName = Console.ReadLine();
         _fileHandler.LoadFromFile(fileName);
-        _tasks = _fileHandler.GetTasks();
     }
+
+    /* RemoveTask ...???
+    */
 
     /* SortTasks ...
     */
