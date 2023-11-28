@@ -36,44 +36,44 @@ public class TaskManager
     */
     public void AddTask()
     {
-        Console.WriteLine("The type of taks are:");
+        Console.WriteLine("\nThe type of taks are:");
         Console.WriteLine("1. Simple Task");
         Console.WriteLine("2. Scheduled Task");
         Console.WriteLine("3. Repetitive Task");
-        Console.WriteLine("Which type of task would you like to create? ");
+        Console.Write("Which type of task would you like to create? ");
         int taskType = Convert.ToInt32(Console.ReadLine());
         
         switch (taskType)
         {
             case 1:
                 SimpleTask simpleTask = new SimpleTask("SimpleTask", "description", false);
-                Console.WriteLine("What is the description of the task? ");
+                Console.Write("What is the description of the task? ");
                 string taskDescription = Console.ReadLine();
                 simpleTask.SetTaskDescription(taskDescription);
                 _tasks.Add(simpleTask);
                 break;
             case 2:
                 ScheduledTask scheduledTask = new ScheduledTask("ScheduleTask", "description", false, DateTime.Parse("11/11/24"));
-                Console.WriteLine("What is the description of the task? ");
+                Console.Write("What is the description of the task? ");
                 string taskDescription2 = Console.ReadLine();
                 scheduledTask.SetTaskDescription(taskDescription2);
-                Console.WriteLine("What is the due date of the task (MM/DD/YY)? ");
+                Console.Write("What is the due date of the task (MM/DD/YY)? ");
                 DateTime dueDate = DateTime.Parse(Console.ReadLine());
                 scheduledTask.SetDueDate(dueDate);
                 _tasks.Add(scheduledTask);
                 break;
             case 3:
                 RepetitiveTask repetitiveTask = new RepetitiveTask("RepetitiveTask", "description", false, "daily", DateTime.Parse("12/12/24"), 2, 4);
-                Console.WriteLine("What is the description of the task? ");
+                Console.Write("What is the description of the task? ");
                 string taskDescription3 = Console.ReadLine();
                 repetitiveTask.SetTaskDescription(taskDescription3);
-                Console.WriteLine("What is the frequency of the task? ");
+                Console.Write("What is the frequency of the task? ");
                 string frequencyRepetition = Console.ReadLine();
                 repetitiveTask.SetFrequencyRepetition(frequencyRepetition);
-                Console.WriteLine("What is the due date of the task (MM/DD/YY)? ");
+                Console.Write("What is the due date of the task (MM/DD/YY)? ");
                 DateTime dueDate2 = DateTime.Parse(Console.ReadLine());
                 repetitiveTask.SetDueDate(dueDate2);
-                Console.WriteLine("How many times has the task been repeated? ");
+                Console.Write("How many times has the task been repeated? ");
                 int totalRepetition = Convert.ToInt32(Console.ReadLine());
                 repetitiveTask.SetTotalRepetition(totalRepetition);
                 repetitiveTask.SetNumberRepetition(0);
