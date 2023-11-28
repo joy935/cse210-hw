@@ -9,6 +9,7 @@ public class SimpleTask : Task
     public SimpleTask(string taskType, string taskDescription, bool isCompleted) : base(taskType, taskDescription, isCompleted)
     {}
 
+    /* methods of the class */
     /* GetTaskInfo ...
     */
     public override string GetTaskInfo()

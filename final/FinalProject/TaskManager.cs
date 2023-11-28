@@ -32,6 +32,7 @@ public class TaskManager
         _tasks = tasks;
     }
 
+    /* methods of the class */
     /* AddTask ...
     */
     public void AddTask()
@@ -93,8 +94,13 @@ public class TaskManager
     */
     public void DisplayTasks()
     {
-        UserInterface userInterface = new UserInterface(_tasks);
-        userInterface.DisplayTasks();
+        // UserInterface userInterface = new UserInterface(_tasks);
+        // userInterface.DisplayTasks();
+        
+        foreach (Task task in _tasks)
+        {
+            Console.WriteLine(task.GetTaskInfo());
+        }
     }
 
     /* SaveTasks ...
@@ -115,6 +121,7 @@ public class TaskManager
         string fileName = Console.ReadLine();
         FileHandler fileHandler = new FileHandler(fileName, _tasks);
         fileHandler.LoadFromFile(fileName);
+        _tasks = fileHandler.GetTasks();
     }
 
     /* SortTasks ...

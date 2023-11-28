@@ -32,6 +32,7 @@ public class FileHandler
         _tasks = tasks;
     }
 
+    /* methods of the class */
     /* SaveToFile ...
     */
     public void SaveToFile(string fileName, List<Task> tasks)
@@ -49,7 +50,7 @@ public class FileHandler
 
     public List<Task> LoadFromFile(string fileName)
     {
-        List<Task> tasks = new List<Task>();
+        _tasks = new List<Task>();
         string [] lines = System.IO.File.ReadAllLines(fileName);
 
         foreach (string line in lines)
@@ -66,14 +67,16 @@ public class FileHandler
             {
                 bool isCompleted = bool.Parse(infos[1]);
                 SimpleTask simpleTask = new SimpleTask("SimpleTask", taskDescription, isCompleted);
-                tasks.Add(simpleTask);
+                simpleTask.GetTaskInfo();
+                _tasks.Add(simpleTask);
             }
             else if (taskType == "ScheduledTask")
             {
                 DateOnly dueDate = DateOnly.Parse(infos[1]);
                 bool isCompleted = bool.Parse(infos[2]);
                 ScheduledTask scheduledTask = new ScheduledTask("ScheduledTask", taskDescription, isCompleted, dueDate);
-                tasks.Add(scheduledTask);
+                scheduledTask.GetTaskInfo();
+                _tasks.Add(scheduledTask);
             }
             else if (taskType == "RepetitiveTask")
             {
@@ -83,13 +86,14 @@ public class FileHandler
                 int totalRepetition = int.Parse(infos[4]);
                 bool isCompleted = bool.Parse(infos[5]);
                 RepetitiveTask repetitiveTask = new RepetitiveTask("RepetitiveTask", taskDescription, isCompleted, frequencyRepetition, dueDate, numberRepetition, totalRepetition);
-                tasks.Add(repetitiveTask);
+                repetitiveTask.GetTaskInfo();
+                _tasks.Add(repetitiveTask);
             }
             else 
             {
                 Console.WriteLine("Error: Task type not found.");
             }
         }
-        return tasks;
+        return _tasks;
     }
 }

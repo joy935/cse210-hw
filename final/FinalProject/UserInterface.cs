@@ -13,6 +13,7 @@ class UserInterface
         _tasks = tasks;
     }
 
+    /* methods of the class */
     /* Menu is a method that displays the menu options.
     Parameters: none
     Return: none
@@ -55,9 +56,9 @@ class UserInterface
                     taskManager.SaveTasks();
                     Console.WriteLine("To-Do list saved.");
                     break;
-                case 4: // tested : ok
+                case 4: // tested : not ok
                     taskManager.LoadTasks();
-                    Console.WriteLine("Loading To-Do list...");
+                    Console.WriteLine("To-Do list loaded.");
                     break;
                 case 5:
                     Console.WriteLine("Complete a task");
