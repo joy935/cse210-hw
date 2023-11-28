@@ -1,1 +1,1 @@
-SimpleTask:Create a skate~False
+SimpleTask:Make a fruit salad~False

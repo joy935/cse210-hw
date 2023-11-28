@@ -95,9 +95,10 @@ public class TaskManager
     */
     public void DisplayTasks()
     {   
-        foreach (Task task in _tasks)
+        Console.WriteLine("To-do list: ");
+        foreach (Task task in _tasks)   // for each task in the list of tasks
         {
-            Console.WriteLine(task.GetTaskInfo());
+            task.DisplayTaskInfo();     // display the task info
         }
     }
 

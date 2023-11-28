@@ -50,7 +50,7 @@ class UserInterface
                     taskManager.AddTask();
                     break;
                 case 2: // tested : add numerotation to the tasks, display from a file
-                    DisplayTasks();
+                    taskManager.DisplayTasks();
                     break;
                 case 3:  // tested : ok
                     taskManager.SaveTasks();
@@ -77,12 +77,12 @@ class UserInterface
     Parameters: None
     Return: none
     */
-    public void DisplayTasks()
-    {
-        Console.WriteLine("To-do list: ");
-        foreach (Task task in _tasks)   // for each task in the list of tasks
-        {
-            task.DisplayTaskInfo();     // display the task info
-        }
-    }
+    // public void DisplayTasks()
+    // {
+    //     Console.WriteLine("To-do list: ");
+    //     foreach (Task task in _tasks)   // for each task in the list of tasks
+    //     {
+    //         task.DisplayTaskInfo();     // display the task info
+    //     }
+    // }
 }
