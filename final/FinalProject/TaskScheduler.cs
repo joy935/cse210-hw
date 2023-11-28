@@ -22,5 +22,13 @@ public class TaskScheduler
         _tasks = tasks;
     }
 
-    
+    public void SortByDueDate()
+    {
+        // sort the list of tasks by due date
+    }
+
+    public void OverDueTasks()
+    {
+        // display all tasks that are overdue
+    }
 }
