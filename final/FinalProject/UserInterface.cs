@@ -90,9 +90,12 @@ class UserInterface
     public void DisplayTasks()
     {
         Console.WriteLine("To-do list: ");
+        int i = 1;
         foreach (Task task in _tasks)   // for each task in the list of tasks
         {
+            Console.Write($"{i}. ");
             task.DisplayTaskInfo();     // display the task info
+            i++;
         }
     }
 }
