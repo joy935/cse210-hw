@@ -52,7 +52,7 @@ class UserInterface
                 case 1: // tested : ok
                     taskManager.AddTask();
                     break;
-                case 2: // tested : add numerotation to the tasks
+                case 2: // tested : add feature to remove accomplished tasks
                     _tasks = taskManager.GetTasks(); // update the list of tasks
                     DisplayTasks();
                     break;
@@ -66,8 +66,12 @@ class UserInterface
                     _tasks = taskManager.LoadTasks(filename); // update the list of tasks
                     Console.WriteLine("To-Do list loaded.");
                     break;
-                case 5: // to be tested
-                    Console.WriteLine("Complete a task");
+                case 5: // tested : add feature to update the number of repetitions for the repetitive tasks
+                     _tasks = taskManager.GetTasks(); // update the list of tasks
+                    DisplayTasks();
+                    Console.WriteLine("Which task have you accomplished? ");
+                    int taskIndex = Convert.ToInt32(Console.ReadLine());
+                    taskManager.CompleteTask(taskIndex, _tasks);
                     break;
                 case 6: // tested : ok
                     Console.WriteLine("Quit");
