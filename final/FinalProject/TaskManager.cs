@@ -116,15 +116,15 @@ public class TaskManager
         return _fileHandler.LoadFromFile(filename);
     }
 
+    /* CompleteTask ...
+    */
+    
     /* RemoveTask ...???
     */
 
-    /* SortTasks ...
+    /* SortTasks ... ???
     */
 
-    /* OverDueTasks ...
-    */
-
-    /* CompleteTask ...
+    /* OverDueTasks ... ???
     */
 }
