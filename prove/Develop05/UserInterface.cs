@@ -19,7 +19,7 @@ public class UserInterface
 
     /* ListGoals is a method that updates the goal when it 
     is completed
-    Parameters: none
+    Parameters: goalIndex and goals
     Return: none
     */
     public int UpdateGoal(int goalIndex, List<Goal> goals)
