@@ -69,7 +69,7 @@ class UserInterface
                 case 5: // tested : add feature to update the number of repetitions for the repetitive tasks
                      _tasks = taskManager.GetTasks(); // update the list of tasks
                     DisplayTasks();
-                    Console.WriteLine("Which task have you accomplished? ");
+                    Console.Write("Which task have you accomplished? ");
                     int taskIndex = Convert.ToInt32(Console.ReadLine());
                     taskManager.CompleteTask(taskIndex, _tasks);
                     break;
@@ -89,7 +89,7 @@ class UserInterface
     */
     public void DisplayTasks()
     {
-        Console.WriteLine("To-do list: ");
+        Console.WriteLine("\nTo-do list: ");
         int i = 1;
         foreach (Task task in _tasks)   // for each task in the list of tasks
         {
