@@ -158,6 +158,22 @@ public class TaskManager
         List<Task> tasks, the list of tasks
     Return: none
     */
+    public void CompleteTask(int taskIndex, List<Task> tasks)
+    {
+        // check if the task index is valid
+        if (taskIndex >= 0 && taskIndex < tasks.Count)
+        {
+            // get the task to update
+            Task taskToUpdate = tasks[taskIndex - 1];
+            // update the task
+            taskToUpdate.MarkComplete();
+        }
+        // if the task index is not valid
+        else
+        {
+            Console.WriteLine("Invalid task index. Please try again.");
+        }
+    }
     
     /* RemoveTask ...???
     */
