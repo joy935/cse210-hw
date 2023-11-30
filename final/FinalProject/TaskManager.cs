@@ -161,7 +161,7 @@ public class TaskManager
     public void CompleteTask(int taskIndex, List<Task> tasks)
     {
         // check if the task index is valid
-        if (taskIndex >= 0 && taskIndex < tasks.Count)
+        if (taskIndex >= 0 && taskIndex - 1 < tasks.Count)
         {
             // get the task to update
             Task taskToUpdate = tasks[taskIndex - 1];
