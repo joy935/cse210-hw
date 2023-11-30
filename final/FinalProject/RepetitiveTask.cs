@@ -81,4 +81,25 @@ public class RepetitiveTask : Task
     {
         Console.WriteLine($"{_taskDescription} - Due: {_dueDate} (Repetition: {_numberRepetition}/{_totalRepetition})");
     }
+
+    /* MarkComplete is a method that marks the task as completed
+    by incrementing the number of repetition. If the number of 
+    repetition is less than the total number of repetition, the
+    method returns false. Otherwise, it returns true.
+    Parameters: none
+    Return: bool
+    */
+    public virtual bool MarkComplete()
+    {
+        if (_numberRepetition < _totalRepetition)
+        {
+            _numberRepetition++;
+            return false;
+        }
+        else
+        {
+            _isCompleted = true;
+            return true;
+        }
+    }
 }

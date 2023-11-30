@@ -175,12 +175,8 @@ public class TaskManager
         }
     }
     
-    /* RemoveTask ...???
-    */
-
-    /* SortTasks ... ???
-    */
-
-    /* OverDueTasks ... ???
+    /* TaskOrganizer is a method that organizes the tasks by due date, 
+    removes the tasks that are completed from the list of tasks 
+    ???
     */
 }
