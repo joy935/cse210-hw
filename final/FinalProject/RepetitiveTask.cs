@@ -89,12 +89,21 @@ public class RepetitiveTask : Task
     Parameters: none
     Return: bool
     */
-    public virtual bool MarkComplete()
+    public override bool MarkComplete()
     {
         if (_numberRepetition < _totalRepetition)
         {
             _numberRepetition++;
-            return false;
+            if (_numberRepetition == _totalRepetition)
+            {
+                _isCompleted = true;
+                return true;
+            }
+            else
+            {
+                _isCompleted = false;
+                return false;
+            }
         }
         else
         {
