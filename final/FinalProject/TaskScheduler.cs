@@ -22,13 +22,32 @@ public class TaskScheduler
         _tasks = tasks;
     }
 
+    /* methods of the class */
+    /* SortByDueDate is a method that sorts the list of tasks by due date.
+    Parameters: none
+    Return: none
+    */
     public void SortByDueDate()
     {
         // sort the list of tasks by due date
     }
 
+    /* OverDueTasks is a method that displays all tasks that are overdue.
+    Parameters: none
+    Return: none
+    */
     public void OverDueTasks()
     {
         // display all tasks that are overdue
+    }
+
+    /* RemoveAccomplishedTasks is a method that removes all tasks that 
+    are accomplished.
+    Parameters: none
+    Return: none
+    */
+    public void RemoveAccomplishedTasks()
+    {
+        // remove all tasks that are accomplished
     }
 }
