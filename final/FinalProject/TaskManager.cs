@@ -174,9 +174,4 @@ public class TaskManager
             Console.WriteLine("Invalid task index. Please try again.");
         }
     }
-    
-    /* TaskOrganizer is a method that organizes the tasks by due date, 
-    removes the tasks that are completed from the list of tasks 
-    ???
-    */
 }
