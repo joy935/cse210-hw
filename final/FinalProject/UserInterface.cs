@@ -52,7 +52,7 @@ class UserInterface
                 case 1: // tested : ok
                     taskManager.AddTask();
                     break;
-                case 2: // tested : add feature to remove accomplished tasks
+                case 2: // tested : add feature to remove accomplished tasks, sort by due date, and display overdue tasks
                     _tasks = taskManager.GetTasks(); // update the list of tasks
                     DisplayTasks();
                     break;
@@ -66,7 +66,7 @@ class UserInterface
                     _tasks = taskManager.LoadTasks(filename); // update the list of tasks
                     Console.WriteLine("To-Do list loaded.");
                     break;
-                case 5: // tested : add feature to update the number of repetitions for the repetitive tasks
+                case 5: // tested : add feature to update the next due date for the repetitive tasks
                      _tasks = taskManager.GetTasks(); // update the list of tasks
                     DisplayTasks();
                     Console.Write("Which task have you accomplished? ");
