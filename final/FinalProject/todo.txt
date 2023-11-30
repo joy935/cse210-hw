@@ -1,5 +1,6 @@
-SimpleTask:Get a cake~True
-ScheduledTask:Pick up decor~11/30/2023~False
-RepetitiveTask:Go to Baden~weekly~12/2/2023~0~3~False
-SimpleTask:Buy a shirt~True
-ScheduledTask:Clean the car~12/17/2023~False
+SimpleTask:Bake a cake~True
+SimpleTask:Buy bread~False
+ScheduledTask:Pick up Ivy~11/30/2023~True
+ScheduledTask:Get Christmas decor~11/30/2023~False
+RepetitiveTask:Go to Zurich~weekly~12/2/2023~3~3~True
+RepetitiveTask:Meet with Nadia~weekly~12/2/2023~0~3~False
