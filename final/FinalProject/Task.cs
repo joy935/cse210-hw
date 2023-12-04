@@ -7,9 +7,17 @@ public abstract class Task
     /* attributes of the class */
     protected string _taskType;         // type of task
     protected string _taskDescription;  // description of task
+    protected DateOnly _dueDate;        // due date of task
     protected bool _isCompleted;        // is the task complete?
 
-    /* constructor of the class */
+    /* constructors of the class */
+    public Task(string taskType, string taskDescription, DateOnly dueDate, bool isCompleted)
+    {
+        _taskType = taskType;
+        _taskDescription = taskDescription;
+        _dueDate = dueDate;
+        _isCompleted = isCompleted;
+    }
     public Task(string taskType, string taskDescription, bool isCompleted)
     {
         _taskType = taskType;
