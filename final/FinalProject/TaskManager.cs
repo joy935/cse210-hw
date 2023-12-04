@@ -73,7 +73,7 @@ public class TaskManager
         string taskDescription3 = Console.ReadLine();
         // set the task description
         repetitiveTask.SetTaskDescription(taskDescription3);
-        Console.Write("What is the frequency of the task? (daily, weekly, monthly, yearly)");
+        Console.Write("What is the frequency of the task (daily, weekly, monthly, yearly) ?");
         string frequencyRepetition = Console.ReadLine();
         // set the frequency of the task
         repetitiveTask.SetFrequencyRepetition(frequencyRepetition);
