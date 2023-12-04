@@ -114,11 +114,17 @@ public class TaskManager
     */
     public void DisplayTasks()
     {   
+        TaskScheduler taskScheduler = new TaskScheduler(_tasks);
+        _tasks = taskScheduler.GetTasks(); // get the sorted tasks
+        taskScheduler.OverDueTasks(); // display the overdue tasks
         // display the list of tasks
-        Console.WriteLine("To-do list: ");
+        Console.WriteLine("/nTo-do list: ");
+        int i = 1;
         foreach (Task task in _tasks)   // for each task in the list of tasks
         {
+            Console.Write($"{i}. ");
             task.DisplayTaskInfo();     // display the task info
+            i++;
         }
     }
 
