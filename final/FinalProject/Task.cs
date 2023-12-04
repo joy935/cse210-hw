@@ -50,6 +50,14 @@ public abstract class Task
     {
         _isCompleted = isCompleted;
     }
+    public DateOnly GetDueDate()
+    {
+        return _dueDate;
+    }
+    public void SetDueDate(DateOnly dueDate)
+    {
+        _dueDate = dueDate;
+    }
 
     /* methods of the class */
     /* GetTaskInfo is an abstract method that returns the task info
