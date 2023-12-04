@@ -79,19 +79,19 @@ public class TaskManager
                 break;
             case 3:
             // create a repetitive task
-                RepetitiveTask repetitiveTask = new RepetitiveTask("RepetitiveTask", "description", false, "daily", DateOnly.Parse("12/12/24"), 2, 4);
+                RepetitiveTask repetitiveTask = new RepetitiveTask("RepetitiveTask", "description", DateOnly.Parse("12/12/24"), false, "daily", 2, 4);
                 Console.Write("What is the description of the task? ");
                 string taskDescription3 = Console.ReadLine();
                 // set the task description
                 repetitiveTask.SetTaskDescription(taskDescription3);
-                Console.Write("What is the frequency of the task? ");
+                Console.Write("What is the frequency of the task? (daily, weekly, monthly, yearly)");
                 string frequencyRepetition = Console.ReadLine();
                 // set the frequency of the task
                 repetitiveTask.SetFrequencyRepetition(frequencyRepetition);
-                Console.Write("What is the due date of the task (MM/DD/YY)? ");
+                Console.Write("What is the due date of the task (YY/MM/DD)? ");
                 // set the due date
-                DateOnly dueDate2 = DateOnly.Parse(Console.ReadLine());
-                repetitiveTask.SetDueDate(dueDate2);
+                DateOnly dueDate3 = DateOnly.Parse(Console.ReadLine());
+                repetitiveTask.SetDueDate(dueDate3);
                 Console.Write("How many times has the task been repeated? ");
                 // set the total repetition
                 int totalRepetition = Convert.ToInt32(Console.ReadLine());
