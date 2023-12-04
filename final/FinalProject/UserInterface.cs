@@ -51,31 +51,37 @@ class UserInterface
 
             switch (choice)
             {
-                case 1: // tested : ok
-                    taskManager.AddTask();
+                case 1: // tested :
+                    taskManager.AddSimpleTask();
                     break;
-                case 2: // tested : add feature to remove accomplished tasks, sort by due date, and display overdue tasks
+                case 2: 
+                    taskManager.AddScheduledTask();
+                    break;
+                case 3:
+                    taskManager.AddRepetitiveTask();
+                    break;
+                case 4: // tested : add feature to remove accomplished tasks, sort by due date, and display overdue tasks
                     _tasks = taskManager.GetTasks(); // update the list of tasks
                     taskManager.DisplayTasks();
                     break;
-                case 3:  // tested : ok
+                case 5:  // tested : ok
                     taskManager.SaveTasks();
                     Console.WriteLine("To-Do list saved.");
                     break;
-                case 4: // tested : ok
+                case 6: // tested : ok
                     Console.Write("What is the filename? ");
                     string filename = Console.ReadLine();
                     _tasks = taskManager.LoadTasks(filename); // update the list of tasks
                     Console.WriteLine("To-Do list loaded.");
                     break;
-                case 5: // tested : ok (added feature to update due date to repetitive tasks)
+                case 7: // tested : ok (added feature to update due date to repetitive tasks)
                      _tasks = taskManager.GetTasks(); // update the list of tasks
                     taskManager.DisplayTasks();
                     Console.Write("Which task have you accomplished? ");
                     int taskIndex = Convert.ToInt32(Console.ReadLine());
                     taskManager.CompleteTask(taskIndex, _tasks);
                     break;
-                case 6: // tested : ok
+                case 8: // tested : ok
                     Console.WriteLine("Quit");
                     break;
                 default:

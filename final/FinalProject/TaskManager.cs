@@ -43,7 +43,7 @@ public class TaskManager
     {
         // create a simple task
         SimpleTask simpleTask = new SimpleTask("SimpleTask", "description", false);
-        Console.Write("What is the description of the task? ");
+        Console.Write("\nWhat is the description of the task? ");
         string taskDescription = Console.ReadLine();
         // set the task description
         simpleTask.SetTaskDescription(taskDescription);
@@ -54,7 +54,7 @@ public class TaskManager
     {
         // create a scheduled task
         ScheduledTask scheduledTask = new ScheduledTask("ScheduleTask", "description", DateOnly.Parse("11/11/24"), false);
-        Console.Write("What is the description of the task? ");
+        Console.Write("\nWhat is the description of the task? ");
         string taskDescription2 = Console.ReadLine();
         // set the task description
         scheduledTask.SetTaskDescription(taskDescription2);
@@ -69,7 +69,7 @@ public class TaskManager
     {
         // create a repetitive task
         RepetitiveTask repetitiveTask = new RepetitiveTask("RepetitiveTask", "description", DateOnly.Parse("12/12/24"), false, "daily", 2, 4);
-        Console.Write("What is the description of the task? ");
+        Console.Write("\nWhat is the description of the task? ");
         string taskDescription3 = Console.ReadLine();
         // set the task description
         repetitiveTask.SetTaskDescription(taskDescription3);
