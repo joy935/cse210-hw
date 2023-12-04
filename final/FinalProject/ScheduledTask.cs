@@ -7,10 +7,8 @@ public class ScheduledTask : Task
     private DateOnly _dueDate; // due date of the task
 
     /* constructor of the class */
-    public ScheduledTask(string taskType, string taskDescription, bool isCompleted, DateOnly dueDate) : base(taskType, taskDescription, isCompleted)
-    {
-        _dueDate = dueDate;
-    }
+    public ScheduledTask(string taskType, string taskDescription, DateOnly dueDate, bool isCompleted) : base(taskType, taskDescription, dueDate, isCompleted)
+    { }
 
     /* Getters and setters for the attributes of the class */
     public DateOnly GetDueDate()
