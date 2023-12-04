@@ -47,7 +47,26 @@ public class TaskScheduler
     */
     public void OverDueTasks()
     {
-        // display all tasks that are overdue
+        DateOnly today = DateOnly.FromDateTime(DateTime.Today);
+        Console.WriteLine("*** Overdue Tasks ***");
+        // loop through the list of tasks
+        foreach (Task task in _tasks)
+        {
+            if (task.GetTaskType == "SimpleTask")
+            {
+                // don't display the task
+                Console.WriteLine("no tasks");
+            }
+            else 
+            {
+                // if the task is overdue, display the task info
+                if (task.GetDueDate() < today)
+                {
+                    task.DisplayTaskInfo();
+                }
+            }
+
+        }
     }
 
     /* RemoveAccomplishedTasks is a method that removes all tasks that 
