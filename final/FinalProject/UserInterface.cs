@@ -38,7 +38,7 @@ class UserInterface
     public void GetMenu()
     {
         int choice = 0;
-        while (choice != 6)
+        while (choice != 8)
         {
             // display the menu
             Menu();
@@ -81,8 +81,7 @@ class UserInterface
                     int taskIndex = Convert.ToInt32(Console.ReadLine());
                     taskManager.CompleteTask(taskIndex, _tasks);
                     break;
-                case 8: // tested : ok
-                    Console.WriteLine("Quit");
+                case 8: // tested : 
                     break;
                 default:
                     Console.WriteLine("Invalid choice");
