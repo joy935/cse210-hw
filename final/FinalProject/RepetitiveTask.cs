@@ -5,15 +5,13 @@ public class RepetitiveTask : Task
 {
     /* attributes of the class */
     private string _frequencyRepetition;    // frequency of the task
-    private DateOnly _dueDate;              // first due date of the task
     private int _numberRepetition;          // number of times the task has been repeated
     private int _totalRepetition;           // total number of times the task should be repeated
 
     /* constructor of the class */
-    public RepetitiveTask(string taskType, string taskDescription, bool isCompleted, string frequencyRepetition, DateOnly dueDate, int numberRepetition, int totalRepetition) : base(taskType, taskDescription, isCompleted)
+    public RepetitiveTask(string taskType, string taskDescription, DateOnly dueDate, bool isCompleted, string frequencyRepetition, int numberRepetition, int totalRepetition) : base(taskType, taskDescription, dueDate, isCompleted)
     {
         _frequencyRepetition = frequencyRepetition;
-        _dueDate = dueDate;
         _numberRepetition = numberRepetition;
         _totalRepetition = totalRepetition;
     }
@@ -65,11 +63,11 @@ public class RepetitiveTask : Task
     {
         if (_isCompleted == true)
         {
-            return $"RepetitiveTask:{_taskDescription}~{_frequencyRepetition}~{_dueDate}~{_numberRepetition}~{_totalRepetition}~True";
+            return $"RepetitiveTask:{_taskDescription}~{_dueDate}~True~{_frequencyRepetition}~{_numberRepetition}~{_totalRepetition}";
         }
         else
         {
-            return $"RepetitiveTask:{_taskDescription}~{_frequencyRepetition}~{_dueDate}~{_numberRepetition}~{_totalRepetition}~False";
+            return $"RepetitiveTask:{_taskDescription}~{_dueDate}~False~{_frequencyRepetition}~{_numberRepetition}~{_totalRepetition}";
         }
     }
 
@@ -80,6 +78,33 @@ public class RepetitiveTask : Task
     public override void DisplayTaskInfo()
     {
         Console.WriteLine($"{_taskDescription} - Due: {_dueDate} (Repetition: {_numberRepetition}/{_totalRepetition})");
+    }
+
+    /**/
+    public void UpdateDueDate()
+    {
+        switch (_frequencyRepetition)
+        {
+            case "daily":
+                _dueDate = _dueDate.AddDays(1);
+                Console.WriteLine(_dueDate);
+                break;
+            case "weekly":
+                _dueDate = _dueDate.AddDays(7);
+                Console.WriteLine(_dueDate);
+                break;
+            case "monthly":
+                _dueDate = _dueDate.AddMonths(1);
+                Console.WriteLine(_dueDate);
+                break;
+            case "yearly":
+                _dueDate = _dueDate.AddYears(1);
+                Console.WriteLine(_dueDate);
+                break;
+            default:
+                Console.WriteLine("Invalid choice");
+                break;
+        }
     }
 
     /* MarkComplete is a method that marks the task as completed
