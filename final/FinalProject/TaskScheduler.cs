@@ -27,9 +27,18 @@ public class TaskScheduler
     Parameters: none
     Return: none
     */
-    public void SortByDueDate()
+    public List<Task> SortByDueDate()
     {
+        List<Task> sortedTasks = new List<Task>();
         // sort the list of tasks by due date
+        sortedTasks = _tasks.OrderBy(task => task.GetDueDate()).ToList();
+        // add the sorted tasks to the sortedTasks list
+        _tasks = sortedTasks;
+        foreach (Task task in _tasks)
+        {
+            Console.WriteLine(task.GetTaskInfo());
+        }
+        return _tasks;
     }
 
     /* OverDueTasks is a method that displays all tasks that are overdue.
