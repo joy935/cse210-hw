@@ -119,6 +119,7 @@ public class RepetitiveTask : Task
         if (_numberRepetition < _totalRepetition)
         {
             _numberRepetition++;
+            UpdateDueDate();
             if (_numberRepetition == _totalRepetition)
             {
                 _isCompleted = true;
