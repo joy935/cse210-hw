@@ -97,10 +97,10 @@ public class FileHandler
             {
                 // get the DateOnly for the dueDate attribute
                 // and the bool for the isCompleted attribute status
-                DateOnly dueDate = DateOnly.Parse(infos[1]);
-                bool isCompleted = bool.Parse(infos[2]);
+                DateOnly dueDate2 = DateOnly.Parse(infos[1]);
+                bool isCompleted2 = bool.Parse(infos[2]);
                 // create a scheduled task object
-                ScheduledTask scheduledTask = new ScheduledTask("ScheduledTask", taskDescription, isCompleted, dueDate);
+                ScheduledTask scheduledTask = new ScheduledTask("ScheduledTask", taskDescription, dueDate2, isCompleted2);
                 // get the task info
                 scheduledTask.GetTaskInfo();
                 // add the task to the list of tasks
@@ -113,13 +113,14 @@ public class FileHandler
                 // and the int for the numberRepetition attribute
                 // and the int for the totalRepetition attribute
                 // and the bool for the isCompleted attribute status
-                string frequencyRepetition = infos[1];
-                DateOnly dueDate = DateOnly.Parse(infos[2]);
-                int numberRepetition = int.Parse(infos[3]);
-                int totalRepetition = int.Parse(infos[4]);
-                bool isCompleted = bool.Parse(infos[5]);
+                DateOnly dueDate3 = DateOnly.Parse(infos[1]);
+                bool isCompleted3 = bool.Parse(infos[2]);
+                string frequencyRepetition = infos[3];
+                int numberRepetition = int.Parse(infos[4]);
+                int totalRepetition = int.Parse(infos[5]);
+                
                 // create a repetitive task object
-                RepetitiveTask repetitiveTask = new RepetitiveTask("RepetitiveTask", taskDescription, isCompleted, frequencyRepetition, dueDate, numberRepetition, totalRepetition);
+                RepetitiveTask repetitiveTask = new RepetitiveTask("RepetitiveTask", taskDescription, dueDate3, isCompleted3, frequencyRepetition, numberRepetition, totalRepetition);
                 // get the task info
                 repetitiveTask.GetTaskInfo();
                 // add the task to the list of tasks
