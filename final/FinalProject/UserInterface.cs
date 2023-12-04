@@ -21,12 +21,14 @@ class UserInterface
     public void Menu()
     {
         Console.WriteLine("\nMenu:");
-        Console.WriteLine("1. Create a new task");
-        Console.WriteLine("2. Display the to-do list");
-        Console.WriteLine("3. Save the to-do list");
-        Console.WriteLine("4. Load a to-do list");
-        Console.WriteLine("5. Complete a task");
-        Console.WriteLine("6. Quit");
+        Console.WriteLine("1. Create a new simple task");
+        Console.WriteLine("2. Create a new scheduled task");
+        Console.WriteLine("3. Create a new repetitive task");
+        Console.WriteLine("4. Display the to-do list");
+        Console.WriteLine("5. Save the to-do list");
+        Console.WriteLine("6. Load a to-do list");
+        Console.WriteLine("7. Complete a task");
+        Console.WriteLine("8. Quit");
     }
 
     /* GetUMenu is a method that gets the user's choice from the menu.
