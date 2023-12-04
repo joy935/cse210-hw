@@ -39,73 +39,56 @@ public class TaskManager
     Parameters: none
     Return: none
     */
-    public void AddTask()
+    public void AddSimpleTask()
     {
-        // ask the user what type of task they want to create
-        Console.WriteLine("\nThe type of taks are:");
-        Console.WriteLine("1. Simple Task");
-        Console.WriteLine("2. Scheduled Task");
-        Console.WriteLine("3. Repetitive Task");
-        // get the user's choice and convert it to an integer
-        Console.Write("Which type of task would you like to create? ");
-        int taskType = Convert.ToInt32(Console.ReadLine());
-        
-        // create a task object depending on the user's choice
-        switch (taskType)
-        {
-            case 1:
-            // create a simple task
-                SimpleTask simpleTask = new SimpleTask("SimpleTask", "description", false);
-                Console.Write("What is the description of the task? ");
-                string taskDescription = Console.ReadLine();
-                // set the task description
-                simpleTask.SetTaskDescription(taskDescription);
-                // add the task to the list of tasks
-                _tasks.Add(simpleTask);
-                break;
-            case 2:
-            // create a scheduled task
-                ScheduledTask scheduledTask = new ScheduledTask("ScheduleTask", "description", DateOnly.Parse("11/11/24"), false);
-                Console.Write("What is the description of the task? ");
-                string taskDescription2 = Console.ReadLine();
-                // set the task description
-                scheduledTask.SetTaskDescription(taskDescription2);
-                Console.Write("What is the due date of the task (YY/MM/DD)? ");
-                // set the due date
-                DateOnly dueDate2 = DateOnly.Parse(Console.ReadLine());
-                scheduledTask.SetDueDate(dueDate2);
-                // add the task to the list of tasks
-                _tasks.Add(scheduledTask);
-                break;
-            case 3:
-            // create a repetitive task
-                RepetitiveTask repetitiveTask = new RepetitiveTask("RepetitiveTask", "description", DateOnly.Parse("12/12/24"), false, "daily", 2, 4);
-                Console.Write("What is the description of the task? ");
-                string taskDescription3 = Console.ReadLine();
-                // set the task description
-                repetitiveTask.SetTaskDescription(taskDescription3);
-                Console.Write("What is the frequency of the task? (daily, weekly, monthly, yearly)");
-                string frequencyRepetition = Console.ReadLine();
-                // set the frequency of the task
-                repetitiveTask.SetFrequencyRepetition(frequencyRepetition);
-                Console.Write("What is the due date of the task (YY/MM/DD)? ");
-                // set the due date
-                DateOnly dueDate3 = DateOnly.Parse(Console.ReadLine());
-                repetitiveTask.SetDueDate(dueDate3);
-                Console.Write("How many times has the task been repeated? ");
-                // set the total repetition
-                int totalRepetition = Convert.ToInt32(Console.ReadLine());
-                repetitiveTask.SetTotalRepetition(totalRepetition);
-                // set the number of repetition to zero
-                repetitiveTask.SetNumberRepetition(0);
-                // add the task to the list of tasks
-                _tasks.Add(repetitiveTask);
-                break;
-            default:
-            // default case
-                Console.WriteLine("Invalid choice");
-                break;
-        }
+        // create a simple task
+        SimpleTask simpleTask = new SimpleTask("SimpleTask", "description", false);
+        Console.Write("What is the description of the task? ");
+        string taskDescription = Console.ReadLine();
+        // set the task description
+        simpleTask.SetTaskDescription(taskDescription);
+        // add the task to the list of tasks
+        _tasks.Add(simpleTask);
+    }
+    public void AddScheduledTask()
+    {
+        // create a scheduled task
+        ScheduledTask scheduledTask = new ScheduledTask("ScheduleTask", "description", DateOnly.Parse("11/11/24"), false);
+        Console.Write("What is the description of the task? ");
+        string taskDescription2 = Console.ReadLine();
+        // set the task description
+        scheduledTask.SetTaskDescription(taskDescription2);
+        Console.Write("What is the due date of the task (YY/MM/DD)? ");
+        // set the due date
+        DateOnly dueDate2 = DateOnly.Parse(Console.ReadLine());
+        scheduledTask.SetDueDate(dueDate2);
+        // add the task to the list of tasks
+        _tasks.Add(scheduledTask);
+    }
+    public void AddRepetitiveTask()
+    {
+        // create a repetitive task
+        RepetitiveTask repetitiveTask = new RepetitiveTask("RepetitiveTask", "description", DateOnly.Parse("12/12/24"), false, "daily", 2, 4);
+        Console.Write("What is the description of the task? ");
+        string taskDescription3 = Console.ReadLine();
+        // set the task description
+        repetitiveTask.SetTaskDescription(taskDescription3);
+        Console.Write("What is the frequency of the task? (daily, weekly, monthly, yearly)");
+        string frequencyRepetition = Console.ReadLine();
+        // set the frequency of the task
+        repetitiveTask.SetFrequencyRepetition(frequencyRepetition);
+        Console.Write("What is the due date of the task (YY/MM/DD)? ");
+        // set the due date
+        DateOnly dueDate3 = DateOnly.Parse(Console.ReadLine());
+        repetitiveTask.SetDueDate(dueDate3);
+        Console.Write("How many times has the task been repeated? ");
+        // set the total repetition
+        int totalRepetition = Convert.ToInt32(Console.ReadLine());
+        repetitiveTask.SetTotalRepetition(totalRepetition);
+        // set the number of repetition to zero
+        repetitiveTask.SetNumberRepetition(0);
+        // add the task to the list of tasks
+        _tasks.Add(repetitiveTask);
     }
 
     /* DisplayTasks is a method that displays the tasks in a list format.
