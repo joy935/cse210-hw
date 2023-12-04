@@ -82,24 +82,4 @@ class UserInterface
             }
         }
     }
-
-    /* DisplayTasks is a method that displays the tasks in a list format.
-    Parameters: None
-    Return: none
-    */
-    public void DisplayTasks()
-    {
-        Console.WriteLine("\nTo-do list: ");
-        int i = 1;
-        foreach (Task task in _tasks)   // for each task in the list of tasks
-        {
-            Console.Write($"{i}. ");
-            task.DisplayTaskInfo();     // display the task info
-            i++;
-        }
-    }
-    // things to do:
-    // add feature to remove accomplished tasks
-    // add feature to sort by due date
-    // add feature to display overdue tasks
 }
