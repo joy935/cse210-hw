@@ -25,14 +25,6 @@ public class RepetitiveTask : Task
     {
         _frequencyRepetition = frequencyRepetition;
     }
-    public DateOnly GetDueDate()
-    {
-        return _dueDate;
-    }
-    public void SetDueDate(DateOnly dueDate)
-    {
-        _dueDate = dueDate;
-    }
     public int GetNumberRepetition()
     {
         return _numberRepetition;

@@ -3,8 +3,7 @@ using System;
 /* ScheduledTask Derived Class */
 public class ScheduledTask : Task
 {
-    /* attribute of the class */
-    private DateOnly _dueDate; // due date of the task
+    // no attributes
 
     /* constructor of the class */
     public ScheduledTask(string taskType, string taskDescription, DateOnly dueDate, bool isCompleted) : base(taskType, taskDescription, dueDate, isCompleted)

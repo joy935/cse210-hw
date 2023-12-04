@@ -68,7 +68,7 @@ class UserInterface
                     break;
                 case 5: // tested : ok (added feature to update due date to repetitive tasks)
                      _tasks = taskManager.GetTasks(); // update the list of tasks
-                    DisplayTasks();
+                    taskManager.DisplayTasks();
                     Console.Write("Which task have you accomplished? ");
                     int taskIndex = Convert.ToInt32(Console.ReadLine());
                     taskManager.CompleteTask(taskIndex, _tasks);

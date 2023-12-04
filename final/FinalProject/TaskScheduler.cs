@@ -52,20 +52,14 @@ public class TaskScheduler
         // loop through the list of tasks
         foreach (Task task in _tasks)
         {
-            if (task.GetTaskType == "SimpleTask")
+            // don't display the task if it is accomplished
+            // don't display the task if it is simple task
+            
+            // if the task is overdue, display the task info
+            if (task.GetDueDate() < today)
             {
-                // don't display the task
-                Console.WriteLine("no tasks");
+                task.DisplayTaskInfo();
             }
-            else 
-            {
-                // if the task is overdue, display the task info
-                if (task.GetDueDate() < today)
-                {
-                    task.DisplayTaskInfo();
-                }
-            }
-
         }
     }
 
