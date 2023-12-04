@@ -10,16 +10,6 @@ public class ScheduledTask : Task
     public ScheduledTask(string taskType, string taskDescription, DateOnly dueDate, bool isCompleted) : base(taskType, taskDescription, dueDate, isCompleted)
     { }
 
-    /* Getters and setters for the attributes of the class */
-    public DateOnly GetDueDate()
-    {
-        return _dueDate;
-    }
-    public void SetDueDate(DateOnly dueDate)
-    {
-        _dueDate = dueDate;
-    }
-
     /* GetTaskInfo is a method that returns the task info
     in a specific format to be saved later in a file.
     If the task is completed, the method returns the task info
