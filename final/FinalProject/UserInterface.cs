@@ -51,13 +51,13 @@ class UserInterface
 
             switch (choice)
             {
-                case 1: // tested :
+                case 1: // tested : ok
                     taskManager.AddSimpleTask();
                     break;
-                case 2: 
+                case 2: // test for the date format !!!!!!
                     taskManager.AddScheduledTask();
                     break;
-                case 3:
+                case 3: // test for the date format !!!!!!
                     taskManager.AddRepetitiveTask();
                     break;
                 case 4: // tested : add feature to remove accomplished tasks, sort by due date, and display overdue tasks
