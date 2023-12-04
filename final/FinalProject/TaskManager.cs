@@ -65,15 +65,15 @@ public class TaskManager
                 break;
             case 2:
             // create a scheduled task
-                ScheduledTask scheduledTask = new ScheduledTask("ScheduleTask", "description", false, DateOnly.Parse("11/11/24"));
+                ScheduledTask scheduledTask = new ScheduledTask("ScheduleTask", "description", DateOnly.Parse("11/11/24"), false);
                 Console.Write("What is the description of the task? ");
                 string taskDescription2 = Console.ReadLine();
                 // set the task description
                 scheduledTask.SetTaskDescription(taskDescription2);
-                Console.Write("What is the due date of the task (MM/DD/YY)? ");
+                Console.Write("What is the due date of the task (YY/MM/DD)? ");
                 // set the due date
-                DateOnly dueDate = DateOnly.Parse(Console.ReadLine());
-                scheduledTask.SetDueDate(dueDate);
+                DateOnly dueDate2 = DateOnly.Parse(Console.ReadLine());
+                scheduledTask.SetDueDate(dueDate2);
                 // add the task to the list of tasks
                 _tasks.Add(scheduledTask);
                 break;
