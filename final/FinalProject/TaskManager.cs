@@ -4,9 +4,9 @@ using System;
 public class TaskManager
 {
     /* attributes of the class */
-    private string _fileName;   // name of the file
-    private List<Task> _tasks;  // list of tasks
-    private FileHandler _fileHandler; // file handler
+    private string _fileName;           // name of the file
+    private List<Task> _tasks;          // list of tasks
+    private FileHandler _fileHandler;   // file handler
 
     /* constructor of the class */
     public TaskManager(string fileName, List<Task> tasks)
@@ -34,8 +34,8 @@ public class TaskManager
     }
 
     /* methods of the class */
-    /* AddTask is a method that adds a task to the list of tasks
-    by creating a new task object.
+    /* AddSimpleTask is a method that creates a simple task and 
+    adds it to the list of tasks.
     Parameters: none
     Return: none
     */
@@ -50,6 +50,12 @@ public class TaskManager
         // add the task to the list of tasks
         _tasks.Add(simpleTask);
     }
+
+    /* AddScheduledTask is a method that creates a scheduled task and
+    adds it to the list of tasks.
+    Parameters: none
+    Return: none
+    */
     public void AddScheduledTask()
     {
         // create a scheduled task
@@ -59,12 +65,18 @@ public class TaskManager
         // set the task description
         scheduledTask.SetTaskDescription(taskDescription2);
         Console.Write("What is the due date of the task (YY/MM/DD)? ");
-        // set the due date
         DateOnly dueDate2 = DateOnly.Parse(Console.ReadLine());
+        // set the due date
         scheduledTask.SetDueDate(dueDate2);
         // add the task to the list of tasks
         _tasks.Add(scheduledTask);
     }
+
+    /* AddRepetitiveTask is a method that creates a repetitive task and
+    adds it to the list of tasks.
+    Parameters: none
+    Return: none
+    */
     public void AddRepetitiveTask()
     {
         // create a repetitive task
@@ -126,7 +138,6 @@ public class TaskManager
         // ask the user for the filename
         Console.Write("What is the filename? ");
         string fileName = Console.ReadLine();
-        // create a file handler object
         _fileHandler = new FileHandler(fileName, _tasks);
         // save the tasks to the file by calling the SaveToFile method
         _fileHandler.SaveToFile(fileName, _tasks);
@@ -134,12 +145,11 @@ public class TaskManager
 
     /* LoadTasks is a method that loads the tasks from a file
     by calling the LoadFromFile method from the FileHandler class.
-    Parameters: None
+    Parameters: filename, the name of the file
     Return: none
     */
     public List<Task> LoadTasks(string filename)
     {
-        // create a file handler object
         _fileHandler = new FileHandler(filename, _tasks);
         // load the tasks from the file by calling the LoadFromFile method
         return _fileHandler.LoadFromFile(filename);
@@ -169,14 +179,25 @@ public class TaskManager
         }
     }
 
+    /* DisplayAccomplishedTasks is a method that displays all 
+    accomplished tasks.
+    Parameters: none
+    Return: none
+    */
     public void DisplayAccomplishedTasks()
     {
         Console.WriteLine("Accomplished tasks:");
+        // loop through the list of tasks
         foreach (Task task in _tasks)
         {
+            // if the task is accomplished, display the task info
             if (task.GetIsCompleted() == true)
             {
                 task.DisplayTaskInfo();
+            }
+            else
+            {
+                Console.WriteLine("There are no accomplished tasks.");
             }
         }
     }
