@@ -16,22 +16,13 @@ using System.IO;
         {
             // open, write and close the file
             // true, to append the file (otherwise it would overwrite)
-            using (StreamWriter outputFile = new StreamWriter(filename, true))
-            {
-                // iterate through all entries
-                foreach (Entry entry in _entries)
-                {
-                    // write each entry in the file
-                    outputFile.WriteLine(entry.GetEntry());
-                }
-            }
         }
 
         /* DisplayEntryFromFile is a method that display each entry
         from a file. 
         Parameter: filename, the name of the file 
         Return: nothing */
-        public void DisplayEntry(string filename)
+        public void DisplayEntry()
         {
             // Streak streak = new Streak();
             // streak.GetTheDates(filename);
@@ -47,34 +38,37 @@ using System.IO;
         /* Load the journal from a file
         Parameter: none
         Return: filename, the name of the file*/
-        public string LoadFile()
+        public List<Entry> LoadFile(string filename)
         {
-            // get the filename from the user
-           Console.WriteLine("What is the filename?");
-           string filename = Console.ReadLine();
-           return filename;
+            string [] lines = System.IO.File.ReadAllLines(filename);
+            foreach (string line in lines)
+            {
+                string [] parts = line.Split('~');
 
+                string date = parts[0].Trim();
+                string prompt = parts[1].Trim();
+                string entry = parts[2].Trim();   
+            }
+            return _entries;
         }
 
         /* Save the journal to a file
         Parameter: none
         Return: filename, the name of the file */
-        public string SaveFile()
+        public void SaveFile(string filename)
         {
-            // get the filename from the user
-            Console.WriteLine("What is the filename?");
-            string filename = Console.ReadLine();
+            using (StreamWriter outputFile = new StreamWriter(filename, true))
+            {
+                // iterate through all entries
+                foreach (Entry entry in _entries)
+                {
+                    // write each entry in the file
+                    outputFile.WriteLine(entry.GetEntry());
+                }
+            };
 
             // determine the path to save the file
             string firstPartPath = "./prove/Develop02/";
             string filePath = Path.Combine(firstPartPath, filename);
-            
-            // concatenate the entries of the journal 
-            string entriesToAdd = string.Join(Environment.NewLine, _entries);
-            
-            // create a new file, write the journal to the file and close the file
-            // if the file already exists, overwrite it
-            System.IO.File.WriteAllText(filePath, entriesToAdd);
-            return filename;
         }
     }

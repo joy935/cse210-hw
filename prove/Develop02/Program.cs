@@ -7,9 +7,6 @@ partial class Program
     {
         // welcome message to start the journal program
         Console.WriteLine("Welcome to the Journal Program!");
-
-        // initialize the fileName with an existing file
-        string fileName = "myFile.txt";
         
         // loop through the menu
         while (true)
@@ -38,6 +35,8 @@ partial class Program
             Entry entry = new Entry();
             Journal journal = new Journal();
 
+            List<Entry> entries = new List<Entry>(); // create a new list of entries
+
             // if the user chooses to write an entry 
             if (choice == 1)
             {
@@ -55,32 +54,32 @@ partial class Program
                 from the entry object */
                 entry._entry = Console.ReadLine();
                 // add the new entries to list of the journal class
-                journal._entries.Add(entry);
-                /* add the user entry to a file using the method 
-                WriteEntryInFile from the entry object */
-                journal.WriteEntryInFile(fileName);            
+                entries.Add(entry);
             }
             // if the user chooses to display the entry (entries)
             else if (choice == 2)
             {
                 /* display the entry (entries) using the method 
                 DisplayEntryFromFile from the journal object */
-                journal.DisplayEntry(fileName);
-
+                journal.DisplayEntry();
             }
             // if the user chooses to load a file
             else if (choice == 3)
             {
                 /* load a file using the method LoadFile from the 
                 journal object and store it as FileName */
-                fileName = journal.LoadFile(); 
+                Console.WriteLine("What is the filename?");
+                string filename = Console.ReadLine();
+                journal.LoadFile(filename); 
             }
             // if the user chooses to save the file
             else if (choice == 4)
             {
                 /* save the file using the SaveFile method from the 
                 journal object and store it as FileName */
-                fileName = journal.SaveFile();
+                Console.WriteLine("What is the filename?");
+                string filename = Console.ReadLine();
+                journal.SaveFile(filename);
             }
             // if the user chooses to quit
             else if (choice == 5)
