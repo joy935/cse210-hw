@@ -25,7 +25,7 @@ public class TaskScheduler
     /* methods of the class */
     /* SortByDueDate is a method that sorts the list of tasks by due date.
     Parameters: none
-    Return: none
+    Return: list of tasks
     */
     public List<Task> SortByDueDate()
     {
@@ -55,7 +55,8 @@ public class TaskScheduler
         return false;
     }
 
-    /* OverDueTasks is a method that displays all tasks that are overdue.
+    /* OverDueTasks is a method that displays all tasks that are overdue,
+    not completed and not a simple task.
     Parameters: none
     Return: none
     */
