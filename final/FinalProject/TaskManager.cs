@@ -102,7 +102,7 @@ public class TaskManager
         taskScheduler.RemoveAccomplishedTasks(); // remove the accomplished tasks
         
         Console.WriteLine();
-        //taskScheduler.OverDueTasks(); // display the overdue tasks
+        taskScheduler.OverDueTasks(); // display the overdue tasks
         
         // display the list of tasks
         Console.WriteLine();

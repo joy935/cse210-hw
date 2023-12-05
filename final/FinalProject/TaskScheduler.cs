@@ -44,11 +44,10 @@ public class TaskScheduler
     public bool IsOverdue()
     {
         DateOnly today = DateOnly.FromDateTime(DateTime.Today);
-        // loop through the list of tasks
         foreach (Task task in _tasks)
         {
             // if the task is overdue, return true
-            if (task.GetDueDate() < today)
+            if (task.GetDueDate() < today && !task.GetIsCompleted())
             {
                 return true;
             }
@@ -62,18 +61,15 @@ public class TaskScheduler
     */
     public void OverDueTasks()
     {
-        DateOnly today = DateOnly.FromDateTime(DateTime.Today);
-        if (IsOverdue())
+        if (IsOverdue() == true)
         {
+            DateOnly today = DateOnly.FromDateTime(DateTime.Today);
             Console.WriteLine("****** Overdue Tasks ******");
             // loop through the list of tasks
             foreach (Task task in _tasks)
-            {
-                // don't display the task if it is accomplished
-                // don't display the task if it is simple task
-                
-                // if the task is overdue, display the task info
-                if (task.GetDueDate() < today)
+            {             
+                // if the task is overdue, not completed and not a simple task, display the task info
+                if (task.GetDueDate() < today && !task.GetIsCompleted() && task.GetTaskType() != "SimpleTask")
                 {
                     task.DisplayTaskInfo();
                 }
