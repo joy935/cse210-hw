@@ -72,7 +72,11 @@ public class RepetitiveTask : Task
         Console.WriteLine($"{_taskDescription} - Due: {_dueDate} (Repetition: {_numberRepetition}/{_totalRepetition})");
     }
 
-    /**/
+    /* UpdateDueDate is a method that updates the due date of the task
+    based on the frequency of repetition.
+    Parameters: none
+    Return: none
+    */
     public void UpdateDueDate()
     {
         switch (_frequencyRepetition)
