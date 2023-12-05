@@ -28,7 +28,8 @@ class UserInterface
         Console.WriteLine("5. Save the to-do list");
         Console.WriteLine("6. Load a to-do list");
         Console.WriteLine("7. Complete a task");
-        Console.WriteLine("8. Quit");
+        Console.WriteLine("8. Display the accomplished tasks");
+        Console.WriteLine("9. Quit");
     }
 
     /* GetUMenu is a method that gets the user's choice from the menu.
@@ -38,7 +39,7 @@ class UserInterface
     public void GetMenu()
     {
         int choice = 0;
-        while (choice != 8)
+        while (choice != 9)
         {
             // display the menu
             Menu();
@@ -82,6 +83,9 @@ class UserInterface
                     taskManager.CompleteTask(taskIndex, _tasks);
                     break;
                 case 8:
+                    Console.WriteLine("Accomplished tasks:");
+                    break;
+                case 9:
                     break;
                 default:
                     Console.WriteLine("Invalid choice");
