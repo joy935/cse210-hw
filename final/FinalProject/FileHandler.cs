@@ -84,47 +84,38 @@ public class FileHandler
             // create a task object based on the task type
             if (taskType == "SimpleTask")
             {
-                // get the bool for the isCompleted attribute status
-                bool isCompleted = bool.Parse(infos[1]);
+                bool isCompleted = bool.Parse(infos[1]); // get the bool for the isCompleted attribute status
+                
                 // create a simple task object
                 SimpleTask simpleTask = new SimpleTask("SimpleTask", taskDescription, isCompleted);
-                // get the task info
-                simpleTask.GetTaskInfo();
-                // add the task to the list of tasks
-                _tasks.Add(simpleTask);
+                
+                simpleTask.GetTaskInfo(); // get the task info
+                _tasks.Add(simpleTask); // add the task to the list of tasks
             }
             else if (taskType == "ScheduledTask")
             {
-                // get the DateOnly for the dueDate attribute
-                // and the bool for the isCompleted attribute status
-                DateOnly dueDate2 = DateOnly.Parse(infos[1]);
-                bool isCompleted2 = bool.Parse(infos[2]);
+                DateOnly dueDate2 = DateOnly.Parse(infos[1]); // get the DateOnly for the dueDate attribute
+                bool isCompleted2 = bool.Parse(infos[2]); // get the bool for the isCompleted attribute status
+                
                 // create a scheduled task object
                 ScheduledTask scheduledTask = new ScheduledTask("ScheduledTask", taskDescription, dueDate2, isCompleted2);
-                // get the task info
-                scheduledTask.GetTaskInfo();
-                // add the task to the list of tasks
-                _tasks.Add(scheduledTask);
+                
+                scheduledTask.GetTaskInfo(); // get the task info
+                _tasks.Add(scheduledTask); // add the task to the list of tasks
             }
             else if (taskType == "RepetitiveTask")
             {
-                // get the string for the frequencyRepetition attribute
-                // and the DateOnly for the dueDate attribute
-                // and the int for the numberRepetition attribute
-                // and the int for the totalRepetition attribute
-                // and the bool for the isCompleted attribute status
-                DateOnly dueDate3 = DateOnly.Parse(infos[1]);
-                bool isCompleted3 = bool.Parse(infos[2]);
-                string frequencyRepetition = infos[3];
-                int numberRepetition = int.Parse(infos[4]);
-                int totalRepetition = int.Parse(infos[5]);
+                DateOnly dueDate3 = DateOnly.Parse(infos[1]); // get the DateOnly for the dueDate attribute
+                bool isCompleted3 = bool.Parse(infos[2]); // get the bool for the isCompleted attribute status
+                string frequencyRepetition = infos[3]; // get the string for the frequencyRepetition attribute
+                int numberRepetition = int.Parse(infos[4]); // get the int for the numberRepetition attribute
+                int totalRepetition = int.Parse(infos[5]); // get the int for the totalRepetition attribute
                 
                 // create a repetitive task object
                 RepetitiveTask repetitiveTask = new RepetitiveTask("RepetitiveTask", taskDescription, dueDate3, isCompleted3, frequencyRepetition, numberRepetition, totalRepetition);
-                // get the task info
-                repetitiveTask.GetTaskInfo();
-                // add the task to the list of tasks
-                _tasks.Add(repetitiveTask);
+                
+                repetitiveTask.GetTaskInfo(); // get the task info
+                _tasks.Add(repetitiveTask); // add the task to the list of tasks
             }
             else // if the task type is not found
             {
