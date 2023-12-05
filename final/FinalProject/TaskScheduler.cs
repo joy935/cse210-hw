@@ -3,7 +3,7 @@ using System;
 /* Task Scheduler Class */
 public class TaskScheduler
 {
-    /* attributes of the class */
+    /* attribute of the class */
     private List<Task> _tasks;   // list of tasks
 
     /* constructor of the class */
@@ -12,7 +12,7 @@ public class TaskScheduler
         _tasks = tasks;
     }
 
-    /* Getters and setters for the attributes of the class */
+    /* Getter and setter for the attribute of the class */
     public List<Task> GetTasks()
     {
         return _tasks;
@@ -36,22 +36,32 @@ public class TaskScheduler
         _tasks = sortedTasks;
         foreach (Task task in _tasks)
         {
+            // get the task information
             task.GetTaskInfo();
         }
         return _tasks;
     }
 
+    /* IsOverdue is a method that checks if there are any overdue tasks
+    in the list of tasks.
+    Parameters: none
+    Return: a boolean value, true if there are overdue tasks, false otherwise
+    */
     public bool IsOverdue()
     {
+        // get today's date
         DateOnly today = DateOnly.FromDateTime(DateTime.Today);
+        // loop through the list of tasks
         foreach (Task task in _tasks)
         {
-            // if the task is overdue, return true
+            // if the task is overdue and not accomplished , return true
             if (task.GetDueDate() < today && !task.GetIsCompleted())
             {
+                // return true if there are overdue tasks
                 return true;
             }
         }
+        // return false if there are no overdue tasks
         return false;
     }
 
@@ -62,8 +72,10 @@ public class TaskScheduler
     */
     public void OverDueTasks()
     {
+        // check if there are overdue tasks
         if (IsOverdue() == true)
         {
+            // get today's date
             DateOnly today = DateOnly.FromDateTime(DateTime.Today);
             Console.WriteLine("****** Overdue Tasks ******");
             // loop through the list of tasks
@@ -72,11 +84,12 @@ public class TaskScheduler
                 // if the task is overdue, not completed and not a simple task, display the task info
                 if (task.GetDueDate() < today && !task.GetIsCompleted() && task.GetTaskType() != "SimpleTask")
                 {
+                    // display the task info
                     task.DisplayTaskInfo();
                 }
             }
         }
-        else 
+        else // if there are no overdue tasks
         {
             Console.WriteLine("There are no overdue tasks.");
         }
@@ -84,7 +97,7 @@ public class TaskScheduler
     }
 
     /* RemoveAccomplishedTasks is a method that removes all tasks that 
-    are accomplished.
+    are accomplished from the list of tasks.
     Parameters: none
     Return: none
     */
