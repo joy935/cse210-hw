@@ -51,7 +51,7 @@ class UserInterface
 
             switch (choice)
             {
-                case 1: // tested : ok
+                case 1:
                     taskManager.AddSimpleTask();
                     break;
                 case 2: // test for the date format !!!!!!
@@ -60,28 +60,28 @@ class UserInterface
                 case 3: // test for the date format !!!!!!
                     taskManager.AddRepetitiveTask();
                     break;
-                case 4: // tested : add feature to remove accomplished tasks, sort by due date, and display overdue tasks
+                case 4:
                     _tasks = taskManager.GetTasks(); // update the list of tasks
                     taskManager.DisplayTasks();
                     break;
-                case 5:  // tested : ok
+                case 5:
                     taskManager.SaveTasks();
                     Console.WriteLine("To-Do list saved.");
                     break;
-                case 6: // tested : ok
+                case 6:
                     Console.Write("What is the filename? ");
                     string filename = Console.ReadLine();
                     _tasks = taskManager.LoadTasks(filename); // update the list of tasks
                     Console.WriteLine("To-Do list loaded.");
                     break;
-                case 7: // tested : ok (added feature to update due date to repetitive tasks)
+                case 7:
                      _tasks = taskManager.GetTasks(); // update the list of tasks
                     taskManager.DisplayTasks();
                     Console.Write("Which task have you accomplished? ");
                     int taskIndex = Convert.ToInt32(Console.ReadLine());
                     taskManager.CompleteTask(taskIndex, _tasks);
                     break;
-                case 8: // tested : 
+                case 8:
                     break;
                 default:
                     Console.WriteLine("Invalid choice");
