@@ -98,10 +98,15 @@ public class TaskManager
     public void DisplayTasks()
     {   
         TaskScheduler taskScheduler = new TaskScheduler(_tasks);
-        _tasks = taskScheduler.GetTasks(); // get the sorted tasks
-        taskScheduler.OverDueTasks(); // display the overdue tasks
+        _tasks = taskScheduler.SortByDueDate(); // sort the tasks by due date
+        taskScheduler.RemoveAccomplishedTasks(); // remove the accomplished tasks
+        
+        Console.WriteLine();
+        //taskScheduler.OverDueTasks(); // display the overdue tasks
+        
         // display the list of tasks
-        Console.WriteLine("To-do list: ");
+        Console.WriteLine();
+        Console.WriteLine("-------- To-do list --------");
         int i = 1;
         foreach (Task task in _tasks)   // for each task in the list of tasks
         {

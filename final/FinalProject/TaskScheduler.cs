@@ -36,7 +36,7 @@ public class TaskScheduler
         _tasks = sortedTasks;
         foreach (Task task in _tasks)
         {
-            Console.WriteLine(task.GetTaskInfo());
+            task.GetTaskInfo();
         }
         return _tasks;
     }
@@ -63,9 +63,9 @@ public class TaskScheduler
     public void OverDueTasks()
     {
         DateOnly today = DateOnly.FromDateTime(DateTime.Today);
-        if (IsOverdue() == true)
+        if (IsOverdue())
         {
-            Console.WriteLine("*** Overdue Tasks ***");
+            Console.WriteLine("****** Overdue Tasks ******");
             // loop through the list of tasks
             foreach (Task task in _tasks)
             {
@@ -93,6 +93,14 @@ public class TaskScheduler
     */
     public void RemoveAccomplishedTasks()
     {
-        // remove all tasks that are accomplished
+        // loop through the list of tasks
+        for(int i = _tasks.Count - 1; i >= 0; i--)
+        {
+            // if the task is accomplished, remove the task
+            if (_tasks[i].GetIsCompleted() == true)
+            {
+                _tasks.RemoveAt(i);
+            }
+        }
     }
 }
