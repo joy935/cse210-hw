@@ -66,7 +66,7 @@ using System.IO;
             string filename = Console.ReadLine();
 
             // determine the path to save the file
-            string firstPartPath = "/Users/veihitupai/Documents/GitHub/cse210-hw/prove/Develop02/";
+            string firstPartPath = "./prove/Develop02/";
             string filePath = Path.Combine(firstPartPath, filename);
             
             // concatenate the entries of the journal 
