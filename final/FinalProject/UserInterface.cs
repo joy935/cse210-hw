@@ -83,7 +83,8 @@ class UserInterface
                     taskManager.CompleteTask(taskIndex, _tasks);
                     break;
                 case 8:
-                    Console.WriteLine("Accomplished tasks:");
+                    Console.WriteLine();
+                    taskManager.DisplayAccomplishedTasks();
                     break;
                 case 9:
                     break;

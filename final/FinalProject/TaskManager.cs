@@ -168,4 +168,16 @@ public class TaskManager
             Console.WriteLine("Invalid task index. Please try again.");
         }
     }
+
+    public void DisplayAccomplishedTasks()
+    {
+        Console.WriteLine("Accomplished tasks:");
+        foreach (Task task in _tasks)
+        {
+            if (task.GetIsCompleted() == true)
+            {
+                task.DisplayTaskInfo();
+            }
+        }
+    }
 }
