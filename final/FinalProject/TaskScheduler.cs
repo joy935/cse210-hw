@@ -91,7 +91,7 @@ public class TaskScheduler
         }
         else // if there are no overdue tasks
         {
-            Console.WriteLine("There are no overdue tasks.");
+            Console.WriteLine("Great job, there are no overdue tasks!");
         }
 
     }
