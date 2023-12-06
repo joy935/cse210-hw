@@ -1,9 +1,9 @@
 SimpleTask:Bake a cake~True
 SimpleTask:Buy bread~False
-ScheduledTask:Pick up Ivy~11/30/2023~True
-ScheduledTask:Get Christmas decor~12/1/2023~False
-RepetitiveTask:Go to Zurich~12/20/2023~False~weekly~1~3
-RepetitiveTask:Meet with Nadia~12/2/2023~False~weekly~0~3
+ScheduledTask:Pick up Ivy~2023-11-30~True
+ScheduledTask:Get Christmas decor~2023-12-01~False
+RepetitiveTask:Go to Zurich~2024-01-03~True~weekly~3~3
+RepetitiveTask:Meet with Nadia~2023-12-16~False~weekly~2~3
 SimpleTask:Return the PSI bikes~False
-ScheduledTask:Go the Christmas markets~12/23/2023~False
-RepetitiveTask:Get SwissPass~2/23/2024~False~monthly~0~3
+ScheduledTask:Go the Christmas markets~2023-12-23~True
+RepetitiveTask:Get SwissPass~2024-02-23~False~monthly~0~3
