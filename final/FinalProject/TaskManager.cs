@@ -64,8 +64,14 @@ public class TaskManager
         string taskDescription2 = Console.ReadLine();
         // set the task description
         scheduledTask.SetTaskDescription(taskDescription2);
-        Console.Write("What is the due date of the task (YY/MM/DD)? ");
-        DateOnly dueDate2 = DateOnly.Parse(Console.ReadLine());
+        Console.Write("What is the due date of the task? ");
+        Console.Write("Day DD: ");
+        int day = Convert.ToInt32(Console.ReadLine());
+        Console.Write("Month MM: ");
+        int month = Convert.ToInt32(Console.ReadLine());
+        Console.Write("Year YYYY: ");
+        int year = Convert.ToInt32(Console.ReadLine());
+        DateOnly dueDate2 = new DateOnly(year, month, day);
         // set the due date
         scheduledTask.SetDueDate(dueDate2);
         // add the task to the list of tasks
