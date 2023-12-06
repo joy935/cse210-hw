@@ -54,7 +54,7 @@ partial class Program
                 from the entry object */
                 entry._entry = Console.ReadLine();
                 // add the new entries to list of the journal class
-                entries.Add(entry);
+                entries.Add(entry.GetInfo());
             }
             // if the user chooses to display the entry (entries)
             else if (choice == 2)

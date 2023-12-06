@@ -21,4 +21,9 @@ public class Entry
         tilde character as a string and return it*/
         return $"Date: {_date} - Prompt: {_randomPrompt}\n{_entry}";
     }
+
+    public string GetInfo()
+    {
+        return $"{_date}~{_randomPrompt}~{_entry}";
+    }
 }

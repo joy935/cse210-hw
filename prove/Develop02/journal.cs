@@ -5,17 +5,15 @@ using System.IO;
     public class Journal
     {
         // define a list of entries from the entry class
-        public List<Entry> _entries = new List<Entry>();
+        public List<Entry> _entries;
 
-        /* AddEntryInFile is a method that writes the new entry 
-        composed by the date, the random prompt and the 
-        user entry in a file.
-        Parameter: fileName
-        Return: nothing */
-        public void WriteEntryInFile(string filename)
+        public string GetEntry()
         {
-            // open, write and close the file
-            // true, to append the file (otherwise it would overwrite)
+            return _entries;
+        }
+        public void SetEntry(string entry)
+        {
+            _entries = entry;
         }
 
         /* DisplayEntryFromFile is a method that display each entry
@@ -63,7 +61,7 @@ using System.IO;
                 foreach (Entry entry in _entries)
                 {
                     // write each entry in the file
-                    outputFile.WriteLine(entry.GetEntry());
+                    outputFile.WriteLine(entry.GetInfo());
                 }
             };
 
