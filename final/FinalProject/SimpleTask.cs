@@ -36,6 +36,13 @@ public class SimpleTask : Task
     */
     public override void DisplayTaskInfo()
     {
-        Console.WriteLine($"{_taskDescription}");
+        if (_isCompleted == true)
+        {
+            Console.WriteLine($"✓ {_taskDescription}");
+        }
+        else
+        {
+            Console.WriteLine($"{_taskDescription}");
+        }
     }
 }

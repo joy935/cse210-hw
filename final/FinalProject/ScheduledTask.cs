@@ -35,6 +35,13 @@ public class ScheduledTask : Task
     */
     public override void DisplayTaskInfo()
     {
-        Console.WriteLine($"{_taskDescription} - Due: {_dueDate}");
+        if (_isCompleted == true)
+        {
+            Console.WriteLine($"✓ {_taskDescription} - Due: {_dueDate.ToLongDateString()}");
+        }
+        else
+        {
+            Console.WriteLine($"{_taskDescription} - Due: {_dueDate.ToLongDateString()}");
+        }    
     }
 }

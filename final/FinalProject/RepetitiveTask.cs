@@ -69,7 +69,14 @@ public class RepetitiveTask : Task
     */
     public override void DisplayTaskInfo()
     {
-        Console.WriteLine($"{_taskDescription} - Due: {_dueDate} (Repetition: {_numberRepetition}/{_totalRepetition})");
+        if (_isCompleted == true)
+        {
+            Console.WriteLine($"✓ {_taskDescription} - Due: {_dueDate.ToLongDateString()} (Repetition: {_numberRepetition}/{_totalRepetition})");
+        }
+        else
+        {
+            Console.WriteLine($"{_taskDescription} - Due: {_dueDate.ToLongDateString()} (Repetition: {_numberRepetition}/{_totalRepetition})");
+        }
     }
 
     /* UpdateDueDate is a method that updates the due date of the task
