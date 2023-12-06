@@ -64,14 +64,8 @@ public class TaskManager
         string taskDescription2 = Console.ReadLine();
         // set the task description
         scheduledTask.SetTaskDescription(taskDescription2);
-        Console.Write("What is the due date of the task? ");
-        Console.Write("Day DD: ");
-        int day = Convert.ToInt32(Console.ReadLine());
-        Console.Write("Month MM: ");
-        int month = Convert.ToInt32(Console.ReadLine());
-        Console.Write("Year YYYY: ");
-        int year = Convert.ToInt32(Console.ReadLine());
-        DateOnly dueDate2 = new DateOnly(year, month, day);
+        Console.Write("What is the due date of the task (YY/MM/DD)? ");
+        DateOnly dueDate2 = DateOnly.Parse(Console.ReadLine());
         // set the due date
         scheduledTask.SetDueDate(dueDate2);
         // add the task to the list of tasks
@@ -123,6 +117,29 @@ public class TaskManager
         taskScheduler.OverDueTasks(); // display the overdue tasks
         
         // display the list of tasks
+        Console.WriteLine();
+        Console.WriteLine("-------- To-do list --------");
+        int i = 1;
+        foreach (Task task in _tasks)   // for each task in the list of tasks
+        {
+            Console.Write($"{i}. ");
+            task.DisplayTaskInfo();     // display the task info
+            i++;
+        }
+    }
+
+    /* DisplayAllTasks is a method that displays all tasks in a list format
+    to allow the user to choose a task to complete. Note: It also displays
+    the accomplished tasks.
+    Parameters: None
+    Return: none
+    */
+    public void DisplayAllTasks()
+    {
+        TaskScheduler taskScheduler2 = new TaskScheduler(_tasks);
+        Console.WriteLine();
+        taskScheduler2.OverDueTasks();
+
         Console.WriteLine();
         Console.WriteLine("-------- To-do list --------");
         int i = 1;
@@ -200,10 +217,6 @@ public class TaskManager
             if (task.GetIsCompleted() == true)
             {
                 task.DisplayTaskInfo();
-            }
-            else
-            {
-                Console.WriteLine("There are no accomplished tasks.");
             }
         }
     }
