@@ -55,10 +55,10 @@ class UserInterface
                 case 1:
                     taskManager.AddSimpleTask();
                     break;
-                case 2: // test for the date format !!!!!!
+                case 2:
                     taskManager.AddScheduledTask();
                     break;
-                case 3: // test for the date format !!!!!!
+                case 3:
                     taskManager.AddRepetitiveTask();
                     break;
                 case 4:
@@ -77,7 +77,7 @@ class UserInterface
                     break;
                 case 7:
                      _tasks = taskManager.GetTasks(); // update the list of tasks
-                    taskManager.DisplayTasks();
+                    taskManager.DisplayAllTasks();
                     Console.Write("Which task have you accomplished? ");
                     int taskIndex = Convert.ToInt32(Console.ReadLine());
                     taskManager.CompleteTask(taskIndex, _tasks);
