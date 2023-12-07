@@ -90,19 +90,15 @@ public class RepetitiveTask : Task
         {
             case "daily":
                 _dueDate = _dueDate.AddDays(1);
-                Console.WriteLine(_dueDate);
                 break;
             case "weekly":
                 _dueDate = _dueDate.AddDays(7);
-                Console.WriteLine(_dueDate);
                 break;
             case "monthly":
                 _dueDate = _dueDate.AddMonths(1);
-                Console.WriteLine(_dueDate);
                 break;
             case "yearly":
                 _dueDate = _dueDate.AddYears(1);
-                Console.WriteLine(_dueDate);
                 break;
             default:
                 Console.WriteLine("Invalid choice");
