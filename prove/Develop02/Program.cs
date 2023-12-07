@@ -32,7 +32,6 @@ partial class Program
 
             // create the prompt, entry and journal objects
             Prompt prompt = new Prompt();
-            Entry entry = new Entry();
             Journal journal = new Journal();
 
             List<Entry> entries = new List<Entry>(); // create a new list of entries
@@ -40,13 +39,14 @@ partial class Program
             // if the user chooses to write an entry 
             if (choice == 1)
             {
+                string response = "";
                 /* get the class attribute _date from the entry object 
                 to correspond to the dateText */
-                entry._date = dateText;
+                string date = dateText
                 /* get the class attribute _randomPrompt from the entry 
                 object to correspond to the method GetRandomPrompt from 
                 the prompt object */
-                entry._randomPrompt = prompt.GetRandomPrompt();
+                string prompt = prompt.GetRandomPrompt();
                 // display the random prompt
                 Console.WriteLine(entry._randomPrompt);
                 Console.Write("> ");
@@ -54,7 +54,7 @@ partial class Program
                 from the entry object */
                 entry._entry = Console.ReadLine();
                 // add the new entries to list of the journal class
-                entries.Add(entry.GetInfo());
+                entries.Add(Entry entry = new Entry(dateText, prompt.GetRandomPrompt(), response));
             }
             // if the user chooses to display the entry (entries)
             else if (choice == 2)
