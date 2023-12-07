@@ -7,15 +7,6 @@ using System.IO;
         // define a list of entries from the entry class
         public List<Entry> _entries;
 
-        public string GetEntry()
-        {
-            return _entries;
-        }
-        public void SetEntry(string entry)
-        {
-            _entries = entry;
-        }
-
         /* DisplayEntryFromFile is a method that display each entry
         from a file. 
         Parameter: filename, the name of the file 
