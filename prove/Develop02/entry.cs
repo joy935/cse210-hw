@@ -26,4 +26,11 @@ public class Entry
     {
         return $"{_date}~{_randomPrompt}~{_entry}";
     }
+
+    public Entry(string date, string prompt, string entry)
+    {
+        _date = date;
+        _randomPrompt = prompt;
+        _entry = entry;
+    }
 }
