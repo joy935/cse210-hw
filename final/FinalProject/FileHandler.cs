@@ -62,7 +62,15 @@ public class FileHandler
     */
     public List<Task> LoadFromFile(string fileName)
     {
-        // create a list of tasks
+        // if the file does not exist
+        if (!File.Exists(fileName))
+        {
+            Console.WriteLine("Error: File does not exist.");
+            return null;
+        }
+        else
+        {
+            // create a list of tasks
         _tasks = new List<Task>();
         // read the file and store it in a string array
         string [] lines = System.IO.File.ReadAllLines(fileName);
@@ -125,5 +133,6 @@ public class FileHandler
         }
         // return the list of tasks
         return _tasks;
-    }
+        }
+    }   
 }
