@@ -131,6 +131,7 @@ public class FileHandler
                 Console.WriteLine("Error: Task type not found.");
             }
         }
+        Console.WriteLine("File loaded successfully.");
         // return the list of tasks
         return _tasks;
         }
