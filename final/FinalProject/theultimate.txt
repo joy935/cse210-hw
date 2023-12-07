@@ -1,3 +1,0 @@
-SimpleTask:Submit survey~True
-ScheduledTask:Watch last ASI episode~2023-12-23~True
-RepetitiveTask:Prepare K night~2023-12-20~True~weekly~2~2

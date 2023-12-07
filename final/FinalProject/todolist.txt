@@ -1,2 +1,4 @@
+RepetitiveTask:Go to Zurich~2024-12-03~True~weekly~0~3
 ScheduledTask:Submit assignment~12/22/2023~False
 ScheduledTask:Go hiking~11/30/2023~False
+RepetitiveTask:Go to Bern~2024-01-13~True~monthly~1~3
