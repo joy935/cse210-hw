@@ -73,7 +73,6 @@ class UserInterface
                     Console.Write("What is the filename? ");
                     string filename = Console.ReadLine();
                     _tasks = taskManager.LoadTasks(filename); // update the list of tasks
-                    Console.WriteLine("To-Do list loaded.");
                     break;
                 case 7:
                      _tasks = taskManager.GetTasks(); // update the list of tasks
