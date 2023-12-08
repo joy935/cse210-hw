@@ -64,7 +64,7 @@ public class TaskManager
         string taskDescription2 = Console.ReadLine();
         // set the task description
         scheduledTask.SetTaskDescription(taskDescription2);
-        Console.Write("What is the due date of the task (YY/MM/DD)? ");
+        Console.Write("What is the due date of the task (YYYY/MM/DD)? ");
         DateOnly dueDate2 = DateOnly.Parse(Console.ReadLine());
         // set the due date
         scheduledTask.SetDueDate(dueDate2);
@@ -85,11 +85,11 @@ public class TaskManager
         string taskDescription3 = Console.ReadLine();
         // set the task description
         repetitiveTask.SetTaskDescription(taskDescription3);
-        Console.Write("What is the frequency of the task (daily, weekly, monthly, yearly) ?");
+        Console.Write("What is the frequency of the task (daily, weekly, monthly, yearly)? ");
         string frequencyRepetition = Console.ReadLine();
         // set the frequency of the task
         repetitiveTask.SetFrequencyRepetition(frequencyRepetition);
-        Console.Write("What is the due date of the task (YY/MM/DD)? ");
+        Console.Write("What is the due date of the task (YYYY/MM/DD)? ");
         // set the due date
         DateOnly dueDate3 = DateOnly.Parse(Console.ReadLine());
         repetitiveTask.SetDueDate(dueDate3);
