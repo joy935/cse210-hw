@@ -89,11 +89,11 @@ public class TaskManager
         string frequencyRepetition = Console.ReadLine();
         // set the frequency of the task
         repetitiveTask.SetFrequencyRepetition(frequencyRepetition);
-        Console.Write("What is the due date of the task (YYYY/MM/DD)? ");
+        Console.Write("What is the first due date of the task (YYYY/MM/DD)? ");
         // set the due date
         DateOnly dueDate3 = DateOnly.Parse(Console.ReadLine());
         repetitiveTask.SetDueDate(dueDate3);
-        Console.Write("How many times has the task been repeated? ");
+        Console.Write("How many times do you want to repeat this task? ");
         // set the total repetition
         int totalRepetition = Convert.ToInt32(Console.ReadLine());
         repetitiveTask.SetTotalRepetition(totalRepetition);
@@ -141,7 +141,7 @@ public class TaskManager
         taskScheduler2.OverDueTasks();
 
         Console.WriteLine();
-        Console.WriteLine("-------- To-do list --------");
+        Console.WriteLine("Complete list of tasks:");
         int i = 1;
         foreach (Task task in _tasks)   // for each task in the list of tasks
         {
